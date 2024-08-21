@@ -1,7 +1,6 @@
-import * as THREE from 'three';
 import Scroll from './utils/Scroll';
-// import frag from "./../../assets/shader/main.frag?raw";
-// import vert from "./../../assets/shader/main.vert?raw";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 class main {
   constructor() {
@@ -10,19 +9,15 @@ class main {
     this.header = document.getElementById('header');
     this.toTop = document.getElementById('to-top');
     this.top = document.getElementById('top');
-    this.container = document.getElementById('container');
+    this.container = document.getElementsByClassName('special-2409-airbnb')[0];
     this.visitor = document.getElementById('visitor');
-    this.ceu = document.getElementById('challenge-enthusiasm-unity');
     this.menu = document.getElementById('menu');
     this.footer = document.getElementById('footer');
     this.textTarget = document.getElementsByClassName('text-target');
     this.swiperContainer = document.getElementsByClassName('swiper-container');
     this.swipers = [];
-    this.galleryIndex = document.getElementById('gallery-index').getElementsByTagName('span');
-    this.qa = document.getElementsByClassName('qa-faq');
     this.scrollTrigger = document.getElementsByClassName('scroll-trigger');
     this.menuTrigger = document.getElementsByClassName('menu-trigger');
-    this.video = document.getElementsByTagName('video')[0];
     this.duration = 100;
     this.end = 0;
     this.index = 0;
@@ -41,14 +36,11 @@ class main {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    Splitting();
+    // Splitting();
     this.init();
     this.animationScroll();
     for (let i = 0; i < this.menuTrigger.length; i++) {
       this.menuTrigger[i].addEventListener('click', this.triggerMenu.bind(this));
-    }
-    for (let i = 0; i < this.qa.length; i++) {
-      this.qa[i].addEventListener('click', this.triggerQa.bind(this));
     }
     for (let i = 0; i < this.scrollTrigger.length; i++) {
       this.scrollTrigger[i].addEventListener('click', this.toScroll.bind(this));
@@ -125,108 +117,6 @@ class main {
     return a + t * (b - a);
   }
 
-  initSwiper() {
-    for (let i = 0; i < this.swiperContainer.length; i++) {
-      let thisSwiper = this.swiperContainer[i];
-      let space = 0;
-      let slides = 2.5, loopedSlides = 0;
-      let speed = 1500;
-      let loop = true;
-      let excute = true;
-      let pcSlides = 0, pcLoopedSlides = 0;
-      let direction = 'horizontal';
-      let allowTouchMove = true;
-      let centeredSlides = true;
-      let on = {};
-      let autoplay = {
-          delay: 3000,
-          disableOnInteraction: false,
-        };
-      let navigation = {
-          nextEl: `.swiper-button-next`,
-          prevEl: `.swiper-button-prev`,
-          clickable: true
-      };
-      let pagination = {}
-      if (thisSwiper.classList.contains('vertical-slider')) {
-        direction = 'vertical';
-        speed = 10000;
-        allowTouchMove = false;
-        slides = 6;
-        centeredSlides = false;
-        space = 0;
-        autoplay = {
-          delay: 0,
-          disableOnInteraction: false,
-        };
-      }
-      if (thisSwiper.classList.contains('team-slider')) {
-        speed = 100000;
-        allowTouchMove = false;
-        slides = .46785714285714286;
-        centeredSlides = false;
-        space = 0;
-        autoplay = {
-          delay: 0,
-          // pauseOnMouseEnter: true,
-          disableOnInteraction: false,
-        };
-        if (this.width > 750) {
-          pcSlides = 1;
-        }
-      }
-      if (thisSwiper.classList.contains('gallery-slider')) {
-        on = {
-          slideChange: (e) => {
-            let activeIndex = e.realIndex;
-            for (let i = 0; i < this.galleryIndex.length; i++) {
-              let gallery = this.galleryIndex[i];
-              gallery.classList.remove('up-hide')
-              if (gallery.classList.contains('up')) {
-                gallery.classList.remove('up')
-                gallery.classList.add('up-hide')
-              }
-            }
-            document.getElementsByClassName(`gallery-index${activeIndex}`)[0].classList.add('up')
-          },
-        };
-        if (this.width < 750) {
-          excute = false;
-        }
-      }
-      if (pcSlides === 0) {
-        pcSlides = slides;
-        pcLoopedSlides = slides;
-      } else {
-        pcLoopedSlides = pcSlides;
-      }
-      loopedSlides = slides;
-      if (excute) {
-        this.swiper = new Swiper(thisSwiper, {
-          speed: speed,
-          loop: loop,
-          direction: direction,
-          allowTouchMove: allowTouchMove,
-          centeredSlides: centeredSlides,
-          loopedSlides: loopedSlides,
-          autoplay: autoplay,
-          slidesPerView: slides,
-          spaceBetween: space,
-          pagination: pagination,
-          navigation: navigation,
-          on: on,
-          breakpoints: {
-            750: {
-              slidesPerView: pcSlides,
-              loopedSlides: pcLoopedSlides,
-            }
-          }
-        });
-        this.swipers.push(this.swiper);
-      }
-    }
-  }
-
   triggerMenu(e) {
     let elm = e.currentTarget;
     if (this.menu.classList.contains('active')) {
@@ -264,16 +154,7 @@ class main {
 
   init() {
     this.resizeEvent();
-    this.lenis();
-    this.initSwiper();
-    if (this.width < 750) {
-
-    } else {
-      if (this.container.classList.contains('b')) {
-        // this.initSwiper();
-      } else {
-      }
-    }
+    // this.lenis();
     window.scrollTo(0, 0);
     this.container.classList.add('loaded');
   }
