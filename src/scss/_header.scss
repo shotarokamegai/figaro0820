@@ -1,0 +1,593 @@
+@media screen and (max-width: 749px) {
+  #container {
+    .brand-wrapper {
+      .brand {
+        position: relative;
+        &:nth-child(1), &:nth-child(3), &:nth-child(5), &:nth-child(7), &:nth-child(9) {
+          &::after {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            display: block;
+            height: rem(1);
+            width: vw(350);
+            background-color: $text;
+          }
+        }
+        &.full, &.half {
+
+        }
+        &.full {
+          border-bottom: rem(1) solid $text;
+        }
+        &:active {
+          // &::before {
+          //   transform: translate3d(0, 0, 0);
+          // }
+          // .brand-title {
+          //   color: $white;
+          //   svg * {
+          //     fill: $white;
+          //   }
+          // }
+          // .brand-icon {
+          //   svg * {
+          //     stroke: $white;
+          //   }
+          // }
+        }
+        // &::before {
+        //   position: absolute;
+        //   top: 0;
+        //   left: 0;
+        //   height: 100%;
+        //   width: 100%;
+        //   content: '';
+        //   transform: translate3d(0, -101%, 0);
+        //   will-change: transform;
+        //   transition: transform .5s $zoom;
+        //   background-color: $text;
+        // }
+        a {
+          @include center();
+          height: 100%;
+          width: 100%;
+          z-index: 1;
+        }
+        svg {
+          display: block;
+          * {
+            transition: fill .5s $zoom, stroke .5s $zoom;
+            will-change: fill, stroke;
+          }
+        }
+        &-title {
+          position: relative;
+          transition: color .5s $zoom, transform .5s $zoom;
+          will-change: color, transform;
+        }
+        &-icon {
+          position: relative;
+          transition: transform .5s $zoom;
+          will-change: transform;
+        }
+      }
+    }
+  }
+    #header {
+      #menu {
+        position: fixed;
+        // @include fitcenter();
+        padding: 16.2849872774vw 0 calc( 16.2849872774vw + 60px );
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        visibility: hidden;
+        transition: visibility 0s 1s;
+        overflow: scroll;
+        overscroll-behavior: none;
+        background-color: $white;
+        // overflow: hidden;
+        z-index: 11;
+        &.active {
+          visibility: visible;
+          transition: visibility 0s 0s;
+          .menu__inner {
+            .logo {
+              opacity: 1;
+              transition: opacity $ziwaziwa 1s .4s;
+            }
+            .brand-wrapper .brand {
+              opacity: 1;
+              transform: translate3d(0, 0, 0);
+              @for $i from 1 through 10 {
+                &:nth-child(#{$i}) {
+                  transition: opacity $ziwaziwa 1s #{$i * 0.1 + .3}s, transform $ziwaziwa 1s #{$i * 0.1 + .3}s;
+                }
+              }
+            }
+          }
+          &::before {
+            transform: translate3d(0, 0%, 0);
+            transition: transform .5s $zoom;
+          }
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background-color: $white;
+          transform: translate3d(0, -101%, 0);
+          will-change: transform;
+          transition: transform .5s $zoom .5s;
+        }
+        .menu__inner {
+          position: relative;
+          width: 100%;
+          .logo, .brand {
+            opacity: 0;
+          }
+          .logo {
+            margin: 0 auto vw(80);
+            width: vw(173.93);
+            will-change: opacity;
+            transition: opacity $ziwaziwa .5s;
+          }
+          .brand-wrapper {
+            margin: 0 auto;
+            width: vw(350);
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .brand {
+              // padding: 0 vw(22);
+              position: relative;
+              padding: vw(8) 0;
+              height: vw(64);
+              width: vw(158);
+              opacity: 0;
+              box-sizing: content-box;
+              // box-sizing: border-box;
+              will-change: opacity, transform;
+              transform: translate3d(vw(-10), 0, 0);
+              transition: opacity $ziwaziwa .5s, transform 0s .5s;
+              &:nth-child(2n) {
+                &::before {
+                  display: none;
+                }
+                &::after {
+                  display: none;
+                }
+              }
+              &::before {
+                position: absolute;
+                top: 50%;
+                transform: translate3d(0, -50%, 0);
+                content: '';
+                right: vw(-16);
+                width: rem(1);
+                height: vw(64);
+                background-color: $text;
+              }
+              &-index {
+                margin-bottom: vw(8);
+                @include fontvw(10);
+              }
+              &-title {
+                @include fontvw(14);
+                svg {
+                  display: block;
+                  height: vw(64);
+                  width: auto;
+                  * {
+                    fill: $text;
+                  }
+                }
+              }
+              &-icon {
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translate3d(0, -50%, 0);
+              }
+              &:nth-last-child(1), &:nth-last-child(2) {
+                .icon-wrapper svg:nth-child(1) {
+                  transform: translate3d(0, 0, 0);
+                  left: 0;
+                }
+                .icon-wrapper svg:nth-child(2) {
+                  transform: translate3d(100%, 0, 0);
+                }
+              }
+              &:last-child {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+      .menu-trigger {
+        position: fixed;
+        @include fitcenter();
+        top: 0;
+        right: 0;
+        height: vw(64);
+        width: vw(64);
+        // border-radius: 100%;
+        border: rem(1) solid transparent;
+        background-color: $mlbRed;
+        will-change: background-color;
+        transition: background-color .5s $Power3easeInOut;
+        z-index: 12;
+        &:active {
+          background-color: $mlbBlue;
+        }
+        &.active {
+          background-color: $mlbBlue;
+          .icon-wrapper_ {
+            span {
+              &:nth-child(1) {
+                transform: translate3d(0%, 0, 0);
+              }
+              &:nth-child(2) {
+                transform: translate3d(100%, 0, 0);
+              }
+            }
+          }
+          p {
+            span {
+              &:nth-child(1) {
+                transform: translate3d(0%, 0, 0);
+              }
+              &:nth-child(2) {
+                transform: translate3d(101%, 0, 0);
+              }
+            }
+          }
+        }
+        &__inner {
+          width: 100%;
+        }
+        &-icon {
+          position: relative;
+          margin: 0 auto vw(6);
+          width: 100%;
+          overflow: hidden;
+          span {
+            display: block;
+            width: 100%;
+            will-change: transform;
+            transition: transform .5s $Power3easeInOut;
+            &:nth-child(1) {
+              position: absolute;
+              top: 0;
+              left: 0;
+              transform: translate3d(-100%, 0, 0);
+            }
+            &:nth-child(2) {
+              transform: translate3d(0%, 0, 0);
+            }
+            svg {
+              margin: 0 auto;
+              width: vw(24);
+              * {
+               fill: $white;
+              }
+            }
+          }
+        }
+        p {
+          position: relative;
+          @include fontvw(8);
+          width: 100%;
+          color: $white;
+          will-change: color;
+          transition: color .5s $Power3easeInOut;
+          overflow: hidden;
+          span {
+            position: relative;
+            display: block;
+            width: 100%;
+            will-change: transform;
+            transition: transform .5s $Power3easeInOut;
+            &:nth-child(1) {
+              position: absolute;
+              left: 0;
+              transform: translate3d(-101%, 0, 0);
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+}
+@media screen and (min-width: 750px) {
+  #container {
+    .brand-wrapper {
+      .brand {
+        position: relative;
+        // border-bottom: rem(1) solid $text;
+        // overflow: hidden;
+        &:nth-child(9) {
+          &::before {
+            position: absolute;
+            content: '';
+            bottom: 0;
+            left: 0;
+            display: block;
+            height: rem(1);
+            width: vwPc(642);
+            background-color: $text;
+          }
+        }
+        &:nth-child(1), &:nth-child(4), &:nth-child(7), &:nth-child(9) {
+          &::after {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            display: block;
+            height: rem(1);
+            width: vwPc(642);
+            background-color: $text;
+          }
+        }
+        &:nth-child(2), &:nth-child(5) {
+          &::before, &::after {
+            position: absolute;
+            content: '';
+            top: 50%;
+            transform: translate3d(0, -50%, 0);
+            display: block;
+            height: vwPc(64);
+            width: rem(1);
+            background-color: $text;
+          }
+          &::before {
+            left: vwPc(-17);
+          }
+          &::after {
+            right: vwPc(-17);
+          }
+        }
+        &:nth-child(7) {
+          &::before {
+            position: absolute;
+            content: '';
+            top: 50%;
+            transform: translate3d(0, -50%, 0);
+            display: block;
+            height: vwPc(64);
+            width: rem(1);
+            background-color: $text;
+          }
+          &::before {
+            right: vwPc(-17);
+          }
+        }
+        &:hover {
+          .brand-title, .brand-icon {
+            opacity: .6;
+          }
+        }
+        a {
+          @include center();
+          height: 100%;
+          width: 100%;
+          z-index: 1;
+        }
+        svg {
+          display: block;
+          * {
+            transition: fill .5s $zoom, stroke .5s $zoom;
+            will-change: fill, stroke;
+          }
+        }
+        &-title, &-icon {
+          position: relative;
+          transition: opacity .5s $Power1easeInOut;
+          will-change: opacity;
+        }
+      }
+    }
+    #header {
+      #menu {
+        position: fixed;
+        @include fitcenter();
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        visibility: hidden;
+        transition: visibility 0s 1s;
+        overflow: hidden;
+        z-index: 11;
+        &.active {
+          visibility: visible;
+          transition: visibility 0s 0s;
+          .menu__inner {
+            .logo {
+              opacity: 1;
+              transition: opacity $ziwaziwa 1s .4s;
+            }
+            .brand-wrapper .brand {
+              opacity: 1;
+              transform: translate3d(0, 0, 0);
+              @for $i from 1 through 10 {
+                &:nth-child(#{$i}) {
+                  transition: opacity $ziwaziwa 1s #{$i * 0.1 + .3}s, transform $ziwaziwa 1s #{$i * 0.1 + .3}s;
+                }
+              }
+            }
+          }
+          &::before {
+            transform: translate3d(0, 0%, 0);
+            transition: transform .5s $zoom;
+          }
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background-color: $white;
+          transform: translate3d(0, -101%, 0);
+          will-change: transform;
+          transition: transform .5s $zoom .5s;
+        }
+        .menu__inner {
+          position: relative;
+          margin: 0 vwPc(60) 0 0;
+          width: vwPc(1212);
+          .logo, .brand {
+            opacity: 0;
+          }
+          .logo {
+            margin-right: vwPc(116);
+            width: vwPc(454);
+            will-change: opacity;
+            transition: opacity $ziwaziwa .5s;
+          }
+          .brand-wrapper {
+            width: vwPc(642);
+            flex-wrap: wrap;
+            .brand {
+              padding: vwPc(12) 0;
+              height: vwPc(64);
+              margin-right: vwPc(36);
+              width: vwPc(190);
+              box-sizing: content-box;
+              &-index {
+                margin-bottom: vwPc(8);
+                @include fontvwPc(12);
+              }
+              &-title {
+                @include fontvwPc(24);
+                svg {
+                  display: block;
+                  height: vwPc(64);
+                  width: auto;
+                  * {
+                    fill: $text;
+                  }
+                }
+              }
+              &:nth-child(3),&:nth-child(6),&:nth-child(8),&:last-child {
+                margin-right: 0;
+              }
+              &.half {
+                width: vwPc(303);
+              }
+              &.full {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+      .menu-trigger {
+        position: fixed;
+        @include fitcenter();
+        top: 0;
+        right: 0;
+        height: rem(64);
+        width: rem(64);
+        // border-radius: 100%;
+        border: rem(1) solid transparent;
+        background-color: $mlbRed;
+        will-change: background-color;
+        transition: background-color .5s $Power3easeInOut;
+        cursor: pointer;
+        z-index: 12;
+        &:hover {
+          background-color: $mlbBlue;
+        }
+        &.active {
+          background-color: $mlbBlue;
+          // &:hover {
+          //   background-color: $gray300;
+          // }
+          .icon-wrapper_ {
+            span {
+              &:nth-child(1) {
+                transform: translate3d(0%, 0, 0);
+              }
+              &:nth-child(2) {
+                transform: translate3d(100%, 0, 0);
+              }
+            }
+          }
+          p {
+            span {
+              &:nth-child(1) {
+                transform: translate3d(0%, 0, 0);
+              }
+              &:nth-child(2) {
+                transform: translate3d(101%, 0, 0);
+              }
+            }
+          }
+        }
+        &__inner {
+          width: 100%;
+        }
+        &-icon {
+          position: relative;
+          margin: 0 auto vwPc(6);
+          width: 100%;
+          overflow: hidden;
+          span {
+            display: block;
+            width: 100%;
+            will-change: transform;
+            transition: transform .5s $Power3easeInOut;
+            &:nth-child(1) {
+              position: absolute;
+              top: 0;
+              left: 0;
+              transform: translate3d(-100%, 0, 0);
+            }
+            &:nth-child(2) {
+              transform: translate3d(0%, 0, 0);
+            }
+            svg {
+              margin: 0 auto;
+              width: vwPc(24);
+              * {
+               fill: $white;
+              }
+            }
+          }
+        }
+        p {
+          position: relative;
+          @include fontsize(8);
+          width: 100%;
+          color: $white;
+          will-change: color;
+          transition: color .5s $Power3easeInOut;
+          overflow: hidden;
+          span {
+            position: relative;
+            display: block;
+            width: 100%;
+            will-change: transform;
+            transition: transform .5s $Power3easeInOut;
+            &:nth-child(1) {
+              position: absolute;
+              left: 0;
+              transform: translate3d(-101%, 0, 0);
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

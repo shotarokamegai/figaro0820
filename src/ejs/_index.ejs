@@ -1,0 +1,301 @@
+<%
+  var brand = [
+    {
+      link: '',
+      url: 'rope',
+      alt: 'ROPÉ',
+      color: '#507354'
+    },
+    {
+      link: '',
+      url: 'adametrope',
+      alt: 'ADAM ET ROPÉ',
+      color: '#725A56'
+    },
+    {
+      link: '',
+      url: 'adametropehomme',
+      alt: 'ADAM ET ROPÉ HOMME',
+      color: '#D84D51'
+    },
+    {
+      link: '',
+      url: 'rope_picnic',
+      alt: 'ROPE&#x27; PICNIC',
+      color: '#B9802A'
+    },
+    {
+      link: '',
+      url: 'vis',
+      alt: 'VIS',
+      color: '#6F2D64'
+    },
+    {
+      link: '',
+      url: 'junred',
+      alt: 'JUNRED',
+      color: '#443F54'
+    },
+  ];
+%>
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <%- include('parts/_head', {title: '', description: '', keywords: '', url: '', ogimage: ''}) %>
+</head>
+
+<body class="">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBNGHSH"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div id="container">
+    <header id="header">
+      <%- include('parts/_menu', {brand: brand}) %>
+    </header>
+    <main>
+      <div class="vertical">
+        <div class="swiper-container swiper-container1 vertical-slider">
+          <div class="swiper-wrapper">
+            <% for (var i = 1; i < 7; i++) { %>
+              <div class="swiper-slide">
+                <img src="./assets/img/vertical.svg" width="" height="" alt="MLB COLLECTION BY JUN" />
+              </div>
+            <% } %>
+          </div>
+        </div>
+      </div>
+      <section id="top" class="section">
+        <div class="kv">
+          <picture class="appear">
+            <source srcset="./assets/img/kv_sp.webp" media="(max-width:749px)" width="" height="" type="image/webp">
+            <source srcset="./assets/img/kv_sp.png" media="(max-width:749px)" width="" height="">
+            <source srcset="./assets/img/kv.webp" width="" height="" type="image/webp" />
+            <img src="./assets/img/kv.png" width="" height="" alt="" />
+          </picture>
+        </div>
+        <h1>
+          <span class="logo">
+            <img src="./assets/img/mlb-with-copy.svg" alt="MLB ™/© 2024 MLB">
+          </span>
+          <span class="text factoria flip-open" data-splitting>
+            MLB <br class="sp" />COLLECTION <br class="sp" />BY JUN
+          </span>
+        </h1>
+        <div class="scroll scroll-trigger" data-target="about">
+          <div class="scroll__inner">
+            <div class="scroll-circle"></div>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="about">
+        <div class="team-slider swiper-container swiper-container2">
+          <div class="team-cover">
+            <img src="./assets/img/team-cover.svg" alt="">
+          </div>
+          <div class="swiper-wrapper">
+            <div class="team swiper-slide">
+              <picture class="appear">
+                <source srcset="./assets/img/teams_sp.webp" media="(max-width:749px)" width="" height="" type="image/webp">
+                <source srcset="./assets/img/teams_sp.png" media="(max-width:749px)" width="" height="">
+                <source srcset="./assets/img/teams.webp" width="" height="" type="image/webp" />
+                <img src="./assets/img/teams.png" width="" height="" alt="" />
+              </picture>
+            </div>
+          </div>
+        </div>
+        <div class="section__inner">
+          <p class="section-text addactive show">
+            ジュングループでは、オードリー・ヘプバーンの放つ輝きを通して、ファッションの楽しみや喜び、<br/>
+            また不安定な情勢の今だからこそポジティブな気持ちになれるアイテムを展開いたします。
+          </p>
+          <div class="show addactive">
+            <div class="btn">
+              <a href=""></a>
+              <span class="btn-icon">
+                <img src="./assets/img/diamond.svg" alt="">
+              </span>
+              <span class="btn-text factoria">
+                MLB ALL ITEMS
+              </span>
+              <span class="btn-triangle">
+                <img src="./assets/img/triangle.svg" alt="">
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="gallery">
+        <div class="gallery-wrapper">
+        <div class="swiper-container  swiper-container3 gallery-slider">
+          <div class="swiper-wrapper">
+            <% for (var i = 0; i < 6; i++) { %>
+              <div class="swiper-slide addactive">
+                <%- include('parts/_card') %>
+              </div>
+            <% } %>
+          </div>
+        </div>
+        </div>
+        <div class="gallery-pagination flex flex-sp align-center">
+          <p class="factoria text-center" id="gallery-index">
+            <span class="gallery-index0">1</span>
+            <span class="gallery-index1">2</span>
+            <span class="gallery-index2">3</span>
+            <span class="gallery-index3">4</span>
+            <span class="gallery-index4">5</span>
+            <span class="gallery-index5">6</span>
+          </p>
+          <div></div>
+          <p class="factoria">6</p>
+        </div>
+      </section>
+      <section id="brand" class="section">
+        <div class="back absolute">
+          <img src="./assets/img/brand_back.svg" alt="">
+        </div>
+        <div class="section__inner">
+          <div class="props props1 absolute gif" data-num="3">
+            <img class="active" src="./assets/img/props1_1.png" alt="">
+            <img src="./assets/img/props1_2.png" alt="">
+            <img src="./assets/img/props1_3.png" alt="">
+          </div>
+          <div class="text-center">
+            <h2 class="section-title factoria white flip-open addactive" data-splitting>
+              BRANDS
+            </h2>
+          </div>
+          <div class="mag-wrapper">
+            <div class="mag-wrapper__inner flex flex-sp">
+            <% for (var i = 0; i < brand.length; i++) { %>
+              <div class="mag addactive delay">
+                <div class="mag__inner-back" style="background-color: <%- brand[i]['color'] %>;">
+                  <img src="./assets/img/mlb-with-copy.svg" alt="MLB ™/© 2024 MLB">
+                </div>
+                <div class="mag__inner" style="background-color: <%- brand[i]['color'] %>;">
+                  <a href="" class="mag-view-more">
+                    <p class="espiritu">VIEW MORE</p>
+                  </a>
+                  <header class="flex flex-sp">
+                    <div class="above flex flex-sp space-between align-center">
+                      <h1>
+                        <img src="./assets/img/mlb.svg" alt="MLB">
+                      </h1>
+                      <p class="title factoria ultra">
+                        MLB COLLECTION BY JUN
+                      </p>
+                    </div>
+                    <div class="bottom flex flex-sp space-between">
+                      <p class="aktiv">Baseball</p>
+                      <p class="aktiv">2024</p>
+                    </div>
+                  </header>
+                  <div class="mag-image">
+                    <img src="./assets/img/mag_<%- brand[i]['url'] %>.jpg" alt="<%- brand[i]['alt'] %>">
+                  </div>
+                  <h1 class="mag-logo">
+                    <%- include(`parts/_${brand[i]['url']}`) %>
+                  </h1>
+                  <footer class="flex flex-sp align-center space-between">
+                    <p class="aktiv">™/© 2024 MLB</p>
+                    <div class="barcode">
+                      <img src="./assets/img/barcode.svg" alt="">
+                    </div>
+                  </footer>
+                </div>
+                <div class="mag-note flex space-between">
+                  <h1>
+                    (<%- brand[i]['alt'] %>)
+                  </h1>
+                  <a class="aktive bold view-more" href="">
+                    VIEW MORE
+                  </a>
+                </div>
+              </div>
+            <% } %>
+            </div>
+          </div>
+          <div class="text-center show addactive">
+            <div class="all-items">
+              <a href="https://www.junonline.jp/product/?tag=MLB_COLLECTION&list_unit=fku" target="_blank" rel="noopener"></a>
+              <div class="all-items-text factoria">
+                <p>
+                  MLB ALL ITEMS
+                </p>
+                <div class="all-items-icon">
+                  <%- include('parts/_ball') %>
+                  <%- include('parts/_arrow') %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="section-text show addactive">ショップスタッフのスタイリングはこちら</p>
+          <div class="text-center show addactive">
+            <a href="https://www.junonline.jp/styling/?tag=MLB_COLLECTION" target="_blank" rel="noopener" class="arrow-btn icon-wrapper-parent">
+              <span class="arrow-btn-text aktiv bold">
+                SNaP/Me
+              </span>
+              <span class="arrow-btn-icon icon-wrapper">
+                <%- include('parts/_snap') %>
+                <%- include('parts/_arrow') %>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section id="shop-list" class="section">
+        <div class="section__inner">
+          <div class="props props2 absolute gif" data-num="2">
+            <img class="active" src="./assets/img/props2_1.png" alt="">
+            <img src="./assets/img/props2_2.png" alt="">
+          </div>
+          <div class="props props3 absolute gif" data-num="2">
+            <img class="active" src="./assets/img/props3_1.png" alt="">
+            <img src="./assets/img/props3_2.png" alt="">
+          </div>
+          <div class="text-center">
+            <h2 class="section-title factoria flip-open addactive" data-splitting>
+              SHOP LIST
+            </h2>
+          </div>
+          <p class="section-text show addactive">取り扱い店舗一覧</p>
+          <div class="shop-list-wrapper flex flex-sp show addactive">
+            <% for (var i = 0; i < brand.length; i++) { %>
+              <div class="shop-list flex flex-sp align-center icon-wrapper-parent">
+                <a href=""></a>
+                <div class="flex">
+                  <p class="shop-list-index aktiv">(<%- ( '00' + (i+1) ).slice( -2 ) %>)</p>
+                  <div class="shop-list-logo factoria demi">
+                    <%- brand[i]['alt'] %>
+                  </div>
+                </div>
+                <div class="shop-list-arrow icon-wrapper">
+                  <%- include('parts/_ball') %>
+                  <%- include('parts/_arrow') %>
+                </div>
+              </div>
+            <% } %>
+          </div>
+          <p class="credit text-center aktiv show addactive">
+            Photographer : Shuhei Tsunekawa(SIGNO)<br/>
+            Stylist : Erica Mimura(SLITS)<br/>
+            Hair Stylist : Asahi Sano<br/>
+            Make up Artist : Nao Yoshida<br/>
+            Model : didi(agency noi)<br/>
+            Direction & Producer : Takeru Kudo
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer id="footer">
+      <p class="copy aktiv">© JUN CO.,LTD. ALL RIGHTS RESERVED.</p>
+    </footer>
+  </div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/swiper@8.2.4/swiper-bundle.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="./assets/js/libs.js"></script>
+<script src="./assets/js/main.js"></script>
+</html>

@@ -1,0 +1,86 @@
+<div id="menu">
+  <div class="menu__inner flex align-center space-between">
+    <h1 class="logo">
+      <a href="" target="_blank" rel="noopener" class="hover">
+        <img src="./assets/img/mlb-menu.svg" alt="MLB ™/© 2024 MLB COLLECTION BY JUN" />
+      </a>
+    </h1>
+    <ul class="brand-wrapper flex flex-sp">
+      <% for (var i = 0; i < brand.length; i++) { %>
+      <li class="brand flex flex-sp space-between align-center <%- brand[i].url %> icon-wrapper-parent">
+        <a href="<%- brand[i].link %>"></a>
+          <h2 class="brand-title">
+            <%- include(`_${brand[i].url}-menu`) %>
+          </h2>
+          <div class="brand-icon icon-wrapper">
+            <%- include(`_ball`) %>
+            <%- include(`_arrow`) %>
+          </div>
+      </li>
+      <% } %>
+
+      <li class="brand flex flex-sp space-between align-center half icon-wrapper-parent">
+        <a href=""></a>
+          <div class="title">
+            <p class="brand-index aktiv">
+              (ALL)
+            </p>
+            <p class="brand-title factoria demi">
+              TOP PAGE
+            </p>
+          </div>
+          <div class="brand-icon icon-wrapper">
+            <%- include(`_ball`) %>
+            <%- include(`_arrow`) %>
+          </div>
+      </li>
+      <li class="brand flex flex-sp space-between align-center half icon-wrapper-parent">
+        <a href=""></a>
+          <div class="title">
+            <p class="brand-index aktiv">
+              (STYLING)
+            </p>
+            <p class="brand-title factoria demi">
+              SNaP/Me
+            </p>
+          </div>
+          <div class="brand-icon icon-wrapper">
+            <%- include('_snap') %>
+            <%- include(`_arrow`) %>
+          </div>
+      </li>
+      <li class="brand flex flex-sp space-between align-center full icon-wrapper-parent">
+        <a href="" target="_blank" rel="noopener">
+        </a>
+        <div class="title">
+          <p class="brand-index aktiv">
+            (ONLINE STORE)
+          </p>
+          <p class="brand-title factoria demi">
+            CHECK ALL ITEMS
+          </p>
+        </div>
+          <div class="brand-icon icon-wrapper">
+            <%- include('_cart') %>
+            <%- include(`_arrow`) %>
+          </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="menu-trigger">
+  <div class="menu-trigger__inner text-center">
+    <div class="menu-trigger-icon icon-wrapper_">
+      <span>
+        <%- include('_close') %>
+      </span>
+      <span>
+        <%- include('_ball') %>
+      </span>
+    </div>
+    <p class="espiritu">
+      <span>CLOSE</span>
+      <span>MENU</span>
+    </p>
+  </div>
+</div>
