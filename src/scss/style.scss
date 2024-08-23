@@ -11,6 +11,7 @@
 
 .special-2409-airbnb {
   font-family: "Hiragino Kaku Gothic Pro";
+  background-color: $cream;
   .absolute {
     position: absolute;
   }
@@ -57,6 +58,10 @@
       max-width: rem(488);
       width: calc( 488 / 1440 * 100% );
     }
+    .w508 {
+      max-width: rem(508);
+      width: calc( 508 / 1440 * 100% );
+    }
     .w590 {
       max-width: rem(590);
       width: calc( 590 / 1440 * 100% );
@@ -98,9 +103,22 @@
       height: rem(80);
       width: rem(386);
       text-align: center;
-      border: rem(1) solid $white;
+      border: rem(1) solid $navy;
       box-sizing: border-box;
       background-color: $navy;
+      will-change: background-color;
+      transition: background-color .5s $Power1easeInOut;
+      &:hover {
+        background-color: $white;
+        .btn-text {
+          color: $navy;
+        }
+        .btn-icon {
+          svg * {
+            stroke: $navy;
+          }
+        }
+      }
       &.black {
         border: rem(1) solid $black;
         background-color: $black;
@@ -111,6 +129,8 @@
       &-text {
         @include fontsize(16);
         color: $white;
+        will-change: color;
+        transition: color .5s $Power1easeInOut;
       }
       &-icon {
         position: absolute;
@@ -118,10 +138,15 @@
         right: rem(20);
         transform: translate3d(0, -50%, 0);
         width: rem(30);
+        svg * {
+          will-change: stroke;
+          transition: stroke .5s $Power1easeInOut;
+        }
       }
     }
     .section-text {
       @include fontsize(16);
+      letter-spacing: rem(-0.32);
       line-height: (28.8 / 16);
     }
     .section-credit {
@@ -152,13 +177,15 @@
         width: 100vw;
         transform: translate3d(-50%, 0, 0);
         .wrapper {
-          .img {
+          video {
+            width: 100%;
           }
         }
         h1 {
           right: rem(114);
-          bottom: rem(290);
+          top: 50%;
           width: rem(312);
+          transform: translate3d(0, -50%, 0);
         }
       }
       .lead {
@@ -166,15 +193,22 @@
         h2 {
           margin-bottom: rem(10);
           @include fontsize(25);
+          letter-spacing: rem(2.5);
         }
         h3 {
           margin-bottom: rem(20);
           @include fontsize(32);
+          letter-spacing: rem(1.6);
           font-weight: 600;
         }
       }
       .flex {
-        margin-right: calc(120 / 1440 * 100%);
+        &-img {
+          margin-left: calc(120 / 1440 * 100%);
+        }
+        &-content {
+          margin-right: calc(120 / 1440 * 100%);
+        }
       }
     }
     #section2 {
@@ -219,8 +253,11 @@
           margin-bottom: calc(120 / 1440 * 100%);
           .flex-content {
             margin-left: calc( 120 / 1440 * 100%);
-            margin-top: calc( 248 / 1440 * 100%);
+            // margin-top: calc( 248 / 1440 * 100%);
             // margin-right: rem(120);
+          }
+          .flex-img {
+            margin-right: calc( 120 / 1440 * 100%);
           }
         }
         &.flex2 {
@@ -236,8 +273,18 @@
         }
       }
       .image {
+        &.image2  {
+          position: relative;
+          margin: calc( 20 / 508 * -100%) auto 0 calc( 82 / 508 * -100%);
+          width: calc( 285 / 508 * 100%);
+          z-index: 1;
+        } 
+        &.image3  {
+          margin: calc( 150 / 508 * -100%) auto 0 calc( 101 / 508 * 100%);
+          width: calc( 305 / 508 * 100%);
+        } 
         &.image4  {
-          margin: 0 auto calc( 60 / 1440 * 100%) calc( 120 / 1440 * 100%);
+          margin: 0 auto calc( 30 / 1440 * 100%) calc( 120 / 1440 * 100%);
         } 
       }
     }
@@ -245,6 +292,9 @@
       .flex {
         &-content {
           margin-right: calc( 120 / 1440 * 100%);
+        }
+        &-img {
+          margin-left: calc( 120 / 1440 * 100%);
         }
       }
       #karins-work {
@@ -258,6 +308,7 @@
         h3 {
           margin-bottom: rem(60);
           @include fontsize(24);
+          letter-spacing: rem(0.48);
         }
         .image {
           &.image1 {
@@ -273,10 +324,22 @@
           }
         }
         .flex {
-          margin-top: rem(60);
+          margin-top: rem(150);
           margin-bottom: rem(90);
           &-img {
+            position: relative;
             margin-right: rem(80);
+            .image2 {
+              position: absolute;
+              top: calc(90 / 405 * -100%);
+              left: 0;
+              width: calc( 204 / 405 * 100%);
+              z-index: 1;
+            }
+            .image3 {
+              margin-left: calc(100 / 405 * 100%);
+              width: calc(304 / 405 * 100%);
+            }
           }
           &-content {
             .section-credit {
@@ -290,6 +353,7 @@
           &-title {
             margin-bottom: rem(26);
             @include fontsize(24);
+            letter-spacing: rem(0.48);
             width: 100%;
           }
           &-image {
@@ -319,15 +383,18 @@
         }
         .image {
           margin: 0 auto rem(30);  
+          width: rem(488);
         }
         .section-text {
           margin: 0 auto rem(30);  
+          width: rem(488);
         }
         .address {
           margin: 0 auto rem(60);
           @include fitcenter();
           height: rem(122);
           width: rem(488);
+          // width: rem(488);
           border: rem(1) solid $black;
           &-inner {
 
@@ -433,6 +500,10 @@
       max-width: rem(488);
       width: calc( 488 / 1440 * 100% );
     }
+    .w508 {
+      max-width: rem(508);
+      width: calc( 508 / 1440 * 100% );
+    }
     .w590 {
       max-width: rem(590);
       width: calc( 590 / 1440 * 100% );
@@ -474,9 +545,22 @@
       height: rem(80);
       width: rem(386);
       text-align: center;
-      border: rem(1) solid $white;
+      border: rem(1) solid $navy;
       box-sizing: border-box;
       background-color: $navy;
+      will-change: background-color;
+      transition: background-color .5s $Power1easeInOut;
+      &:hover {
+        background-color: $white;
+        .btn-text {
+          color: $navy;
+        }
+        .btn-icon {
+          svg * {
+            stroke: $navy;
+          }
+        }
+      }
       &.black {
         border: rem(1) solid $black;
         background-color: $black;
@@ -487,6 +571,8 @@
       &-text {
         @include fontsize(16);
         color: $white;
+        will-change: color;
+        transition: color .5s $Power1easeInOut;
       }
       &-icon {
         position: absolute;
@@ -494,10 +580,15 @@
         right: rem(20);
         transform: translate3d(0, -50%, 0);
         width: rem(30);
+        svg * {
+          will-change: stroke;
+          transition: stroke .5s $Power1easeInOut;
+        }
       }
     }
     .section-text {
       @include fontsize(16);
+      letter-spacing: rem(-0.32);
       line-height: (28.8 / 16);
     }
     .section-credit {
@@ -528,13 +619,15 @@
         width: 100vw;
         transform: translate3d(-50%, 0, 0);
         .wrapper {
-          .img {
+          video {
+            width: 100%;
           }
         }
         h1 {
           right: rem(114);
-          bottom: rem(290);
+          top: 50%;
           width: rem(312);
+          transform: translate3d(0, -50%, 0);
         }
       }
       .lead {
@@ -542,15 +635,22 @@
         h2 {
           margin-bottom: rem(10);
           @include fontsize(25);
+          letter-spacing: rem(2.5);
         }
         h3 {
           margin-bottom: rem(20);
           @include fontsize(32);
+          letter-spacing: rem(1.6);
           font-weight: 600;
         }
       }
       .flex {
-        margin-right: calc(120 / 1440 * 100%);
+        &-img {
+          margin-left: calc(120 / 1440 * 100%);
+        }
+        &-content {
+          margin-right: calc(120 / 1440 * 100%);
+        }
       }
     }
     #section2 {
@@ -595,8 +695,11 @@
           margin-bottom: calc(120 / 1440 * 100%);
           .flex-content {
             margin-left: calc( 120 / 1440 * 100%);
-            margin-top: calc( 248 / 1440 * 100%);
+            // margin-top: calc( 248 / 1440 * 100%);
             // margin-right: rem(120);
+          }
+          .flex-img {
+            margin-right: calc( 120 / 1440 * 100%);
           }
         }
         &.flex2 {
@@ -612,8 +715,18 @@
         }
       }
       .image {
+        &.image2  {
+          position: relative;
+          margin: calc( 20 / 508 * -100%) auto 0 calc( 82 / 508 * -100%);
+          width: calc( 285 / 508 * 100%);
+          z-index: 1;
+        } 
+        &.image3  {
+          margin: calc( 150 / 508 * -100%) auto 0 calc( 101 / 508 * 100%);
+          width: calc( 305 / 508 * 100%);
+        } 
         &.image4  {
-          margin: 0 auto calc( 60 / 1440 * 100%) calc( 120 / 1440 * 100%);
+          margin: 0 auto calc( 30 / 1440 * 100%) calc( 120 / 1440 * 100%);
         } 
       }
     }
@@ -621,6 +734,9 @@
       .flex {
         &-content {
           margin-right: calc( 120 / 1440 * 100%);
+        }
+        &-img {
+          margin-left: calc( 120 / 1440 * 100%);
         }
       }
       #karins-work {
@@ -634,6 +750,7 @@
         h3 {
           margin-bottom: rem(60);
           @include fontsize(24);
+          letter-spacing: rem(0.48);
         }
         .image {
           &.image1 {
@@ -649,10 +766,22 @@
           }
         }
         .flex {
-          margin-top: rem(60);
+          margin-top: rem(150);
           margin-bottom: rem(90);
           &-img {
+            position: relative;
             margin-right: rem(80);
+            .image2 {
+              position: absolute;
+              top: calc(90 / 405 * -100%);
+              left: 0;
+              width: calc( 204 / 405 * 100%);
+              z-index: 1;
+            }
+            .image3 {
+              margin-left: calc(100 / 405 * 100%);
+              width: calc(304 / 405 * 100%);
+            }
           }
           &-content {
             .section-credit {
@@ -666,6 +795,7 @@
           &-title {
             margin-bottom: rem(26);
             @include fontsize(24);
+            letter-spacing: rem(0.48);
             width: 100%;
           }
           &-image {
@@ -695,15 +825,18 @@
         }
         .image {
           margin: 0 auto rem(30);  
+          width: rem(488);
         }
         .section-text {
           margin: 0 auto rem(30);  
+          width: rem(488);
         }
         .address {
           margin: 0 auto rem(60);
           @include fitcenter();
           height: rem(122);
           width: rem(488);
+          // width: rem(488);
           border: rem(1) solid $black;
           &-inner {
 
