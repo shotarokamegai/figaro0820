@@ -11,6 +11,7 @@
 
 .special-2409-airbnb {
   font-family: "Hiragino Kaku Gothic Pro";
+  text-align: justify;
   background-color: $cream;
   .absolute {
     position: absolute;
@@ -32,7 +33,7 @@
       opacity: 0;
       transform: translate3d(0, vwPc(20), 0);
       will-change: opacity, transform;
-      transition: opacity 1s $Power1easeInOut, transform 1s $Power1easeInOut;
+      transition: opacity 1s $Power3easeInOut, transform 1s $Power3easeInOut;
       &.active {
         opacity: 1;
         transform: translate3d(0, 0, 0);

@@ -202,6 +202,7 @@
 }
 .special-2409-airbnb {
   font-family: "Hiragino Kaku Gothic Pro";
+  text-align: justify;
   background-color: #FFFBF3;
 }
 .special-2409-airbnb .absolute {
@@ -222,7 +223,7 @@
     opacity: 0;
     transform: translate3d(0, 1.3888888889vw, 0);
     will-change: opacity, transform;
-    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: opacity 1s cubic-bezier(0.165, 0.84, 0.44, 1), transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
   .special-2409-airbnb .fade.active {
     opacity: 1;
