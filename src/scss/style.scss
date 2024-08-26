@@ -215,6 +215,16 @@
         transform: translate3d(-50%, vw(20), 0);
         will-change: opacity, transform;
         transition: opacity 1.5s $Power3easeInOut, transform 1.5s $Power3easeInOut;
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          content: '';
+          height: vw(157);
+          width: 100vw;
+          background: linear-gradient(to bottom, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0));
+          z-index: 1;
+        }
         .wrapper {
           video {
             width: 100%;
@@ -228,6 +238,7 @@
           transform: translate3d(-50%, vw(20), 0);
           will-change: opacity, transform;
           transition: opacity 1.5s $Power3easeInOut .2s, transform 1.5s $Power3easeInOut .2s;
+          z-index: 2;
         }
       }
       .lead {
@@ -236,6 +247,7 @@
           margin-bottom: vw(5);
           @include fontvw(18);
           letter-spacing: vw(.9);
+          line-height: 1;
           color: $navy;
         }
         h3 {
@@ -788,6 +800,7 @@
           margin-bottom: rem(10);
           @include fontsize(25);
           letter-spacing: rem(2.5);
+          line-height: 1;
           color: $navy;
           
         }
