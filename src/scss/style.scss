@@ -29,9 +29,22 @@
 
 @media screen and (max-width: 767px) {
   .special-2409-airbnb {
+    &.loaded {
+      #section1 {
+        .kv, .kv h1 {
+          opacity: 1;
+        }
+        .kv {
+          transform: translate3d(-50%, 0, 0);
+          h1 {
+            transform: translate3d(-50%, 0, 0);
+          }
+        }
+      }
+    }
     .fade {
       opacity: 0;
-      transform: translate3d(0, vwPc(20), 0);
+      transform: translate3d(0, vw(20), 0);
       will-change: opacity, transform;
       transition: opacity 1s $Power3easeInOut, transform 1s $Power3easeInOut;
       &.active {
@@ -198,7 +211,10 @@
         position: relative;
         left: 50%;
         width: 100vw;
-        transform: translate3d(-50%, 0, 0);
+        opacity: 0;
+        transform: translate3d(-50%, vw(20), 0);
+        will-change: opacity, transform;
+        transition: opacity 1.5s $Power3easeInOut, transform 1.5s $Power3easeInOut;
         .wrapper {
           video {
             width: 100%;
@@ -208,7 +224,10 @@
           top: vw(13);
           left: 50%;
           width: vw(170);
-          transform: translate3d(-50%, 0, 0);
+          opacity: 0;
+          transform: translate3d(-50%, vw(20), 0);
+          will-change: opacity, transform;
+          transition: opacity 1.5s $Power3easeInOut .2s, transform 1.5s $Power3easeInOut .2s;
         }
       }
       .lead {
@@ -551,6 +570,19 @@
 
 @media screen and (min-width: 768px) {
   .special-2409-airbnb {
+    &.loaded {
+      #section1 {
+        .kv, .kv h1 {
+          opacity: 1;
+        }
+        .kv {
+          transform: translate3d(-50%, 0, 0);
+          h1 {
+            transform: translate3d(0, -50%, 0);
+          }
+        }
+      }
+    }
     .fade {
       opacity: 0;
       transform: translate3d(0, vwPc(20), 0);
@@ -713,6 +745,10 @@
         left: 50%;
         width: 100vw;
         transform: translate3d(-50%, 0, 0);
+        opacity: 0;
+        transform: translate3d(-50%, rem(20), 0);
+        will-change: opacity, transform;
+        transition: opacity 1.5s $Power3easeInOut, transform 1.5s $Power3easeInOut;
         .wrapper {
           video {
             width: 100%;
@@ -723,6 +759,10 @@
           top: 50%;
           width: rem(312);
           transform: translate3d(0, -50%, 0);
+          opacity: 0;
+          transform: translate3d(0, calc(-50% + rem(20) ), 0);
+          will-change: opacity, transform;
+          transition: opacity 1.5s $Power3easeInOut .2s, transform 1.5s $Power3easeInOut .2s;
         }
       }
       .lead {
