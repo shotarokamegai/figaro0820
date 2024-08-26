@@ -308,9 +308,18 @@
   .special-2409-airbnb .btn:active .btn-icon svg * {
     stroke: #2D4158;
   }
+  .special-2409-airbnb .btn.white {
+    border: 1px solid #ffffff;
+  }
   .special-2409-airbnb .btn.black {
     border: 1px solid #000000;
     background-color: #000000;
+  }
+  .special-2409-airbnb .btn.black:hover {
+    background-color: #ffffff;
+  }
+  .special-2409-airbnb .btn.black:hover .btn-text {
+    color: #000000;
   }
   .special-2409-airbnb .btn-text {
     font-size: 0.6rem;
@@ -359,7 +368,17 @@
     color: #2D4158;
   }
   .special-2409-airbnb #section1 {
-    margin-bottom: 120px;
+    margin-bottom: 16vw;
+  }
+  .special-2409-airbnb #section1 .promotion {
+    position: absolute;
+    top: 5.3333333333vw;
+    right: 6.6666666667vw;
+    font-size: 0.4rem;
+    font-size: 2.1333333333vw;
+    letter-spacing: 0.2133333333vw;
+    color: #ffffff;
+    z-index: 1;
   }
   .special-2409-airbnb #section1 .kv {
     position: relative;
@@ -521,12 +540,15 @@
     margin-bottom: 2.6666666667vw;
     font-size: 1.8rem;
     font-size: 9.6vw;
+    line-height: 1;
+    color: #2D4158;
   }
   .special-2409-airbnb #section4 #karins-work h3 {
     margin-bottom: 8vw;
     font-size: 0.8rem;
     font-size: 4.2666666667vw;
     letter-spacing: 0.0853333333vw;
+    color: #2D4158;
   }
   .special-2409-airbnb #section4 #karins-work .image.image1 {
     margin: 0 auto 5.3333333333vw;
@@ -592,6 +614,8 @@
     margin-bottom: 8vw;
     font-size: 1.8rem;
     font-size: 9.6vw;
+    line-height: 1;
+    color: #2D4158;
   }
   .special-2409-airbnb #section5 #listing .image {
     margin: 0 auto 5.3333333333vw;
@@ -631,6 +655,7 @@
     margin-bottom: 2.6666666667vw;
     font-size: 0.9rem;
     font-size: 4.8vw;
+    line-height: 1;
   }
   .special-2409-airbnb #section5 #information h2 {
     margin-bottom: 5.3333333333vw;
@@ -767,9 +792,18 @@
   .special-2409-airbnb .btn:hover .btn-icon svg * {
     stroke: #2D4158;
   }
+  .special-2409-airbnb .btn.white {
+    border: 1px solid #ffffff;
+  }
   .special-2409-airbnb .btn.black {
     border: 1px solid #000000;
     background-color: #000000;
+  }
+  .special-2409-airbnb .btn.black:hover {
+    background-color: #ffffff;
+  }
+  .special-2409-airbnb .btn.black:hover .btn-text {
+    color: #000000;
   }
   .special-2409-airbnb .btn-text {
     font-size: 16px;
@@ -813,7 +847,16 @@
     color: #2D4158;
   }
   .special-2409-airbnb #section1 {
-    margin-bottom: 120px;
+    margin-bottom: 6.25%;
+  }
+  .special-2409-airbnb #section1 .promotion {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 12px;
+    letter-spacing: 1.8px;
+    color: #ffffff;
+    z-index: 1;
   }
   .special-2409-airbnb #section1 .kv {
     position: relative;
@@ -929,11 +972,14 @@
   .special-2409-airbnb #section4 #karins-work h2 {
     margin-bottom: 20px;
     font-size: 42px;
+    line-height: 1;
+    color: #2D4158;
   }
   .special-2409-airbnb #section4 #karins-work h3 {
     margin-bottom: 60px;
     font-size: 24px;
     letter-spacing: 0.48px;
+    color: #2D4158;
   }
   .special-2409-airbnb #section4 #karins-work .image.image1 {
     margin: 0 auto 60px;
@@ -996,6 +1042,8 @@
   .special-2409-airbnb #section5 #listing h2 {
     margin-bottom: 60px;
     font-size: 48px;
+    line-height: 1;
+    color: #2D4158;
   }
   .special-2409-airbnb #section5 #listing .image {
     margin: 0 auto 30px;
@@ -1032,6 +1080,7 @@
   .special-2409-airbnb #section5 #information h3 {
     margin-bottom: 30px;
     font-size: 24px;
+    line-height: 1;
   }
   .special-2409-airbnb #section5 #information h2 {
     margin-bottom: 60px;
