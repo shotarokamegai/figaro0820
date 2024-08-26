@@ -236,6 +236,7 @@
           margin-bottom: vw(5);
           @include fontvw(18);
           letter-spacing: vw(.9);
+          color: $navy;
         }
         h3 {
           margin-bottom: vw(10);
@@ -544,7 +545,23 @@
           }
         }
         .section-credit {
+          margin-top: vw(60);
           margin-bottom: vw(60);
+          .underline {
+            position: relative;
+            margin-bottom: vw(21.5);
+            padding-bottom: vw(5);
+            display: inline-block;
+            &::after {
+              position: absolute;
+              content: '';
+              left: 0;
+              bottom: 0;
+              height: rem(1);
+              width: 100%;
+              background-color: $black;
+            }
+          }
         }
         .top {
           @include fontvw(16);
@@ -771,6 +788,8 @@
           margin-bottom: rem(10);
           @include fontsize(25);
           letter-spacing: rem(2.5);
+          color: $navy;
+          
         }
         h3 {
           margin-bottom: rem(20);
@@ -1035,6 +1054,21 @@
         }
         .section-credit {
           margin-bottom: rem(60);
+          .underline {
+            position: relative;
+            margin-bottom: rem(25);
+            padding-bottom: rem(5);
+            display: inline-block;
+            &::after {
+              position: absolute;
+              content: '';
+              left: 0;
+              bottom: 0;
+              height: rem(1);
+              width: 100%;
+              background-color: $black;
+            }
+          }
         }
         .top {
           @include fontsize(16);
@@ -1047,7 +1081,7 @@
           @include fitcenter();
           li {
             margin-right: rem(40);
-            width: rem(40);
+            width: rem(30);
             &:last-child {
               margin-right: 0;
             }
