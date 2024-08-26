@@ -46,7 +46,7 @@
       opacity: 0;
       transform: translate3d(0, vw(20), 0);
       will-change: opacity, transform;
-      transition: opacity 1s $Power3easeInOut, transform 1s $Power3easeInOut;
+      transition: opacity 1.5s $Power1easeInOut, transform 1.5s $Power1easeInOut;
       &.active {
         opacity: 1;
         transform: translate3d(0, 0, 0);
@@ -587,7 +587,7 @@
       opacity: 0;
       transform: translate3d(0, vwPc(20), 0);
       will-change: opacity, transform;
-      transition: opacity 1s $Power1easeInOut, transform 1s $Power1easeInOut;
+      transition: opacity 1.5s $Power1easeInOut, transform 1.5s $Power1easeInOut;
       &.active {
         opacity: 1;
         transform: translate3d(0, 0, 0);
