@@ -156,6 +156,7 @@
       &-text {
         @include fontvw(12);
         line-height: (19.2 / 12);
+      letter-spacing: vw(0.9);
         color: $white;
         will-change: color;
         transition: color .5s $Power1easeInOut;
@@ -542,6 +543,7 @@
         padding: vw(90) 0;
         background-color: #FFFBF3;
         .section-text {
+          letter-spacing: 0;
           .underline {
             position: relative;
             margin-bottom: vw(30);
@@ -561,6 +563,7 @@
         .section-credit {
           margin-top: vw(60);
           margin-bottom: vw(60);
+          letter-spacing: 0;
           .underline {
             position: relative;
             margin-bottom: vw(21.5);
@@ -720,6 +723,7 @@
       }
       &-text {
         @include fontsize(16);
+        letter-spacing: rem(0.96);
         color: $white;
         will-change: color;
         transition: color .5s $Power1easeInOut;
@@ -1053,6 +1057,7 @@
         padding: rem(120) 0;
         background-color: #FFFBF3;
         .section-text {
+          letter-spacing: 0;
           .underline {
             position: relative;
             margin-bottom: rem(30);
@@ -1071,6 +1076,7 @@
         }
         .section-credit {
           margin-bottom: rem(60);
+          letter-spacing: 0;
           .underline {
             position: relative;
             margin-bottom: rem(25);

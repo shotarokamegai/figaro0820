@@ -334,6 +334,7 @@
     font-size: 0.6rem;
     font-size: 3.2vw;
     line-height: 1.6;
+    letter-spacing: 0.24vw;
     color: #ffffff;
     will-change: color;
     transition: color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -702,6 +703,9 @@
     padding: 24vw 0;
     background-color: #FFFBF3;
   }
+  .special-2409-airbnb #section5 #bottom .section-text {
+    letter-spacing: 0;
+  }
   .special-2409-airbnb #section5 #bottom .section-text .underline {
     position: relative;
     margin-bottom: 8vw;
@@ -720,6 +724,7 @@
   .special-2409-airbnb #section5 #bottom .section-credit {
     margin-top: 16vw;
     margin-bottom: 16vw;
+    letter-spacing: 0;
   }
   .special-2409-airbnb #section5 #bottom .section-credit .underline {
     position: relative;
@@ -862,6 +867,7 @@
   }
   .special-2409-airbnb .btn-text {
     font-size: 16px;
+    letter-spacing: 0.96px;
     color: #ffffff;
     will-change: color;
     transition: color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -1163,6 +1169,9 @@
     padding: 120px 0;
     background-color: #FFFBF3;
   }
+  .special-2409-airbnb #section5 #bottom .section-text {
+    letter-spacing: 0;
+  }
   .special-2409-airbnb #section5 #bottom .section-text .underline {
     position: relative;
     margin-bottom: 30px;
@@ -1180,6 +1189,7 @@
   }
   .special-2409-airbnb #section5 #bottom .section-credit {
     margin-bottom: 60px;
+    letter-spacing: 0;
   }
   .special-2409-airbnb #section5 #bottom .section-credit .underline {
     position: relative;
