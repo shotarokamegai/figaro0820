@@ -174,13 +174,14 @@
     }
     .section-text {
       @include fontvw(14);
-      letter-spacing: vw(-0.28);
+      letter-spacing: vw(0.9);
       line-height: (22.4 / 14);
     }
     .section-credit {
       margin-top: vw(20);
       @include fontvw(10.5);
       line-height: (15.75 / 10.5);
+      letter-spacing: vw(0.7);
       color: $gray;
       &.black {
         color: $black;
@@ -193,6 +194,7 @@
       margin-bottom: vw(10);
       @include fontvw(21);
       line-height: (27.3 / 21);
+      letter-spacing: vw(0.5);
       font-weight: 600;
       color: $navy;
     }
@@ -736,12 +738,13 @@
     }
     .section-text {
       @include fontsize(16);
-      letter-spacing: rem(-0.32);
+      letter-spacing: rem(0.96);
       line-height: (28.8 / 16);
     }
     .section-credit {
       margin-top: rem(60);
       @include fontsize(12);
+      letter-spacing: rem(0.7);
       line-height: (19.2 / 12);
       color: $gray;
       &.black {
@@ -754,6 +757,7 @@
     .section-title {
       margin-bottom: rem(20);
       @include fontsize(32);
+      letter-spacing: rem(0.8);
       line-height: (38.4 / 32);
       font-weight: 600;
       color: $navy;
