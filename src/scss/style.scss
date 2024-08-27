@@ -586,7 +586,7 @@
           @include fitcenter();
           li {
             margin-right: vw(30);
-            width: vw(30);
+            width: vw(28);
             &:last-child {
               margin-right: 0;
             }
@@ -1094,7 +1094,7 @@
           @include fitcenter();
           li {
             margin-right: rem(40);
-            width: rem(30);
+            width: rem(28);
             &:last-child {
               margin-right: 0;
             }
