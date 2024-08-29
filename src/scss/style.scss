@@ -697,6 +697,7 @@
       background-color: $navy;
       will-change: background-color;
       transition: background-color .5s $Power1easeInOut;
+      cursor: pointer;
       &:hover {
         background-color: $white;
         .btn-text {

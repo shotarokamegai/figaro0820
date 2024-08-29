@@ -842,6 +842,7 @@
     background-color: #2D4158;
     will-change: background-color;
     transition: background-color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
   }
   .special-2409-airbnb .btn:hover {
     background-color: #ffffff;
