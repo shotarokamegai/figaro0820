@@ -208,6 +208,9 @@
 .special-2409-airbnb .absolute {
   position: absolute;
 }
+.special-2409-airbnb .underline-decoration {
+  text-decoration: underline;
+}
 .special-2409-airbnb .text-center {
   text-align: center;
 }
