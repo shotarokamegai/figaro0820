@@ -9794,11 +9794,6 @@ var main = /*#__PURE__*/function () {
             start: start,
             onEnter: function onEnter() {
               elm.classList.add('active');
-              // if (elm.classList.contains('show')) {
-              //   setTimeout(() => {
-              //     elm.classList.add('nowillchange');
-              //   }, 3000)
-              // }
             }
           }
         });

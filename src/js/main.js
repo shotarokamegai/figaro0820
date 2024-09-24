@@ -94,11 +94,6 @@ class main {
           start: start, 
           onEnter: () => {
             elm.classList.add('active');
-            // if (elm.classList.contains('show')) {
-            //   setTimeout(() => {
-            //     elm.classList.add('nowillchange');
-            //   }, 3000)
-            // }
           }
         }
       });
