@@ -51,6 +51,18 @@
         }
       }
     }
+    .cream-back {
+      &::after {
+        position: absolute;
+        content: '';
+        top: vw(-10);
+        right: vw(-10);
+        height: vw(130);
+        width: wv(196);
+        background-color: #FFFBF3;
+        z-index: -1;
+      }
+    }
     .fade {
       opacity: 0;
       transform: translate3d(0, vw(20), 0);
@@ -213,8 +225,8 @@
     }
     .section-title {
       margin-bottom: vw(10);
-      @include fontvw(21);
-      line-height: (27.3 / 21);
+      @include fontvw(18);
+      line-height: (23.4 / 18);
       letter-spacing: vw(0.5);
       font-weight: 600;
       color: $navy;
@@ -449,8 +461,10 @@
         }
         .image {
           &.image2 {
+            position: relative;
             margin: 0 0 vw(20) auto;
             width: vw(204);
+            z-index: 1;
           }
           &.image3 {
             margin: 0 auto vw(30) 0;
@@ -625,6 +639,18 @@
         }
       }
     }
+    .cream-back {
+      &::after {
+        position: absolute;
+        content: '';
+        top: calc( 80 / 488 * 100% );
+        right: calc( -20 / 488 * 100% );
+        height: calc( 305 / 325 * 100% );
+        width: calc( 590 / 488 * 100% );
+        background-color: #FFFBF3;
+        z-index: -1;
+      }
+    }
     .fade {
       opacity: 0;
       transform: translate3d(0, vwPc(20), 0);
@@ -784,9 +810,9 @@
     }
     .section-title {
       margin-bottom: rem(20);
-      @include fontsize(32);
+      @include fontsize(26);
       letter-spacing: rem(0.8);
-      line-height: (38.4 / 32);
+      line-height: (31.2 / 26);
       font-weight: 600;
       color: $navy;
     }
@@ -868,7 +894,7 @@
       margin-bottom: calc(240 / 1440 * 100%);
       .image {
         &.image1 {
-          margin-bottom: calc(120 / 1440 * 100%);
+          margin-bottom: calc(60 / 1440 * 100%);
         }
         &.image2 {
           margin-left: calc( 100 / (209 + 387) * 100%);
@@ -900,6 +926,7 @@
       }
       .flex {
         &-content {
+          margin-top: calc(60 / 1440 * 100%);
           margin-left: calc(120 / 1440 * 100%);
         }
         &-img {
@@ -909,7 +936,7 @@
       }
     }
     #section3 {
-      margin-bottom: calc(120 / 1440 * 100%);
+      margin-bottom: calc(60 / 1440 * 100%);
       .flex {
         &.flex1 {
           .flex-content {
@@ -948,6 +975,10 @@
     #section4 {
       padding-bottom: calc(120 / 1440 * 100%);
       .image {
+        &.image2 {
+          position: relative;
+          z-index: 1;
+        }
         &.image3 {
           margin-bottom: calc( 260 / 710 * 100%);
           margin-top: calc( 150 / 710 * -100%);
