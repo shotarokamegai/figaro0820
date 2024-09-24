@@ -459,9 +459,9 @@
     width: 100%;
   }
   .special-2409-airbnb #section1 .kv h1 {
-    top: 3.4666666667vw;
+    bottom: 4vw;
     left: 50%;
-    width: 45.3333333333vw;
+    width: 48.5333333333vw;
     opacity: 0;
     transform: translate3d(-50%, 5.3333333333vw, 0);
     will-change: opacity, transform;
@@ -810,7 +810,7 @@
     transform: translate3d(-50%, 0, 0);
   }
   .special-2409-airbnb.loaded #section1 .kv h1 {
-    transform: translate3d(0, -50%, 0);
+    transform: translate3d(-50%, 0, 0);
   }
   .special-2409-airbnb .cream-back::after {
     position: absolute;
@@ -1001,12 +1001,11 @@
     width: 100%;
   }
   .special-2409-airbnb #section1 .kv h1 {
-    right: 114px;
-    top: 50%;
-    width: 312px;
-    transform: translate3d(0, -50%, 0);
+    bottom: 33px;
+    left: 50%;
+    width: 330px;
     opacity: 0;
-    transform: translate3d(0, calc(-50% + 20px), 0);
+    transform: translate3d(-50%, 20px, 0);
     will-change: opacity, transform;
     transition: opacity 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s, transform 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s;
   }
