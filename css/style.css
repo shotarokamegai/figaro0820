@@ -429,6 +429,11 @@
     font-size: 2.8vw;
     color: #737373;
   }
+  .special-241007-airbnb .image-text {
+    font-size: 0.525rem;
+    font-size: 2.8vw;
+    color: #737373;
+  }
   .special-241007-airbnb #section1 {
     margin-bottom: 16vw;
   }
@@ -520,14 +525,92 @@
     order: 5;
   }
   .special-241007-airbnb #section2 {
-    margin-bottom: 16vw;
+    margin-bottom: 13.3333333333vw;
   }
   .special-241007-airbnb #section2 #spot {
+    margin: 13.3333333333vw 0;
     padding: 16vw 0;
     background-color: #FFFBF3;
   }
-  .special-241007-airbnb #section2 .section-full {
-    margin-bottom: 5.3333333333vw;
+  .special-241007-airbnb #section2 #spot .spot-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8vw;
+    line-height: 1;
+  }
+  .special-241007-airbnb #section2 #spot .spot-title span:nth-child(1) {
+    margin-right: 2.6666666667vw;
+    font-size: 0.9rem;
+    font-size: 4.8vw;
+  }
+  .special-241007-airbnb #section2 #spot .spot-title span:nth-child(2) {
+    font-size: 1.8rem;
+    font-size: 9.6vw;
+  }
+  .special-241007-airbnb #section2 #spot .box-image {
+    margin: 0 auto 8vw;
+  }
+  .special-241007-airbnb #section2 #spot .box-content {
+    margin: 0 auto;
+    width: 89.3333333333vw;
+  }
+  .special-241007-airbnb #section2 #spot .box-title {
+    margin-bottom: 2.6666666667vw;
+    font-size: 0.9rem;
+    font-size: 4.8vw;
+    font-weight: bold;
+  }
+  .special-241007-airbnb #section2 #spot .box-text {
+    margin-bottom: 8vw;
+    font-size: 0.7rem;
+    font-size: 3.7333333333vw;
+    line-height: 160%;
+  }
+  .special-241007-airbnb #section2 #spot .box-credit {
+    margin-bottom: 8vw;
+    font-size: 0.525rem;
+    font-size: 2.8vw;
+    line-height: 150%;
+    color: #737373;
+  }
+  .special-241007-airbnb #section2 #spot .box-flex {
+    display: flex;
+    padding: 3.7333333333vw;
+    border: 1px solid #2D4158;
+    box-sizing: border-box;
+  }
+  .special-241007-airbnb #section2 #spot .box-flex .left {
+    width: 29.3333333333vw;
+  }
+  .special-241007-airbnb #section2 #spot .box-flex .right {
+    width: calc(100% - 29.3333333333vw);
+    text-align: center;
+  }
+  .special-241007-airbnb #section2 #spot .box-flex .right .name {
+    margin-bottom: 1.3333333333vw;
+    font-size: 0.7rem;
+    font-size: 3.7333333333vw;
+  }
+  .special-241007-airbnb #section2 #spot .box-flex .right .address {
+    margin-bottom: 2.6666666667vw;
+    font-size: 0.525rem;
+    font-size: 2.8vw;
+  }
+  .special-241007-airbnb #section2 #spot .box-flex .right a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+  }
+  .special-241007-airbnb #section2 #spot .box-flex .right a i {
+    font-size: 0.7rem;
+    font-size: 3.7333333333vw;
+  }
+  .special-241007-airbnb #section2 #spot .box-flex .right a span {
+    font-size: 0.525rem;
+    font-size: 2.8vw;
+    text-decoration: underline;
   }
   .special-241007-airbnb #section2 .section-text {
     margin-bottom: 10.6666666667vw;
@@ -539,77 +622,70 @@
   .special-241007-airbnb #section2 .flex {
     position: relative;
   }
-  .special-241007-airbnb #section2 .flex-content {
-    margin-bottom: 10.6666666667vw;
+  .special-241007-airbnb #section2 .flex.flex1 {
+    display: flex;
+    flex-direction: column;
+  }
+  .special-241007-airbnb #section2 .flex.flex1 .flex-content {
+    order: 2;
+  }
+  .special-241007-airbnb #section2 .flex.flex1 .flex-img {
+    margin-bottom: 5.3333333333vw;
+    order: 1;
   }
   .special-241007-airbnb #section2 .image2 {
     margin: 0 0 0 auto;
     width: 76.2666666667vw;
   }
   .special-241007-airbnb #section2 .image3 {
-    width: 58.1333333333vw;
+    width: 89.3333333333vw;
   }
-  .special-241007-airbnb #section3 {
-    margin-bottom: 16vw;
-  }
-  .special-241007-airbnb #section3 .section-full {
+  .special-241007-airbnb #section2 .image3 .image-credit {
     margin-bottom: 5.3333333333vw;
   }
-  .special-241007-airbnb #section3 .section-credit {
-    order: 5;
+  .special-241007-airbnb #section2 .image6 {
+    margin: 0 auto 13.3333333333vw;
+    width: 67.7333333333vw;
   }
-  .special-241007-airbnb #section3 .flex.flex1 {
-    display: flex;
-    flex-direction: column;
+  .special-241007-airbnb #section2 .btn {
+    margin: 8vw auto 0;
   }
-  .special-241007-airbnb #section3 .flex.flex1 .flex-content {
-    display: flex;
-    flex-direction: column;
+  .special-241007-airbnb #section3 {
+    margin-bottom: 9.0666666667vw;
   }
-  .special-241007-airbnb #section3 .flex.flex1 .flex-content .section-subtitle {
-    order: 1;
+  .special-241007-airbnb #section3 .image1 {
+    margin: 0 auto 5.3333333333vw;
   }
-  .special-241007-airbnb #section3 .flex.flex1 .flex-content .section-title {
-    order: 2;
+  .special-241007-airbnb #section3 .image1 img {
+    position: relative;
+    left: 50%;
+    width: 100vw;
+    max-width: initial;
+    transform: translate3d(-50%, 0, 0);
   }
-  .special-241007-airbnb #section3 .flex.flex1 .flex-content .section-text {
-    order: 3;
+  .special-241007-airbnb #section3 .image2 {
+    margin: 8vw 0 5.3333333333vw 0;
+    width: 63.2vw;
   }
-  .special-241007-airbnb #section3 .flex.flex1 .flex-content .section-credit.section-credit1 {
-    margin-top: 8vw;
-    margin-bottom: 10.6666666667vw;
-    order: 4;
-  }
-  .special-241007-airbnb #section3 .flex.flex1 .flex-content .section-credit.section-credit2 {
-    order: 9;
-  }
-  .special-241007-airbnb #section3 .flex.flex1 .flex-content .image5 {
-    margin: 0 auto 8vw;
-    order: 5;
-  }
-  .special-241007-airbnb #section3 .flex.flex1 .flex-content .image2 {
+  .special-241007-airbnb #section3 .image3 {
     margin: 0 0 0 auto;
-    order: 6;
-  }
-  .special-241007-airbnb #section3 .flex.flex1 .flex-content .image3 {
-    margin: -24vw auto 0 0;
-    order: 7;
-  }
-  .special-241007-airbnb #section3 .flex.flex1 .flex-content .image3::after {
-    top: -3.2vw;
-    left: 3.2vw;
-    height: 56.8vw;
-    width: 37.8666666667vw;
-    border: 2px solid #FFFBF3;
-  }
-  .special-241007-airbnb #section3 .flex.flex1 .flex-content .image4 {
-    margin: -16.8vw 8.5333333333vw 0 auto;
-    order: 8;
+    width: 78.4vw;
   }
   .special-241007-airbnb #section4 {
     padding-bottom: 16vw;
   }
+  .special-241007-airbnb #section4 .image1 {
+    margin-bottom: 5.3333333333vw;
+  }
+  .special-241007-airbnb #section4 .image1 img {
+    position: relative;
+    left: 50%;
+    width: 100vw;
+    max-width: initial;
+    transform: translate3d(-50%, 0, 0);
+  }
   .special-241007-airbnb #section4 .flex.flex1 {
+    margin-top: 8vw;
     display: flex;
     flex-direction: column;
   }
@@ -621,7 +697,7 @@
     order: 1;
   }
   .special-241007-airbnb #section4 .flex.flex1 .section-credit {
-    margin-bottom: 8vw;
+    margin-bottom: 16vw;
   }
   .special-241007-airbnb #section4 .flex.flex2 {
     display: flex;
@@ -632,13 +708,24 @@
   }
   .special-241007-airbnb #section4 .flex .image.image2 {
     position: relative;
-    margin: 0 0 5.3333333333vw auto;
-    width: 54.4vw;
+    margin: 0 auto 0 0;
+    width: 66.1333333333vw;
     z-index: 1;
   }
   .special-241007-airbnb #section4 .flex .image.image3 {
-    margin: 0 auto 8vw 0;
+    margin: 0 0 0 auto;
     width: 52.2666666667vw;
+  }
+  .special-241007-airbnb #section4 .flex .image.image6 {
+    margin-bottom: 5.3333333333vw;
+    width: 76.2666666667vw;
+  }
+  .special-241007-airbnb #section4 .flex .image.image4 {
+    margin: 0 0 5.3333333333vw auto;
+    width: 65.3333333333vw;
+  }
+  .special-241007-airbnb #section4 .flex .image.image5 {
+    width: 76.2666666667vw;
   }
   .special-241007-airbnb #section4 .btn {
     margin-top: 16vw;
@@ -655,22 +742,26 @@
     width: 100%;
   }
   .special-241007-airbnb #section4 .profile-wrapper .wrapper .profile {
+    margin-bottom: 5.3333333333vw;
     display: flex;
     align-items: center;
     justify-content: center;
     justify-content: space-between;
     flex-wrap: wrap;
   }
-  .special-241007-airbnb #section4 .profile-wrapper-image {
+  .special-241007-airbnb #section4 .profile-wrapper .wrapper .profile-image {
     width: 32vw;
   }
-  .special-241007-airbnb #section4 .profile-wrapper-content {
+  .special-241007-airbnb #section4 .profile-wrapper .wrapper .profile-content {
     width: 50.1333333333vw;
   }
-  .special-241007-airbnb #section4 .profile-wrapper-name {
+  .special-241007-airbnb #section4 .profile-wrapper .wrapper .profile-name {
     margin-bottom: 2.6666666667vw;
     font-size: 0.7rem;
     font-size: 3.7333333333vw;
+  }
+  .special-241007-airbnb #section4 .profile-wrapper .wrapper .profile:last-child {
+    margin-bottom: 0;
   }
   .special-241007-airbnb #section4 .profile-wrapper .section-credit {
     margin: 0;
@@ -978,6 +1069,10 @@
     font-size: 12px;
     color: #737373;
   }
+  .special-241007-airbnb .image-text {
+    font-size: 12px;
+    color: #737373;
+  }
   .special-241007-airbnb #section1 {
     margin-bottom: 6.25%;
   }
@@ -1154,10 +1249,6 @@
   }
   .special-241007-airbnb #section2 .image.image3 .image-credit {
     margin-bottom: 26px;
-  }
-  .special-241007-airbnb #section2 .image.image3 .image-text {
-    font-size: 12px;
-    color: #737373;
   }
   .special-241007-airbnb #section2 .section-credit {
     margin-left: auto;

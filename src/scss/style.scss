@@ -244,6 +244,10 @@
       @include fontvw(10.5);
       color: $gray;
     }
+    .image-text {
+      @include fontvw(10.5);
+      color: $gray;
+    }
     #section1 {
       margin-bottom: vw(60);
       .promotion {
@@ -336,13 +340,92 @@
       }
     }
     #section2 {
-      margin-bottom: vw(60);
+      margin-bottom: vw(50);
       #spot {
+        margin: vw(50) 0;
         padding: vw(60) 0;
         background-color: #FFFBF3;
-      }
-      .section-full {
-        margin-bottom: vw(20);
+        .spot-title {
+          @include fitcenter();
+          margin-bottom: vw(30);
+          line-height: 1;
+          span {
+            &:nth-child(1) {
+              margin-right: vw(10);
+              @include fontvw(18);
+            }
+            &:nth-child(2) {
+              @include fontvw(36);
+            }
+          }
+        }
+        .box {
+          // display: flex;
+          // justify-content: space-between;
+          // margin-left: calc(120 / 1440 * 100%);
+          // margin-right: calc(120 / 1440 * 100%);
+          &-image {
+            // width: calc(590 / 1200 * 100%);
+            margin: 0 auto vw(30);
+            // width: vw(335);
+          }
+          &-content {
+            // width: calc(488 / 1200 * 100%);
+            margin: 0 auto;
+            width: vw(335);
+          }
+          &-title {
+            margin-bottom: vw(10);
+            @include fontvw(18);
+            font-weight: bold;
+          }
+          &-text {
+            margin-bottom: vw(30);
+            @include fontvw(14);
+            line-height: 160%;
+          }
+          &-credit {
+            margin-bottom: vw(30);
+            @include fontvw(10.5);
+            line-height: 150%;
+            color: $gray;
+          }
+          &-flex {
+            display: flex;
+            // justify-content: space-between;
+            padding: vw(14);
+            border: rem(1) solid $navy;
+            box-sizing: border-box;
+            .left {
+              width: vw(110);
+              // width: rem(163);
+            }
+            .right {
+              width: calc( 100% - vw(110));
+              text-align: center;
+              .name {
+                margin-bottom: vw(5);
+                @include fontvw(14);
+              }
+              .address {
+                margin-bottom: vw(10);
+                @include fontvw(10.5);
+                // line-height: 160%;
+              }
+              a {
+                @include fitcenter();
+                color: $black;
+                i {
+                  @include fontvw(14);
+                }
+                span {
+                  @include fontvw(10.5);
+                  text-decoration: underline;
+                } 
+              }
+            }
+          }
+        }
       }
       .section-text {
         margin-bottom: vw(40);
@@ -353,84 +436,6 @@
       }
       .flex {
         position: relative;
-        &-content {
-          margin-bottom: vw(40);
-        }
-      }
-      .image2 {
-        margin: 0 0 0 auto;
-        width: vw(286);
-      }
-      .image3 {
-        width: vw(218);
-      }
-    }
-    #section3 {
-      margin-bottom: vw(60);
-      .section-full {
-        // order: 1;
-        margin-bottom: vw(20);
-      }
-      .section-credit {
-        order: 5;
-      }
-      .flex {
-        &.flex1 {
-          display: flex;
-          flex-direction: column;
-          .flex-content {
-            display: flex;
-            flex-direction: column;
-            // margin-bottom: vw(60);
-            .section-subtitle {
-              order: 1;
-            }
-            .section-title {
-              order: 2;
-            }
-            .section-text {
-              order: 3;
-            }
-            .section-credit {
-              &.section-credit1 {
-                margin-top: vw(30);
-                margin-bottom: vw(40);
-                order: 4;
-              }
-              &.section-credit2 {
-                order: 9;
-              }
-            }
-            .image5 {
-              margin: 0 auto vw(30);
-              order: 5;
-            }
-            .image2 {
-              margin: 0 0 0 auto;
-              order: 6;
-            }
-            .image3 {
-              margin: vw(-90) auto 0 0;
-              order: 7;
-              &::after {
-                top: vw(-12);
-                left: vw(12);
-                height: vw(213);
-                width: vw(142);
-                border: rem(2) solid #FFFBF3;
-              }
-            }
-            .image4 {
-              margin: vw(-63) vw(32) 0 auto;
-              order: 8;
-            }
-          }
-        }
-      }
-    }
-    #section4 {
-      padding-bottom: vw(60);
-      .flex {
         &.flex1 {
           display: flex;
           flex-direction: column;
@@ -441,8 +446,73 @@
             margin-bottom: vw(20);
             order: 1;
           }
+        }
+      }
+      .image2 {
+        margin: 0 0 0 auto;
+        width: vw(286);
+      }
+      .image3 {
+        width: vw(335);
+        .image-credit {
+          margin-bottom: vw(20);
+        }
+      }
+      .image6 {
+        margin: 0 auto vw(50);
+        width: vw(254);
+      }
+      .btn {
+        margin: vw(30) auto 0;
+      }
+    }
+    #section3 {
+      margin-bottom: vw(34);
+      .image1 {
+        margin: 0 auto vw(20);  
+        img {
+          position: relative;
+          left: 50%;
+          width: 100vw;
+          max-width: initial;
+          transform: translate3d(-50%, 0, 0);
+        }
+      }
+      .image2 {
+        margin: vw(30) 0 vw(20) 0;
+        width: vw(237);
+      }
+      .image3 {
+        margin: 0 0 0 auto;
+        width: vw(294);
+      }
+    }
+    #section4 {
+      padding-bottom: vw(60);
+      .image1 {
+        margin-bottom: vw(20);
+        img {
+          position: relative;
+          left: 50%;
+          width: 100vw;
+          max-width: initial;
+          transform: translate3d(-50%, 0, 0);
+        }
+      }
+      .flex {
+        &.flex1 {
+          margin-top: vw(30);
+          display: flex;
+          flex-direction: column;
+          .flex-content {
+            order: 2;
+          }
+          .flex-img {
+            margin-bottom: vw(20);
+            order: 1;
+          }
           .section-credit {
-            margin-bottom: vw(30);
+            margin-bottom: vw(60);
           }
         }
         &.flex2 {
@@ -457,13 +527,24 @@
         .image {
           &.image2 {
             position: relative;
-            margin: 0 0 vw(20) auto;
-            width: vw(204);
+            margin: 0 auto 0 0;
+            width: vw(248);
             z-index: 1;
           }
           &.image3 {
-            margin: 0 auto vw(30) 0;
+            margin: 0 0 0 auto;
             width: vw(196);
+          }
+          &.image6 {
+            margin-bottom: vw(20);
+            width: vw(286);
+          }
+          &.image4 {
+            margin: 0 0 vw(20) auto;
+            width: vw(245);
+          }
+          &.image5 {
+            width: vw(286);
           }
         }
       }
@@ -481,20 +562,24 @@
         }
         .wrapper {
           .profile {
+            margin-bottom: vw(20);
             @include fitcenter();
             justify-content: space-between;
             flex-wrap: wrap;
+            &-image {
+              width: vw(120);
+            }
+            &-content {
+              width: vw(188);
+            }
+            &-name {
+              margin-bottom: vw(10);
+              @include fontvw(14);
+            }
+            &:last-child {
+              margin-bottom: 0;
+            }
           }
-        }
-        &-image {
-          width: vw(120);
-        }
-        &-content {
-          width: vw(188);
-        }
-        &-name {
-          margin-bottom: vw(10);
-          @include fontvw(14);
         }
         .section-credit {
           margin: 0;
@@ -828,6 +913,10 @@
       @include fontsize(12);
       color: $gray;
     }
+    .image-text {
+      @include fontsize(12);
+      color: $gray;
+    }
     #section1 {
       margin-bottom: calc(90 / 1440 * 100%);
       .promotion {
@@ -1014,11 +1103,6 @@
           width: calc( 387 / (209 + 387) * 100%);
           .image-credit {
             margin-bottom: rem(26);
-          }
-          .image-text {
-            @include fontsize(12);
-            color: $gray;
-            // line-height: 160;
           }
         }
       }
