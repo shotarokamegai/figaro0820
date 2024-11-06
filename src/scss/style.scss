@@ -9,9 +9,10 @@
 
 @charset "utf-8";
 
-.special-241007-airbnb {
+.special-241115-airbnb {
   font-family: "Hiragino Kaku Gothic Pro";
   text-align: justify;
+  color: $black;
   background-color: $bg;
   .absolute {
     position: absolute;
@@ -37,7 +38,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  .special-241007-airbnb {
+  .special-241115-airbnb {
     &.loaded {
       #section1 {
         .kv, .kv h1 {
@@ -216,6 +217,9 @@
       line-height: (15.75 / 10.5);
       letter-spacing: vw(0.7);
       color: $gray;
+      &.mt {
+      margin-top: vw(30);
+      }
       &.black {
         color: $black;
         a {
@@ -229,7 +233,7 @@
       line-height: (23.4 / 18);
       letter-spacing: vw(0.5);
       font-weight: 600;
-      color: $navy;
+      // color: $navy;
     }
     .section-subtitle {
       margin-bottom: vw(10);
@@ -283,9 +287,9 @@
           }
         }
         h1 {
-          bottom: vw(15);
+          top: vw(34);
           left: 50%;
-          width: vw(182);
+          width: vw(218);
           opacity: 0;
           transform: translate3d(-50%, vw(20), 0);
           will-change: opacity, transform;
@@ -300,7 +304,7 @@
           @include fontvw(18);
           letter-spacing: vw(.9);
           line-height: 1;
-          color: $navy;
+          // color: $navy;
         }
         h3 {
           margin-bottom: vw(10);
@@ -367,7 +371,7 @@
           &-image {
             // width: calc(590 / 1200 * 100%);
             margin: 0 auto vw(30);
-            // width: vw(335);
+            width: vw(335);
           }
           &-content {
             // width: calc(488 / 1200 * 100%);
@@ -428,7 +432,7 @@
         }
       }
       .section-text {
-        margin-bottom: vw(40);
+        // margin-bottom: vw(40);
       }
       .section-credit {
         margin-left: auto;
@@ -437,6 +441,7 @@
       .flex {
         position: relative;
         &.flex1 {
+          margin-bottom: vw(30);
           display: flex;
           flex-direction: column;
           .flex-content {
@@ -594,7 +599,6 @@
           margin-bottom: vw(30);
           @include fontvw(36);
           line-height: 1;
-          color: $navy;
         }
         .image {
           margin: 0 auto vw(20);  
@@ -647,7 +651,7 @@
       }
       #bottom {
         padding: vw(90) 0;
-        background-color: #FFFBF3;
+        // background-color: #FFFBF3;
         .section-text {
           letter-spacing: 0;
           .underline {
@@ -709,7 +713,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .special-241007-airbnb {
+  .special-241115-airbnb {
     &.loaded {
       #section1 {
         .kv, .kv h1 {
@@ -718,7 +722,7 @@
         .kv {
           transform: translate3d(-50%, 0, 0);
           h1 {
-            transform: translate3d(-50%, 0, 0);
+            transform: translate3d(0, 0, 0);
           }
         }
       }
@@ -898,7 +902,7 @@
       letter-spacing: rem(0.8);
       line-height: (31.2 / 26);
       font-weight: 600;
-      color: $navy;
+      // color: $navy;
     }
     .section-subtitle {
       margin-bottom: rem(10);
@@ -943,11 +947,13 @@
           }
         }
         h1 {
-          bottom: rem(33);
-          left: 50%;
-          width: rem(330);
+          // bottom: rem(237);
+          bottom: calc(237 / 1440 * 100%);
+          // left: 50%;
+          right: calc(116 / 1440 * 100%);
+          width: calc(390 / 1440 * 100%);
           opacity: 0;
-          transform: translate3d(-50%, rem(20), 0);
+          transform: translate3d(0, rem(20), 0);
           will-change: opacity, transform;
           transition: opacity 1.5s $Power3easeInOut .2s, transform 1.5s $Power3easeInOut .2s;
         }
@@ -959,7 +965,7 @@
           @include fontsize(25);
           letter-spacing: rem(2.5);
           line-height: 1;
-          color: $navy;
+          // color: $navy;
           
         }
         h3 {
@@ -987,7 +993,6 @@
       .flex {
         &.flex1 {
           .flex-content {
-            margin-top: calc(60 / 1440 * 100%);
             margin-left: calc(120 / 1440 * 100%);
           }
           .flex-img {
@@ -1099,7 +1104,7 @@
           width: calc( 387 / (209 + 387) * 100%);
         }
         &.image3 {
-          margin-top: calc( 90 / (209 + 387) * 100%);
+          margin-top: calc( 90 / 1440 * 100%);
           width: calc( 387 / (209 + 387) * 100%);
           .image-credit {
             margin-bottom: rem(26);
@@ -1146,9 +1151,9 @@
         margin-bottom: calc(60 / 794 * 100%);
       }
       .flex {
-        margin-top: calc( 60 / 1440 * 100%);
         &.flex1 {
-          margin-bottom: calc( 44 / 1440 * 100%);
+          margin-top: calc( 60 / 1440 * 100%);
+          margin-bottom: calc( 144 / 1440 * 100%);
           width: calc( 996 / 1440 * 100%);
           .flex-img {
             width: calc( 590 / 996 * 100%);
@@ -1224,7 +1229,6 @@
           margin-bottom: rem(60);
           @include fontsize(48);
           line-height: 1;
-          color: $navy;
         }
         .image {
           margin: 0 auto rem(30);  
@@ -1278,7 +1282,7 @@
       }
       #bottom {
         padding: rem(120) 0;
-        background-color: #FFFBF3;
+        // background-color: #FFFBF3;
         .section-text {
           letter-spacing: 0;
           .underline {
