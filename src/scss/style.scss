@@ -419,8 +419,9 @@
               a {
                 @include fitcenter();
                 color: $black;
-                i {
-                  @include fontvw(14);
+                svg {
+                  margin-right: vw(7);
+                  width: vw(14);
                 }
                 span {
                   @include fontvw(10.5);
@@ -1083,8 +1084,9 @@
               a {
                 @include fitcenter();
                 color: $black;
-                i {
-                  @include fontsize(20);
+                svg {
+                  margin-right: rem(10);
+                  width: rem(20);
                 }
                 span {
                   @include fontsize(12);
