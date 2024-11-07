@@ -13,7 +13,7 @@
   font-family: "Hiragino Kaku Gothic Pro";
   text-align: justify;
   color: $black;
-  background-color: $bg;
+  background-color: $white;
   .absolute {
     position: absolute;
   }
@@ -603,6 +603,11 @@
         }
         .image {
           margin: 0 auto vw(20);  
+          &-credit {
+            margin-top: vw(10);
+            @include fontvw(10.5);
+            color: $gray;
+          }
         }
         .section-text {
           margin: 0 auto vw(30);  
@@ -622,7 +627,7 @@
           }
           &-text {
             margin: 0 auto;
-            width: vw(155);
+            width: vw(160);
             @include fontvw(10.5);
             line-height: (15.75/10.5);
             a {
@@ -633,7 +638,7 @@
       }
       #information {
         padding: vw(60) 0;
-        background-color: $navy;
+        background-color: $black;
         h3 {
           margin-bottom: vw(10);
           @include fontvw(18);
@@ -648,6 +653,9 @@
         }
         .section-text {
           margin: 0 auto vw(30);
+        }
+        .btn {
+          border: rem(1) solid $white;
         }
       }
       #bottom {
@@ -1235,6 +1243,11 @@
         .image {
           margin: 0 auto rem(30);  
           width: rem(488);
+          &-credit {
+            margin-top: rem(10);
+            @include fontsize(12);
+            color: $gray;
+          }
         }
         .section-text {
           margin: 0 auto rem(30);  
@@ -1280,6 +1293,9 @@
         .section-text {
           margin: 0 auto rem(54);
           width: rem(794);
+        }
+        .btn {
+          border: rem(1) solid $white;
         }
       }
       #bottom {
