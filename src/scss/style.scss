@@ -273,12 +273,12 @@
         transition: opacity 1.5s $Power3easeInOut, transform 1.5s $Power3easeInOut;
         &::before {
           position: absolute;
-          top: 0;
+          bottom: 0;
           left: 0;
           content: '';
           height: vw(157);
           width: 100vw;
-          background: linear-gradient(to bottom, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0));
+          background: linear-gradient(to top, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0));
           z-index: 1;
         }
         .wrapper {
@@ -287,7 +287,7 @@
           }
         }
         h1 {
-          top: vw(34);
+          bottom: vw(20);
           left: 50%;
           width: vw(218);
           opacity: 0;
