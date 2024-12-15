@@ -89,14 +89,14 @@ gulp.task('sass', () => {
 });
 
 // EJS
-// gulp.task('ejs', (done) => {
-//   gulp.src('./src/ejs/_index.ejs')
-//     .pipe(ejs())
-//     .pipe(rename('index.html'))
-//     .pipe(connect.reload())
-//     .pipe(gulp.dest(`./`));
-//   done();
-// });
+gulp.task('ejs', (done) => {
+  gulp.src('./src/ejs/_index.ejs')
+    .pipe(ejs())
+    .pipe(rename('index.html'))
+    .pipe(connect.reload())
+    .pipe(gulp.dest(`./`));
+  done();
+});
 
-gulp.task('default', gulp.series(gulp.parallel('sass', 'js', 'watch')));
+gulp.task('default', gulp.series(gulp.parallel('ejs', 'sass', 'js', 'watch')));
 // gulp.task('default', gulp.series(gulp.parallel('connect', 'ejs', 'sass', 'js', 'watch')));

@@ -9711,18 +9711,19 @@ var main = /*#__PURE__*/function () {
     this.top = document.getElementById('top');
     this.container = document.getElementsByClassName('special-241115-airbnb')[0];
     this.visitor = document.getElementById('visitor');
-    this.menu = document.getElementById('menu');
+    this.modal = document.getElementById('modal');
     this.footer = document.getElementById('footer');
     this.textTarget = document.getElementsByClassName('text-target');
     this.swiperContainer = document.getElementsByClassName('swiper-container');
     this.swipers = [];
     this.scrollTrigger = document.getElementsByClassName('scroll-trigger');
-    this.menuTrigger = document.getElementsByClassName('menu-trigger');
+    this.modalTrigger = document.getElementsByClassName('modal-trigger');
     this.duration = 100;
     this.end = 0;
     this.index = 0;
     this.velocity = 1;
     this.velocity_ = 1;
+    this.swiperArry = [];
     this.initial = true;
     this.scrolling = false;
     this.scrollActive = false;
@@ -9733,8 +9734,8 @@ var main = /*#__PURE__*/function () {
     // Splitting();
     this.init();
     this.animationScroll();
-    for (var i = 0; i < this.menuTrigger.length; i++) {
-      this.menuTrigger[i].addEventListener('click', this.triggerMenu.bind(this));
+    for (var i = 0; i < this.modalTrigger.length; i++) {
+      this.modalTrigger[i].addEventListener('click', this.triggerModal.bind(this));
     }
     for (var _i = 0; _i < this.scrollTrigger.length; _i++) {
       this.scrollTrigger[_i].addEventListener('click', this.toScroll.bind(this));
@@ -9747,6 +9748,110 @@ var main = /*#__PURE__*/function () {
     };
   }
   return _createClass(main, [{
+    key: "initSwiper",
+    value: function initSwiper() {
+      for (var i = 0; i < this.swiperContainer.length; i++) {
+        var excute = false;
+        var thisSwiper = this.swiperContainer[i];
+        var slides = thisSwiper.getAttribute('data-slides') === 'auto' ? 'auto' : parseInt(thisSwiper.getAttribute('data-slides'));
+        var slidesPc = thisSwiper.getAttribute('data-slidesPc') === 'auto' ? 'auto' : parseInt(thisSwiper.getAttribute('data-slidesPc'));
+        var scrollbar = thisSwiper.getAttribute('data-scrollbar') === 'true' ? {
+          el: ".".concat(thisSwiper.getAttribute('id'), "-scrollbar")
+        } : false;
+        var scrollbarPc = thisSwiper.getAttribute('data-scrollbarPc') === 'true' ? {
+          el: ".".concat(thisSwiper.getAttribute('id'), "-scrollbar")
+        } : false;
+        var navigation = thisSwiper.getAttribute('data-navigation') === 'true' ? {
+          nextEl: thisSwiper.parentElement.getElementsByClassName('swiper-button-next')[0],
+          prevEl: thisSwiper.parentElement.getElementsByClassName('swiper-button-prev')[0],
+          clickable: true
+        } : false;
+        var navigationPc = thisSwiper.getAttribute('data-navigationPc') === 'true' ? {
+          nextEl: thisSwiper.parentElement.getElementsByClassName('swiper-button-next')[0],
+          prevEl: thisSwiper.parentElement.getElementsByClassName('swiper-button-prev')[0],
+          clickable: true
+        } : false;
+        var speed = parseInt(thisSwiper.getAttribute('data-speed'));
+        var loopedSlides = slides;
+        var autoplay = void 0;
+        if (thisSwiper.getAttribute('data-autoplay') === 'marquee') {
+          autoplay = {
+            delay: 0,
+            // pauseOnMouseEnter: true,
+            disableOnInteraction: false,
+            preventInteractionOnTransition: true
+          };
+          loopedSlides = document.getElementsByClassName('news').length;
+        } else if (thisSwiper.getAttribute('data-autoplay') === 'false') {
+          autoplay = false;
+        } else if (thisSwiper.getAttribute('data-autoplay') === 'true') {
+          autoplay = {
+            delay: 2000,
+            pauseOnMouseEnter: true,
+            disableOnInteraction: false
+          };
+        }
+        if (this.width < 750 && thisSwiper.getAttribute('data-swiper') === 'true') {
+          excute = true;
+        } else if (this.width > 750 && thisSwiper.getAttribute('data-swiperPc') === 'true') {
+          excute = true;
+        }
+        if (excute) {
+          var swiper = new Swiper(thisSwiper, {
+            speed: speed,
+            initialSlide: parseInt(thisSwiper.getAttribute('data-initialslide')),
+            autoplay: autoplay,
+            loop: thisSwiper.getAttribute('data-loop') === 'true' ? true : false,
+            loopedSlides: loopedSlides,
+            centeredSlides: thisSwiper.getAttribute('data-center') === 'true' ? true : false,
+            slidesPerView: slides,
+            spaceBetween: parseInt(thisSwiper.getAttribute('data-space')),
+            // slidesPerGroup: parseInt(thisSwiper.getAttribute('data-slides')),
+            scrollbar: scrollbar,
+            navigation: navigation,
+            on: {
+              slideChangeTransitionStart: function slideChangeTransitionStart(e) {
+                var index = document.getElementById("current1");
+                if (index) {
+                  var span = index.getElementsByTagName('span');
+                  var max = span.length;
+                  for (var _i2 = 0; _i2 < span.length; _i2++) {
+                    if (span[_i2].classList.contains('up')) {
+                      span[_i2].classList.remove('active');
+                      span[_i2].classList.remove('up');
+                    }
+                    if (span[_i2].classList.contains('active')) {
+                      if (span[_i2].classList.contains('initial')) {
+                        span[_i2].classList.remove('initial');
+                      } else {
+                        span[_i2].classList.add('up');
+                      }
+                    }
+                    if (e.realIndex === _i2 || e.realIndex === max && _i2 === 0) {
+                      span[_i2].classList.add('active');
+                    }
+                  }
+                }
+              }
+            },
+            breakpoints: {
+              750: {
+                slidesPerView: slidesPc,
+                loopedSlides: loopedSlides,
+                scrollbar: scrollbarPc,
+                navigation: navigationPc,
+                spaceBetween: parseInt(thisSwiper.getAttribute('data-spacePc'))
+              }
+            }
+          });
+          this.swiperArry.push({
+            swiper: swiper,
+            elm: thisSwiper
+          });
+        }
+      }
+    }
+  }, {
     key: "animationScroll",
     value: function animationScroll() {
       var addactive = document.getElementsByClassName('addactive');
@@ -9776,7 +9881,7 @@ var main = /*#__PURE__*/function () {
         _loop();
       }
       var _loop2 = function _loop2() {
-        var elm = addactive[_i2];
+        var elm = addactive[_i3];
         var start = "top center+=".concat(window.innerHeight / 4);
         if (elm.classList.contains('blur')) {
           start = "top center";
@@ -9798,7 +9903,7 @@ var main = /*#__PURE__*/function () {
           }
         });
       };
-      for (var _i2 = 0; _i2 < addactive.length; _i2++) {
+      for (var _i3 = 0; _i3 < addactive.length; _i3++) {
         _loop2();
       }
     }
@@ -9817,18 +9922,18 @@ var main = /*#__PURE__*/function () {
       return a + t * (b - a);
     }
   }, {
-    key: "triggerMenu",
-    value: function triggerMenu(e) {
+    key: "triggerModal",
+    value: function triggerModal(e) {
       var elm = e.currentTarget;
-      if (this.menu.classList.contains('active')) {
-        this.menu.classList.remove('active');
-        for (var i = 0; i < this.menuTrigger.length; i++) {
-          this.menuTrigger[i].classList.remove('active');
+      if (this.modal.classList.contains('active')) {
+        this.modal.classList.remove('active');
+        for (var i = 0; i < this.modalTrigger.length; i++) {
+          this.modalTrigger[i].classList.remove('active');
         }
       } else {
-        this.menu.classList.add('active');
-        for (var _i3 = 0; _i3 < this.menuTrigger.length; _i3++) {
-          this.menuTrigger[_i3].classList.add('active');
+        this.modal.classList.add('active');
+        for (var _i4 = 0; _i4 < this.modalTrigger.length; _i4++) {
+          this.modalTrigger[_i4].classList.add('active');
         }
       }
     }
@@ -9857,8 +9962,9 @@ var main = /*#__PURE__*/function () {
     value: function init() {
       this.resizeEvent();
       // this.lenis();
+      this.initSwiper();
       window.scrollTo(0, 0);
-      this.container.classList.add('loaded');
+      // this.container.classList.add('loaded');
     }
   }, {
     key: "resizeEvent",

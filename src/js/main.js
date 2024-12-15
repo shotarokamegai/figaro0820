@@ -11,18 +11,19 @@ class main {
     this.top = document.getElementById('top');
     this.container = document.getElementsByClassName('special-241115-airbnb')[0];
     this.visitor = document.getElementById('visitor');
-    this.menu = document.getElementById('menu');
+    this.modal = document.getElementById('modal');
     this.footer = document.getElementById('footer');
     this.textTarget = document.getElementsByClassName('text-target');
     this.swiperContainer = document.getElementsByClassName('swiper-container');
     this.swipers = [];
     this.scrollTrigger = document.getElementsByClassName('scroll-trigger');
-    this.menuTrigger = document.getElementsByClassName('menu-trigger');
+    this.modalTrigger = document.getElementsByClassName('modal-trigger');
     this.duration = 100;
     this.end = 0;
     this.index = 0;
     this.velocity = 1;
     this.velocity_ = 1;
+    this.swiperArry = [];
     this.initial = true;
     this.scrolling = false;
     this.scrollActive = false;
@@ -39,8 +40,8 @@ class main {
     // Splitting();
     this.init();
     this.animationScroll();
-    for (let i = 0; i < this.menuTrigger.length; i++) {
-      this.menuTrigger[i].addEventListener('click', this.triggerMenu.bind(this));
+    for (let i = 0; i < this.modalTrigger.length; i++) {
+      this.modalTrigger[i].addEventListener('click', this.triggerModal.bind(this));
     }
     for (let i = 0; i < this.scrollTrigger.length; i++) {
       this.scrollTrigger[i].addEventListener('click', this.toScroll.bind(this));
@@ -52,6 +53,111 @@ class main {
       this.scrollAnimation();
     }
   }
+
+  initSwiper() {
+    for (let i = 0; i < this.swiperContainer.length; i++) {
+      let excute = false;
+      let thisSwiper = this.swiperContainer[i];
+      let slides = thisSwiper.getAttribute('data-slides') === 'auto' ? 'auto' : parseInt(thisSwiper.getAttribute('data-slides'));
+      let slidesPc = thisSwiper.getAttribute('data-slidesPc') === 'auto' ? 'auto' : parseInt(thisSwiper.getAttribute('data-slidesPc'));
+      let scrollbar = (thisSwiper.getAttribute('data-scrollbar') === 'true') ? {
+        el: `.${thisSwiper.getAttribute('id')}-scrollbar`,
+      } : false;
+      let scrollbarPc = (thisSwiper.getAttribute('data-scrollbarPc') === 'true') ? {
+        el: `.${thisSwiper.getAttribute('id')}-scrollbar`,
+      } : false;
+      let navigation = (thisSwiper.getAttribute('data-navigation') === 'true') ?
+        {
+          nextEl: thisSwiper.parentElement.getElementsByClassName('swiper-button-next')[0],
+          prevEl: thisSwiper.parentElement.getElementsByClassName('swiper-button-prev')[0],
+          clickable: true
+        } : false;
+      let navigationPc = (thisSwiper.getAttribute('data-navigationPc') === 'true') ?
+        {
+          nextEl: thisSwiper.parentElement.getElementsByClassName('swiper-button-next')[0],
+          prevEl: thisSwiper.parentElement.getElementsByClassName('swiper-button-prev')[0],
+          clickable: true
+        } : false;
+      let speed = parseInt(thisSwiper.getAttribute('data-speed'));
+      let loopedSlides = slides;
+      let autoplay;
+      if (thisSwiper.getAttribute('data-autoplay') === 'marquee') {
+        autoplay = {
+          delay: 0,
+          // pauseOnMouseEnter: true,
+          disableOnInteraction: false,
+          preventInteractionOnTransition: true,
+        };
+        loopedSlides = document.getElementsByClassName('news').length; 
+      } else if (thisSwiper.getAttribute('data-autoplay') === 'false') {
+        autoplay = false;
+      } else if (thisSwiper.getAttribute('data-autoplay') === 'true') {
+        autoplay = {
+          delay: 2000,
+          pauseOnMouseEnter: true,
+          disableOnInteraction: false,
+        };
+      }
+      if (this.width < 750 && thisSwiper.getAttribute('data-swiper') === 'true') {
+        excute = true;
+      } else if (this.width > 750 && thisSwiper.getAttribute('data-swiperPc') === 'true') {
+        excute = true;
+      }
+      if (excute) {
+        let swiper = new Swiper(thisSwiper, {
+          speed: speed,
+          initialSlide: parseInt(thisSwiper.getAttribute('data-initialslide')),
+          autoplay: autoplay,
+          loop: (thisSwiper.getAttribute('data-loop') === 'true') ? true : false,
+          loopedSlides: loopedSlides,
+          centeredSlides: (thisSwiper.getAttribute('data-center') === 'true') ? true : false,
+          slidesPerView: slides,
+          spaceBetween: parseInt(thisSwiper.getAttribute('data-space')),
+          // slidesPerGroup: parseInt(thisSwiper.getAttribute('data-slides')),
+          scrollbar: scrollbar,
+          navigation: navigation,
+          on: {
+            slideChangeTransitionStart: (e) => {
+              let index = document.getElementById(`current1`);
+              if (index) {
+                let span = index.getElementsByTagName('span');
+                let max = span.length;
+                for (let i = 0; i < span.length; i++) {
+                  if (span[i].classList.contains('up')) {
+                    span[i].classList.remove('active')
+                    span[i].classList.remove('up')
+                  }
+                  if (span[i].classList.contains('active')) {
+                    if (span[i].classList.contains('initial')) {
+                      span[i].classList.remove('initial')
+                    } else {
+                      span[i].classList.add('up')
+                    }
+                  }
+                  if (e.realIndex === i || (e.realIndex === max && i === 0)) {
+                    span[i].classList.add('active')
+                  }
+                }
+              }
+            },
+          },
+          breakpoints: {
+            750: {
+              slidesPerView: slidesPc,
+              loopedSlides: loopedSlides,
+              scrollbar: scrollbarPc,
+              navigation: navigationPc,
+              spaceBetween: parseInt(thisSwiper.getAttribute('data-spacePc'))
+            }
+          }
+        });
+        this.swiperArry.push({
+          swiper: swiper,
+          elm: thisSwiper
+        });
+      }
+    }
+}
 
   animationScroll() {
     let addactive = document.getElementsByClassName('addactive');
@@ -112,17 +218,17 @@ class main {
     return a + t * (b - a);
   }
 
-  triggerMenu(e) {
+  triggerModal(e) {
     let elm = e.currentTarget;
-    if (this.menu.classList.contains('active')) {
-      this.menu.classList.remove('active');
-      for (let i = 0; i < this.menuTrigger.length; i++) {
-        this.menuTrigger[i].classList.remove('active');
+    if (this.modal.classList.contains('active')) {
+      this.modal.classList.remove('active');
+      for (let i = 0; i < this.modalTrigger.length; i++) {
+        this.modalTrigger[i].classList.remove('active');
       }
     } else {
-      this.menu.classList.add('active');
-      for (let i = 0; i < this.menuTrigger.length; i++) {
-        this.menuTrigger[i].classList.add('active');
+      this.modal.classList.add('active');
+      for (let i = 0; i < this.modalTrigger.length; i++) {
+        this.modalTrigger[i].classList.add('active');
       }
     }
   }
@@ -150,8 +256,9 @@ class main {
   init() {
     this.resizeEvent();
     // this.lenis();
+    this.initSwiper();
     window.scrollTo(0, 0);
-    this.container.classList.add('loaded');
+    // this.container.classList.add('loaded');
   }
 
   resizeEvent() {
