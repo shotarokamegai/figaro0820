@@ -135,6 +135,9 @@ CONTENT AREA
           <% for (var i = 0; i < items.length; i++ ) { %>
             <div class="swiper-slide">
               <div class="item flex space-between">
+                <div class="item-index sp">
+                  <%- i+1 %> / 8
+                </div>
                 <div class="item-image">
                   <picture>
                     <!-- <source srcset="~" media="(min-width: 750px)"/> -->
@@ -147,7 +150,7 @@ CONTENT AREA
                     </div>
                 </div>
                 <div class="item-content">
-                  <div>
+                  <div class="item-content__inner">
                   <p class="item-title">
                     <%- items[i][1] %>
                   </p>
@@ -157,7 +160,7 @@ CONTENT AREA
                   <p class="item-note">
                     <%- items[i][3] %>
                   </p>
-                  <div class="text-center">
+                  <div class="text-center btn-wrap">
                   <a href="<%- items[i][4] %>" target="_blank" rel="noopener" class="btn black">
                     <span class="btn-text bold">詳細を見る</span>
                     <span class="btn-icon">
@@ -200,12 +203,14 @@ CONTENT AREA
   <div id="section1" class="section section-main" data-pv-section="section1" data-section="section1">
     <div class="kv">
       <div class="kv-image">
+        <p class="promotion futura sp">PROMOTION</p>
         <picture>
-          <!-- <source srcset="~" media="(min-width: 750px)"/> -->
+          <source srcset="./img/kv_sp.jpg" media="(max-width: 750px)"/>
           <img src="./img/kv.jpg" alt="" />
         <picture>
       </div>
       <div class="kv-content">
+        <p class="promotion futura pc">PROMOTION</p>
         <div>
         <div class="image">
           <picture>
@@ -214,7 +219,7 @@ CONTENT AREA
           <picture>
         </div>
         <h1 class="text-center">
-          村上隆とルイ・ヴィトン、<br/>
+          村上隆とルイ・ヴィトン、<br class="pc" />
           プレイフルな絆。
         </h1>
         <p class="section-text">
@@ -272,14 +277,14 @@ CONTENT AREA
               この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を 
             </p>
           </div>
-          <div class="box-image fade addactive">
+          <div class="box-image fade addactive left">
             <picture>
               <!-- <source srcset="~" media="(min-width: 750px)"/> -->
               <img src="./img/03.jpg" alt="" />
             <picture>
           </div>
         </div> 
-        <div class="box flex space-between">
+        <div class="box flex space-between nm">
           <div class="box-content">
             <h2 class="fade addactive">この文章はダミーです。文字の大</h2>
             <p class="section-text fade addactive">
@@ -289,7 +294,7 @@ CONTENT AREA
               この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を 
             </p>
           </div>
-          <div class="box-image fade addactive">
+          <div class="box-image fade addactive right">
             <picture>
               <!-- <source srcset="~" media="(min-width: 750px)"/> -->
               <img src="./img/04.jpg" alt="" />
@@ -359,7 +364,7 @@ CONTENT AREA
               この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を 
             </p>
           </div>
-          <div class="box-image fade addactive">
+          <div class="box-image fade addactive right">
             <picture>
               <!-- <source srcset="~" media="(min-width: 750px)"/> -->
               <img src="./img/06.jpg" alt="" />
@@ -376,7 +381,7 @@ CONTENT AREA
               この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を 
             </p>
           </div>
-          <div class="box-image fade addactive">
+          <div class="box-image fade addactive left">
             <picture>
               <!-- <source srcset="~" media="(min-width: 750px)"/> -->
               <img src="./img/07.jpg" alt="" />
@@ -419,7 +424,7 @@ CONTENT AREA
       <h2 class="section-title text-center fade addactive">
         ITEMS
       </h2>
-      <div class="item-wrapper flex">
+      <div class="item-wrapper flex flex-sp">
         <% for (var i = 0; i < items.length; i++ ) { %>
           <div class="item modal-trigger fade addactive" data-target="<%- i+1 %>">
             <div class="item-image">

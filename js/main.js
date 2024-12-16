@@ -9746,8 +9746,42 @@ var main = /*#__PURE__*/function () {
     window.onscroll = function () {
       _this.scrollAnimation();
     };
+    var mediaQuery = window.matchMedia('(min-width: 750px)');
+    // 関数を定義
+    // ロード時に判定
+    this.checkWindow(mediaQuery);
+    // ブレイクポイントが切り替わったら判定
+    mediaQuery.addEventListener('change', this.checkWindow.bind(this));
   }
   return _createClass(main, [{
+    key: "checkWindow",
+    value: function checkWindow(windowSize) {
+      // ウィンドウサイズが768px以上か
+      if (windowSize.matches) {
+        // 768px以上の時（PCの処理）
+        console.log('PC');
+        // this.width = window.innerWidth;
+        // this.height = window.innerHeight;
+        // this.videoY = -this.height/4;
+        // this.animationScroll();
+        for (var i = 0; i < this.swiperArry.length; i++) {
+          this.swiperArry[i].swiper.destroy();
+        }
+        this.initSwiper();
+      } else {
+        // 上記以外の時（SPの処理）
+        console.log('SP');
+        // this.width = window.innerWidth;
+        // this.height = window.innerHeight;
+        // this.videoY = -this.width/.84;
+        // this.animationScroll();
+        for (var _i2 = 0; _i2 < this.swiperArry.length; _i2++) {
+          this.swiperArry[_i2].swiper.destroy();
+        }
+        gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.refresh();
+      }
+    }
+  }, {
     key: "initSwiper",
     value: function initSwiper() {
       for (var i = 0; i < this.swiperContainer.length; i++) {
@@ -9815,20 +9849,20 @@ var main = /*#__PURE__*/function () {
                 if (index) {
                   var span = index.getElementsByTagName('span');
                   var max = span.length;
-                  for (var _i2 = 0; _i2 < span.length; _i2++) {
-                    if (span[_i2].classList.contains('up')) {
-                      span[_i2].classList.remove('active');
-                      span[_i2].classList.remove('up');
+                  for (var _i3 = 0; _i3 < span.length; _i3++) {
+                    if (span[_i3].classList.contains('up')) {
+                      span[_i3].classList.remove('active');
+                      span[_i3].classList.remove('up');
                     }
-                    if (span[_i2].classList.contains('active')) {
-                      if (span[_i2].classList.contains('initial')) {
-                        span[_i2].classList.remove('initial');
+                    if (span[_i3].classList.contains('active')) {
+                      if (span[_i3].classList.contains('initial')) {
+                        span[_i3].classList.remove('initial');
                       } else {
-                        span[_i2].classList.add('up');
+                        span[_i3].classList.add('up');
                       }
                     }
-                    if (e.realIndex === _i2 || e.realIndex === max && _i2 === 0) {
-                      span[_i2].classList.add('active');
+                    if (e.realIndex === _i3 || e.realIndex === max && _i3 === 0) {
+                      span[_i3].classList.add('active');
                     }
                   }
                 }
@@ -9881,7 +9915,7 @@ var main = /*#__PURE__*/function () {
         _loop();
       }
       var _loop2 = function _loop2() {
-        var elm = addactive[_i3];
+        var elm = addactive[_i4];
         var start = "top center+=".concat(window.innerHeight / 4);
         if (elm.classList.contains('blur')) {
           start = "top center";
@@ -9903,7 +9937,7 @@ var main = /*#__PURE__*/function () {
           }
         });
       };
-      for (var _i3 = 0; _i3 < addactive.length; _i3++) {
+      for (var _i4 = 0; _i4 < addactive.length; _i4++) {
         _loop2();
       }
     }
@@ -9927,14 +9961,10 @@ var main = /*#__PURE__*/function () {
       var elm = e.currentTarget;
       if (this.modal.classList.contains('active')) {
         this.modal.classList.remove('active');
-        for (var i = 0; i < this.modalTrigger.length; i++) {
-          this.modalTrigger[i].classList.remove('active');
-        }
       } else {
+        var index = parseInt(elm.getAttribute('data-target'));
         this.modal.classList.add('active');
-        for (var _i4 = 0; _i4 < this.modalTrigger.length; _i4++) {
-          this.modalTrigger[_i4].classList.add('active');
-        }
+        this.swiperArry[0].swiper.slideTo(index);
       }
     }
   }, {

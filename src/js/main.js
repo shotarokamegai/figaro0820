@@ -52,6 +52,39 @@ class main {
     window.onscroll = () => {
       this.scrollAnimation();
     }
+    const mediaQuery = window.matchMedia('(min-width: 750px)');
+    // 関数を定義
+    // ロード時に判定
+    this.checkWindow(mediaQuery);
+    // ブレイクポイントが切り替わったら判定
+    mediaQuery.addEventListener('change', this.checkWindow.bind(this));
+  }
+
+  checkWindow(windowSize) {
+    // ウィンドウサイズが768px以上か
+    if (windowSize.matches) {
+        // 768px以上の時（PCの処理）
+        console.log('PC');
+        // this.width = window.innerWidth;
+        // this.height = window.innerHeight;
+        // this.videoY = -this.height/4;
+        // this.animationScroll();
+        for (let i = 0; i < this.swiperArry.length; i++) {
+          this.swiperArry[i].swiper.destroy();
+        }
+        this.initSwiper();
+    } else {
+        // 上記以外の時（SPの処理）
+        console.log('SP');
+        // this.width = window.innerWidth;
+        // this.height = window.innerHeight;
+        // this.videoY = -this.width/.84;
+        // this.animationScroll();
+        for (let i = 0; i < this.swiperArry.length; i++) {
+          this.swiperArry[i].swiper.destroy();
+        }
+        ScrollTrigger.refresh();
+    }
   }
 
   initSwiper() {
@@ -222,14 +255,10 @@ class main {
     let elm = e.currentTarget;
     if (this.modal.classList.contains('active')) {
       this.modal.classList.remove('active');
-      for (let i = 0; i < this.modalTrigger.length; i++) {
-        this.modalTrigger[i].classList.remove('active');
-      }
     } else {
+      let index = parseInt(elm.getAttribute('data-target'));
       this.modal.classList.add('active');
-      for (let i = 0; i < this.modalTrigger.length; i++) {
-        this.modalTrigger[i].classList.add('active');
-      }
+      this.swiperArry[0].swiper.slideTo(index);
     }
   }
 
