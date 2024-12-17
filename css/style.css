@@ -846,6 +846,9 @@
     justify-content: center;
     width: 42.1416234888%;
   }
+  .special-241217 .modal .item-content__inner {
+    width: 100%;
+  }
   .special-241217 .modal .item-title {
     margin-bottom: 30px;
     font-size: 22px;

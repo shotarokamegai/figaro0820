@@ -72,6 +72,7 @@ class main {
         for (let i = 0; i < this.swiperArry.length; i++) {
           this.swiperArry[i].swiper.destroy();
         }
+        this.swiperArry = [];
         this.initSwiper();
     } else {
         // 上記以外の時（SPの処理）
@@ -83,6 +84,7 @@ class main {
         for (let i = 0; i < this.swiperArry.length; i++) {
           this.swiperArry[i].swiper.destroy();
         }
+        this.swiperArry = [];
         ScrollTrigger.refresh();
     }
   }

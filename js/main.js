@@ -9767,6 +9767,7 @@ var main = /*#__PURE__*/function () {
         for (var i = 0; i < this.swiperArry.length; i++) {
           this.swiperArry[i].swiper.destroy();
         }
+        this.swiperArry = [];
         this.initSwiper();
       } else {
         // 上記以外の時（SPの処理）
@@ -9778,6 +9779,7 @@ var main = /*#__PURE__*/function () {
         for (var _i2 = 0; _i2 < this.swiperArry.length; _i2++) {
           this.swiperArry[_i2].swiper.destroy();
         }
+        this.swiperArry = [];
         gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.refresh();
       }
     }

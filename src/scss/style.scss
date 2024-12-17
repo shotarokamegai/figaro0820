@@ -715,6 +715,9 @@
           @include fitcenter();
           width: calc( 488 / 1158 * 100%);
         }
+        &-content__inner {
+          width: 100%;
+        }
         &-title {
           margin-bottom: rem(30);
           @include fontsize(22); 
