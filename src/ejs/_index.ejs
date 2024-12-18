@@ -206,13 +206,17 @@ CONTENT AREA
       <div class="kv-image">
         <p class="promotion futura sp">PROMOTION</p>
         <video src="./video/KV.mp4" loop autoplay playsinline muted></video>
+        <div class="image sp">
+          <picture>
+            <img src="./img/title.png" alt="Beyond time feat. Louis Vuitton" />
+          <picture>
+        </div>
       </div>
       <div class="kv-content">
         <p class="promotion futura pc">PROMOTION</p>
         <div>
-        <div class="image">
+        <div class="image pc">
           <picture>
-            <!-- <source srcset="~" media="(min-width: 750px)"/> -->
             <img src="./img/title.png" alt="Beyond time feat. Louis Vuitton" />
           <picture>
         </div>
@@ -409,6 +413,9 @@ CONTENT AREA
       <h2 class="section-title text-center fade addactive">
         ITEMS
       </h2>
+      <h3 class="section-subtitle text-center fade addactive">
+        争奪戦必至のコレクションをチェック
+      </h3>
       <div class="item-wrapper flex flex-sp">
         <% for (var i = 0; i < items.length; i++ ) { %>
           <div class="item modal-trigger fade addactive" data-target="<%- i+1 %>">
