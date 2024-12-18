@@ -230,6 +230,10 @@
   color: #000000;
   background-color: #ffffff;
 }
+.special-241217 video {
+  display: block;
+  width: 100%;
+}
 .special-241217 .absolute {
   position: absolute;
 }
@@ -444,16 +448,6 @@
   }
   .special-241217 #bottom ul li:last-child {
     margin-right: 0;
-  }
-  .special-241217 .fade {
-    opacity: 0;
-    transform: translate3d(0, 1.3888888889vw, 0);
-    will-change: opacity, transform;
-    transition: opacity 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-  .special-241217 .fade.active {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
   }
   .special-241217 .btn {
     position: relative;
@@ -716,6 +710,7 @@
     transform: translate3d(0, 0, 0);
   }
   .special-241217 .hover {
+    cursor: pointer;
     will-change: opacity;
     transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
@@ -931,16 +926,6 @@
   }
   .special-241217 #bottom ul li:last-child {
     margin-right: 0;
-  }
-  .special-241217 .fade {
-    opacity: 0;
-    transform: translate3d(0, 1.3888888889vw, 0);
-    will-change: opacity, transform;
-    transition: opacity 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-  .special-241217 .fade.active {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
   }
   .special-241217 .btn {
     position: relative;

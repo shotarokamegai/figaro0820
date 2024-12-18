@@ -14,6 +14,10 @@
   text-align: justify;
   color: $black;
   background-color: $white;
+  video {
+    display: block;
+    width: 100%;
+  }
   .absolute {
     position: absolute;
   }
@@ -285,16 +289,6 @@
             margin-right: 0;
           }
         }
-      }
-    }
-    .fade {
-      opacity: 0;
-      transform: translate3d(0, vwPc(20), 0);
-      will-change: opacity, transform;
-      transition: opacity 1.5s $Power1easeInOut, transform 1.5s $Power1easeInOut;
-      &.active {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
       }
     }
     .btn {
@@ -592,6 +586,7 @@
       }
     }
     .hover {
+      cursor: pointer;
       will-change: opacity;
       transition: opacity .5s $Power1easeInOut;
       &:hover {
@@ -803,16 +798,6 @@
             margin-right: 0;
           }
         }
-      }
-    }
-    .fade {
-      opacity: 0;
-      transform: translate3d(0, vwPc(20), 0);
-      will-change: opacity, transform;
-      transition: opacity 1.5s $Power1easeInOut, transform 1.5s $Power1easeInOut;
-      &.active {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
       }
     }
     .btn {

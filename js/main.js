@@ -9966,7 +9966,11 @@ var main = /*#__PURE__*/function () {
       } else {
         var index = parseInt(elm.getAttribute('data-target'));
         this.modal.classList.add('active');
-        this.swiperArry[0].swiper.slideTo(index);
+        if (this.width < 750) {
+          this.modal.scrollTo(0, document.getElementsByClassName('swiper-slide')[index - 1].offsetTop);
+        } else {
+          this.swiperArry[0].swiper.slideTo(index);
+        }
       }
     }
   }, {
