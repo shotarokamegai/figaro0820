@@ -391,6 +391,12 @@
   .special-241217 #bottom {
     padding: 24vw 0;
   }
+  .special-241217 #bottom .credit {
+    margin: 27.2vw 0 37.3333333333vw;
+    font-size: 0.525rem;
+    font-size: 2.8vw;
+    line-height: 150%;
+  }
   .special-241217 #bottom .section-text {
     letter-spacing: 0;
   }
@@ -870,6 +876,11 @@
   }
   .special-241217 #bottom {
     padding: 120px 0;
+  }
+  .special-241217 #bottom .credit {
+    margin: 108px 0 136px;
+    font-size: 12px;
+    line-height: 160%;
   }
   .special-241217 #bottom .section-text {
     letter-spacing: 0;

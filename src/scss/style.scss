@@ -235,6 +235,11 @@
     #bottom {
       padding: vw(90) 0;
       // background-color: #FFFBF3;
+      .credit {
+        margin: vw(102) 0 vw(140);
+        @include fontvw(10.5);
+        line-height: 150%;
+      }
       .section-text {
         letter-spacing: 0;
         .underline {
@@ -745,6 +750,11 @@
     #bottom {
       padding: rem(120) 0;
       // background-color: #FFFBF3;
+      .credit {
+        margin: rem(108) 0 rem(136);
+        @include fontsize(12);
+        line-height: 160%;
+      }
       .section-text {
         letter-spacing: 0;
         .underline {
