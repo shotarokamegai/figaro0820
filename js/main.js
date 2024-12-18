@@ -9709,7 +9709,7 @@ var main = /*#__PURE__*/function () {
     this.header = document.getElementById('header');
     this.toTop = document.getElementById('to-top');
     this.top = document.getElementById('top');
-    this.container = document.getElementsByClassName('special-241115-airbnb')[0];
+    this.container = document.getElementsByClassName('special-241217')[0];
     this.visitor = document.getElementById('visitor');
     this.modal = document.getElementById('modal');
     this.footer = document.getElementById('footer');
@@ -10000,7 +10000,7 @@ var main = /*#__PURE__*/function () {
       // this.lenis();
       this.initSwiper();
       window.scrollTo(0, 0);
-      // this.container.classList.add('loaded');
+      this.container.classList.add('loaded');
     }
   }, {
     key: "resizeEvent",

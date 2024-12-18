@@ -229,6 +229,12 @@
   text-align: justify;
   color: #000000;
   background-color: #ffffff;
+  opacity: 0;
+  will-change: opacity;
+  transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.special-241217.loaded {
+  opacity: 1;
 }
 .special-241217 video {
   display: block;
@@ -256,15 +262,6 @@
 }
 
 @media screen and (max-width: 767px) {
-  .special-241217.loaded #section1 .kv, .special-241217.loaded #section1 .kv h1 {
-    opacity: 1;
-  }
-  .special-241217.loaded #section1 .kv {
-    transform: translate3d(-50%, 0, 0);
-  }
-  .special-241217.loaded #section1 .kv h1 {
-    transform: translate3d(0, 0, 0);
-  }
   .special-241217 .fade {
     opacity: 0;
     transform: translate3d(0, 5.3333333333vw, 0);
@@ -724,15 +721,6 @@
   }
 }
 @media screen and (min-width: 768px) {
-  .special-241217.loaded #section1 .kv, .special-241217.loaded #section1 .kv h1 {
-    opacity: 1;
-  }
-  .special-241217.loaded #section1 .kv {
-    transform: translate3d(-50%, 0, 0);
-  }
-  .special-241217.loaded #section1 .kv h1 {
-    transform: translate3d(0, 0, 0);
-  }
   .special-241217 .hover {
     cursor: pointer;
     will-change: opacity;
