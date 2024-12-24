@@ -768,6 +768,33 @@
         }
       }
     }
+    .information {
+      margin: rem(150) auto 0;
+      width: calc( 1200 / 1440 * 100%);
+      padding: rem(90) 0;
+      background-color: #F2F2F2; 
+      &-title {
+        margin-bottom: rem(30);
+        @include fontsize(32);
+        font-family: linotype-didot, serif;
+        font-weight: bold;
+      }
+      &-wrapper {
+        margin-top: rem(30);
+        .box {
+          margin-bottom: rem(30);
+          &:last-child {
+            margin-bottom: 0;
+          }
+          p {
+            .small {
+              @include fontsize(12);
+              line-height: 160%;
+            }
+          }
+        }
+      }
+    }
     #bottom {
       padding: rem(120) 0;
       // background-color: #FFFBF3;

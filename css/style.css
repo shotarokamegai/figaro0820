@@ -880,6 +880,31 @@
     line-height: 180%;
     color: #737373;
   }
+  .special-241217 .information {
+    margin: 150px auto 0;
+    width: 83.3333333333%;
+    padding: 90px 0;
+    background-color: #F2F2F2;
+  }
+  .special-241217 .information-title {
+    margin-bottom: 30px;
+    font-size: 32px;
+    font-family: linotype-didot, serif;
+    font-weight: bold;
+  }
+  .special-241217 .information-wrapper {
+    margin-top: 30px;
+  }
+  .special-241217 .information-wrapper .box {
+    margin-bottom: 30px;
+  }
+  .special-241217 .information-wrapper .box:last-child {
+    margin-bottom: 0;
+  }
+  .special-241217 .information-wrapper .box p .small {
+    font-size: 12px;
+    line-height: 160%;
+  }
   .special-241217 #bottom {
     padding: 120px 0;
   }
