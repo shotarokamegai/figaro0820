@@ -385,6 +385,36 @@
   .special-241217 .modal .item .text-center {
     order: 4;
   }
+  .special-241217 .information {
+    position: relative;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    margin: 13.3333333333vw auto 0;
+    width: 100vw;
+    padding: 13.3333333333vw 5.3333333333vw;
+    background-color: #F2F2F2;
+  }
+  .special-241217 .information-title {
+    margin-bottom: 8vw;
+    font-size: 1.2rem;
+    font-size: 6.4vw;
+    font-family: linotype-didot, serif;
+    font-weight: bold;
+  }
+  .special-241217 .information-wrapper {
+    margin-top: 8vw;
+  }
+  .special-241217 .information-wrapper .box {
+    margin: 0 auto 8vw;
+  }
+  .special-241217 .information-wrapper .box:last-child {
+    margin-bottom: 0;
+  }
+  .special-241217 .information-wrapper .box p .small {
+    font-size: 0.525rem;
+    font-size: 2.8vw;
+    line-height: 150%;
+  }
   .special-241217 #bottom {
     padding: 24vw 0;
   }
@@ -656,11 +686,8 @@
     position: relative;
     left: 50%;
     width: 100vw;
-    transform: translate3d(-50%, 5.3333333333vw, 0);
-    margin-bottom: 1.3333333333vw;
-  }
-  .special-241217 .section .play-playful-wrapper .image.active {
     transform: translate3d(-50%, 0, 0);
+    margin-bottom: 1.3333333333vw;
   }
   .special-241217 .section .play-playful-wrapper .image:last-child {
     margin-bottom: 0;

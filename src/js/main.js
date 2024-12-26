@@ -300,7 +300,6 @@ class main {
     let vh = window.innerHeight * 0.01;
     // カスタム変数--vhの値をドキュメントのルートに設定
     document.documentElement.style.setProperty('--vh', `${vh}px`);
-    console.log(this.swipers)
     for (let i = 0; i < this.swipers.length; i++) {
       // let thisSwiper = this.swipers[i];
       // console.log(thisSwiper)

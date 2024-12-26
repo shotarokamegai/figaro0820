@@ -10008,7 +10008,6 @@ var main = /*#__PURE__*/function () {
       var vh = window.innerHeight * 0.01;
       // カスタム変数--vhの値をドキュメントのルートに設定
       document.documentElement.style.setProperty('--vh', "".concat(vh, "px"));
-      console.log(this.swipers);
       for (var i = 0; i < this.swipers.length; i++) {
         // let thisSwiper = this.swipers[i];
         // console.log(thisSwiper)
