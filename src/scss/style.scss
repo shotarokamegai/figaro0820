@@ -437,14 +437,25 @@
       &#section3 {
         padding-top: vw(50);
       }
-      &#section4 {
-        padding-bottom: rem(50);
+      &#section3 {
+        padding-bottom: vw(50);
       }
       &#section5 {
         padding-top: vw(50);
         .section-title {
           margin-bottom: vw(30);
           line-height: 1;
+        }
+      }
+      &#section7 {
+        padding-bottom: vw(50);
+      }
+      &#section8 {
+        padding-bottom: vw(50);
+      }
+      &#section10 {
+        .section-title {
+          margin-top: vw(100);
         }
       }
       &__inner {
@@ -524,6 +535,7 @@
         }
       }
       .play-playful {
+        margin-top: vw(50);
         margin-bottom: vw(50);
         &-title {
           margin: 0 auto vw(50);
@@ -596,18 +608,18 @@
             transform: translate3d(-50%, vw(20), 0);
             order: 1;
             &.right, &.left {
-              picture {
+              picture, video {
                 display: block;
                 width: vw(315);
               }
             }
             &.right {
-              picture {
+              picture, video {
                 margin: 0 0 0 auto;
               }
             }
             &.left {
-              picture {
+              picture, video {
                 margin: 0 auto 0 0;
               }
             }
@@ -995,11 +1007,24 @@
         padding-top: rem(120);
       }
       &#section4 {
-        padding-bottom: rem(90);
+        padding-top: rem(120);
       }
       &#section5 {
-        padding-top: rem(90);
+        padding-top: rem(120);
         .section-title {
+          margin-bottom: rem(60);
+          line-height: 1;
+        }
+      }
+      &#section8 {
+        padding-top: rem(120);
+      }
+      &#section9 {
+        padding-top: rem(120);
+      }
+      &#section10 {
+        .section-title {
+          margin-top: rem(180);
           margin-bottom: rem(60);
           line-height: 1;
         }
@@ -1039,6 +1064,9 @@
           margin-bottom: rem(60);
           width: calc( 266 / 1200 * 100%);
           cursor: pointer;
+          &:nth-child(5),&:nth-child(6),&:nth-child(7),&:nth-child(8) {
+            margin-bottom: 0;
+          }
           &:hover {
             img {
               opacity: .8;
@@ -1082,6 +1110,7 @@
         }
       }
       .play-playful {
+        margin-top: rem(120);
         margin-bottom: rem(120);
         &-title {
           margin: 0 auto rem(120);
