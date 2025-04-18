@@ -39,7 +39,7 @@
 
 //@example	@include fontvw(13);
 @mixin fontvw($size: 24, $base: 10) {
-  font-size: ($size / $base * 0.5) * 1rem;
+  // font-size: ($size / $base * 0.5) * 1rem;
   font-size: $size / $spWidth * 100vw;
 }
 
@@ -55,8 +55,8 @@
 }
 
 @mixin fontvwPc($size: 24, $base: 10) {
-  font-size: ($size / $base * 0.5) * 1rem;
-  font-size: $size / 1440 * 100vw;
+  // font-size: ($size / $base * 0.5) * 1rem;
+  font-size: $size / 1280 * 100vw;
 }
 
 @function vw($px, $width: $spWidth) {
@@ -69,9 +69,26 @@
 }
 
 @function vwPc($px) {
-  @return (($px / 1440) * 100vw);
+  @return (($px / 1320) * 100vw);
 }
 
 @function perPc($px) {
   @return (($px / 1365) * 100%);
+}
+
+@mixin lineHeight($line-height1, $line-height2) {
+  line-height: calc($line-height1 / $line-height2);
+  &::before,
+  &::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+  }
+  &::before {
+      margin-top: (1 - calc($line-height1 / $line-height2)) * 0.5em;
+  }
+  &::after {
+      margin-bottom: (1 - calc($line-height1 / $line-height2)) * 0.5em;  //文字下の余白を消す
+  }
 }

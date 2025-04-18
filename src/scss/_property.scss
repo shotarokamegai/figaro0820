@@ -1,19 +1,26 @@
 ////////////////////////////////////////////////////////////
 // font
+$Shippori: "Shippori Mincho", serif;
+$YuMincho:YuMincho, "Hiragino Mincho ProN",serif;
+$YuGothic: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
 ////////////////////////////////////////////////////////////
 // color
 
-$credit: #737373;
-$black: #000000;
+$black: #272727;
 $white: #ffffff;
-$bg: #F3FAFF;
+$base: #070F24;
+$darkNavy: #070F24;
+$lightPink: #FFF5EE;
+$light: #FFFAE8;
+$pink: #D69693;
+$gray400: #9496A1;
 
-$spWidth: 375;
+$delay: 1;
+$spWidth: 393;
 
 ////////////////////////////////////////////////////////////
 // easing
 
-$slideInit: cubic-bezier(1, 0, 0.4, 1);
 $circle: cubic-bezier(0.4, 0, 0, 1);
 $slide: cubic-bezier(0.8, 0, 0.2, 1);
 $zoom: cubic-bezier(0.65, 0.05, 0.36, 1);

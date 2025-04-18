@@ -1,7 +1,6 @@
 const gulp = require("gulp");
 const connect = require('gulp-connect');
 const notify = require('gulp-notify');
-const htmlbeautify = require("gulp-html-beautify");
 const webpack = require("webpack");
 const cleanCSS = require('gulp-clean-css');
 const webpackStream = require("webpack-stream");
@@ -10,6 +9,7 @@ const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps')
 const sass = require('gulp-sass')(require('sass'));
 const autoprefixer = require("autoprefixer");
+const tailwindcss = require('tailwindcss');
 // const webserver = require('gulp-webserver');
 const plumber = require('gulp-plumber');
 const postcss = require('gulp-postcss')
@@ -61,8 +61,8 @@ gulp.task("js", (done) => {
         }]
       },
     }, webpack))
-    .pipe(connect.reload())
-    .pipe(gulp.dest('./js/'));
+    // .pipe(connect.reload())
+    .pipe(gulp.dest('./assets/js/'));
   done();
 });
 // });
@@ -74,16 +74,16 @@ gulp.task('sass', () => {
     .pipe(plumber())
     .pipe(sass().on('error', sass.logError))
     .pipe(sourcemaps.init())
-    .pipe(postcss([autoprefixer()]))
+    .pipe(postcss([tailwindcss(), autoprefixer()]))
     // .pipe(webpack())
-    .pipe(gulp.dest('./css/'))
+    .pipe(gulp.dest('./assets/css/'))
     .pipe(cleanCSS())
     .pipe(rename({
       suffix: '.min',
     }))
     .pipe(sourcemaps.write('.'))
-    .pipe(connect.reload())
-    .pipe(gulp.dest('./css/'));
+    // .pipe(connect.reload())
+    .pipe(gulp.dest('./assets/css/'));
 
   return (pc);
 });
@@ -93,7 +93,7 @@ gulp.task('ejs', (done) => {
   gulp.src('./src/ejs/_index.ejs')
     .pipe(ejs())
     .pipe(rename('index.html'))
-    .pipe(connect.reload())
+    // .pipe(connect.reload())
     .pipe(gulp.dest(`./`));
   done();
 });

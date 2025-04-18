@@ -1,14 +1,5 @@
-.special-241217 {
-box-sizing: border-box;
-* {
-  margin: 0;
-  padding: 0;
-}
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
+html,
+body,
 div,
 span,
 applet,
@@ -129,15 +120,42 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "游明朝", YuMincho, "Hiragino Mincho ProN W3",
+    "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝",
+    "ＭＳ 明朝", serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 img {
   width: 100%;
   max-width: 100%;
   height: auto;
   display: block;
 }
+
 a {
   text-decoration: none;
 }
+
+.invisible {
+  visibility: hidden;
+}
+
 .reset {
   transition: none !important;
   animation: none !important;
@@ -146,61 +164,37 @@ a {
     animation: none !important;
   }
 }
+
+.center-xy {
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0)
+}
+.center-y {
+  top: 50%;
+  transform: translate3d(0, -50%, 0)
+}
+.center-x {
+  left: 50%;
+  transform: translate3d(-50%, 0, 0)
+}
+.link {
+  @include center();
+  height: 100%;
+  width: 100%;
+  z-index: 10;
 }
 
 @media screen and (max-width: 749px) {
-  .special-241217 {
-    .pc {
-      display: none !important;
-    }
-    .flex-sp {
-      display: flex;
-      &.space-between {
-        justify-content: space-between;
-      }
-      &.justify-center {
-        justify-content: center;
-      }
-      &.justify-end {
-        justify-content: flex-end;
-      }
-      &.align-center {
-        align-items: center;
-      }
-      &.align-end {
-        align-items: flex-end;
-      }
-      &.flex-wrap {
-        flex-wrap: wrap;
-      }
-    }
+  .pc {
+    display: none !important;
   }
 }
 @media screen and (min-width: 750px) {
-  .special-241217 {
-    .sp {
-      display: none !important;
-    }
-    .flex {
-      display: flex;
-      &.space-between {
-        justify-content: space-between;
-      }
-      &.justify-center {
-        justify-content: center;
-      }
-      &.justify-end {
-        justify-content: flex-end;
-      }
-      &.align-center {
-        align-items: center;
-      }
-      &.align-end {
-        align-items: flex-end;
-      }
-      &.flex-wrap {
-        flex-wrap: wrap;
-      }
-    }
+  // html {
+  //   font-size: 10px;
+  // }
+  .sp {
+    display: none !important;
   }
 }
