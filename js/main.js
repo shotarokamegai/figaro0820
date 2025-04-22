@@ -1,67 +1,139 @@
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ([
 /* 0 */,
 /* 1 */
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Scroll)
-/* harmony export */ });
-
-
-// import DisableCover from 'controller/DisableCover';
-
-/**
- * import Scroll from 'utils/Scroll';
- */
-function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
-function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
-var Scroll = /*#__PURE__*/function () {
-  function Scroll() {
-    _classCallCheck(this, Scroll);
+var triggerMenu = function triggerMenu() {
+  var menuTriggerWrapper = document.getElementsByClassName('menu-trigger-wrapper');
+  var menu = document.getElementById('menu');
+  for (var i = 0; i < menuTriggerWrapper.length; i++) {
+    menuTriggerWrapper[i].addEventListener('click', initTriggerMenu);
   }
-  return _createClass(Scroll, null, [{
-    key: "to",
-    value:
-    /**
-     * @example Scroll.to(0,1,Power2.easeOut);
-     */
-    function to(y) {
-      var time = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : .3;
-      var ease = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : Power3.easeInOut;
-      TweenMax.to([document.body, document.documentElement], time, {
-        scrollTop: y,
-        ease: ease
-      });
-
-      // DisableCover.timer(time);
+  function initTriggerMenu() {
+    if (menu) {
+      if (menu.classList.contains('active')) {
+        menu.classList.remove('active');
+        for (var _i = 0; _i < menuTriggerWrapper.length; _i++) {
+          menuTriggerWrapper[_i].classList.remove('active');
+        }
+      } else {
+        menu.classList.add('active');
+        for (var _i2 = 0; _i2 < menuTriggerWrapper.length; _i2++) {
+          menuTriggerWrapper[_i2].classList.add('active');
+        }
+      }
     }
-
-    /**
-     * @example Scroll.set(0);
-     */
-  }, {
-    key: "set",
-    value: function set() {
-      var y = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-      var tgt;
-      if ('scrollingElement' in document) tgt = document.scrollingElement;else if ('WebkitAppearance' in document.documentElement.style) tgt = document.body;else tgt = document.documentElement;
-      tgt.scrollTop = y;
-    }
-  }]);
-}();
-
+  }
+};
+window.addEventListener("DOMContentLoaded", triggerMenu, false);
 
 /***/ }),
 /* 2 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
+
+
+gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["default"]);
+var scrollAnimation = function scrollAnimation() {
+  var top = document.getElementById('top');
+  var addactive = document.getElementsByClassName('addactive');
+  var parallax = document.getElementsByClassName('parallax');
+  var revert = document.getElementsByClassName('revert');
+  window.scrollTo(0, 0);
+  var _loop = function _loop() {
+    var elm = revert[i];
+    var start = "top 0";
+    var end = "top ".concat(top.clientHeight);
+    gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(elm, {
+      ease: "power4.inOut",
+      scrollTrigger: {
+        trigger: top,
+        start: start,
+        // end: end, 
+        // markers: true,
+        // end: end, 
+        onEnter: function onEnter() {
+          elm.classList.remove('revert_');
+        },
+        onEnterBack: function onEnterBack() {
+          elm.classList.remove('revert_');
+        },
+        onLeave: function onLeave() {
+          elm.classList.add('revert_');
+        }
+        // onLeaveBack: () => {
+        //   elm.classList.remove('revert_');
+        // },
+      }
+    });
+  };
+  for (var i = 0; i < revert.length; i++) {
+    _loop();
+  }
+  var _loop2 = function _loop2() {
+    var elm = addactive[_i];
+    var start = "top bottom-=".concat(window.innerHeight / 4);
+    gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(elm, {
+      ease: "power4.inOut",
+      scrollTrigger: {
+        trigger: elm,
+        start: start,
+        onEnter: function onEnter() {
+          elm.classList.add('active');
+          if (elm.classList.contains('show')) {
+            setTimeout(function () {
+              elm.classList.add('nowillchange');
+            }, 3000);
+          }
+        }
+      }
+    });
+  };
+  for (var _i = 0; _i < addactive.length; _i++) {
+    _loop2();
+  }
+  var _loop3 = function _loop3() {
+    var elm = parallax[_i2];
+    var parent = elm.parentNode;
+    var amount = elm.getAttribute('data-amount');
+    // if (window.innerWidth < 750) {
+    //   amount =  amount / 3.5;
+    // }
+    gsap__WEBPACK_IMPORTED_MODULE_0__["default"].fromTo(elm, {
+      // y: 0,
+      y: function y() {
+        return "".concat(amount / -2, "%");
+      }
+    }, {
+      y: function y() {
+        return "".concat(amount / 2, "%");
+      },
+      // ease: "power1.out",
+      scrollTrigger: {
+        trigger: parent,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1,
+        invalidateOnRefresh: true
+      }
+    });
+  };
+  for (var _i2 = 0; _i2 < parallax.length; _i2++) {
+    _loop3();
+  }
+};
+window.addEventListener("DOMContentLoaded", scrollAnimation, false);
+
+/***/ }),
+/* 3 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Back: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Back),
@@ -90,8 +162,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ gsapWithCSS),
 /* harmony export */   gsap: () => (/* binding */ gsapWithCSS)
 /* harmony export */ });
-/* harmony import */ var _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
-/* harmony import */ var _CSSPlugin_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
+/* harmony import */ var _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _CSSPlugin_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
 
 
 var gsapWithCSS = _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(_CSSPlugin_js__WEBPACK_IMPORTED_MODULE_1__.CSSPlugin) || _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.gsap,
@@ -100,9 +172,10 @@ TweenMaxWithCSS = gsapWithCSS.core.Tween;
 
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Animation: () => (/* binding */ Animation),
@@ -4664,9 +4737,10 @@ var Power0 = _easeMap.Power0,
 
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   CSSPlugin: () => (/* binding */ CSSPlugin),
@@ -4675,7 +4749,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   checkPrefix: () => (/* binding */ _checkPropPrefix),
 /* harmony export */   "default": () => (/* binding */ CSSPlugin)
 /* harmony export */ });
-/* harmony import */ var _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
+/* harmony import */ var _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
 /*!
  * CSSPlugin 3.12.5
  * https://gsap.com
@@ -6254,15 +6328,16 @@ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(CSSPlugin);
 
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ScrollTrigger: () => (/* binding */ ScrollTrigger),
 /* harmony export */   "default": () => (/* binding */ ScrollTrigger)
 /* harmony export */ });
-/* harmony import */ var _Observer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
+/* harmony import */ var _Observer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
 /*!
  * ScrollTrigger 3.12.5
  * https://gsap.com
@@ -8923,9 +8998,10 @@ _getGSAP() && gsap.registerPlugin(ScrollTrigger);
 
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Observer: () => (/* binding */ Observer),
@@ -9627,6 +9703,88 @@ Observer.getById = function (id) {
 _getGSAP() && gsap.registerPlugin(Observer);
 
 
+/***/ }),
+/* 8 */
+/***/ (() => {
+
+var mediaQuery = window.matchMedia('(min-width: 750px)');
+var top = document.getElementById('top');
+// 関数を定義
+// ロード時に判定
+checkWindow(mediaQuery);
+// ブレイクポイントが切り替わったら判定
+
+function checkWindow(windowSize) {
+  // ウィンドウサイズが768px以上か
+  if (windowSize.matches) {
+    // 768px以上の時（PCの処理）
+    console.log('PC');
+    // top.setAttribute('style', `height: 100vh;`);
+    // this.width = window.innerWidth;
+    // this.height = window.innerHeight;
+    // this.videoY = -this.height/4;
+    // this.animationScroll();
+  } else {
+    // 上記以外の時（SPの処理）
+    // top.setAttribute('style', `height: ${window.innerHeight}px;`);
+    // console.log('SP');
+    // this.width = window.innerWidth;
+    // this.height = window.innerHeight;
+    // this.videoY = -this.width/.84;
+    // this.animationScroll();
+  }
+}
+mediaQuery.addEventListener('change', checkWindow);
+
+/***/ }),
+/* 9 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
+
+
+var lenis = function lenis() {
+  var menu = document.getElementById('menu');
+  var menuTriggerWrapper = document.getElementsByClassName('menu-trigger-wrapper');
+  var menuTitle = document.getElementsByClassName('menu-title')[0];
+  var lerp = .07;
+  if (window.innerWidth < 750) {
+    lerp = 1;
+  }
+  var lenisInstance = new Lenis({
+    lerp: lerp,
+    smooth: true,
+    direction: "vertical"
+  });
+  var scrollTrigger = document.getElementsByClassName('scroll-trigger');
+  var _loop = function _loop() {
+    var target = document.getElementById(scrollTrigger[i].getAttribute('data-target'));
+    scrollTrigger[i].addEventListener('click', function () {
+      menu.classList.remove('active');
+      for (var _i = 0; _i < menuTriggerWrapper.length; _i++) {
+        menuTriggerWrapper[_i].classList.remove('active');
+      }
+      menuTitle.classList.remove('active');
+      lenisInstance.scrollTo(target, {
+        duration: 1
+      });
+    });
+  };
+  for (var i = 0; i < scrollTrigger.length; i++) {
+    _loop();
+  }
+  lenisInstance.on('scroll', function (e) {
+    gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_0__["default"].update();
+  });
+  gsap__WEBPACK_IMPORTED_MODULE_1__["default"].ticker.add(function (time) {
+    lenisInstance.raf(time * 1000);
+  });
+};
+window.addEventListener("DOMContentLoaded", lenis, false);
+
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -9655,6 +9813,18 @@ _getGSAP() && gsap.registerPlugin(Observer);
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -9685,379 +9855,75 @@ _getGSAP() && gsap.registerPlugin(Observer);
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
+"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _utils_Scroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
-/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
+/* harmony import */ var _modules_trigger_menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _modules_trigger_menu__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_modules_trigger_menu__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _modules_scroll_animation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var _modules_check_mediaquery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8);
+/* harmony import */ var _modules_check_mediaquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modules_check_mediaquery__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _modules_lenis__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9);
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
-function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+// import imagesLoaded from 'imagesloaded'
+
+// import initSwiper from "./modules/init-swiper";
+// import triggerModal from "./modules/trigger-modal";
+// import Common from "./modules/common";
 
 
+// import "./modules/movie";
 
 var main = /*#__PURE__*/function () {
   function main() {
     var _this = this;
     _classCallCheck(this, main);
-    this.width = window.innerWidth;
-    this.height = window.innerWidth;
-    this.header = document.getElementById('header');
-    this.toTop = document.getElementById('to-top');
-    this.top = document.getElementById('top');
-    this.container = document.getElementsByClassName('special-241217')[0];
-    this.visitor = document.getElementById('visitor');
-    this.modal = document.getElementById('modal');
-    this.footer = document.getElementById('footer');
-    this.textTarget = document.getElementsByClassName('text-target');
-    this.swiperContainer = document.getElementsByClassName('swiper-container');
-    this.swipers = [];
-    this.scrollTrigger = document.getElementsByClassName('scroll-trigger');
-    this.modalTrigger = document.getElementsByClassName('modal-trigger');
-    this.duration = 100;
-    this.end = 0;
-    this.index = 0;
-    this.velocity = 1;
-    this.velocity_ = 1;
-    this.swiperArry = [];
-    this.initial = true;
-    this.scrolling = false;
-    this.scrollActive = false;
-    this.scroller = document.body;
-    this.scrollingElement = 'scrollingElement' in document ? document.scrollingElement : window.navigator.userAgent.indexOf('WebKit') != -1 ? body : document.documentElement || body.parentNode;
-    gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger);
+    this.root = document.getElementById('root');
+    // this.swiper = new initSwiper()
+    // this.modal = new triggerModal();
 
-    // Splitting();
     this.init();
-    this.animationScroll();
-    for (var i = 0; i < this.modalTrigger.length; i++) {
-      this.modalTrigger[i].addEventListener('click', this.triggerModal.bind(this));
-    }
-    for (var _i = 0; _i < this.scrollTrigger.length; _i++) {
-      this.scrollTrigger[_i].addEventListener('click', this.toScroll.bind(this));
-    }
     window.onresize = function () {
       _this.resizeEvent();
     };
-    window.onscroll = function () {
-      _this.scrollAnimation();
-    };
-    var mediaQuery = window.matchMedia('(min-width: 750px)');
-    // 関数を定義
-    // ロード時に判定
-    this.checkWindow(mediaQuery);
-    // ブレイクポイントが切り替わったら判定
-    mediaQuery.addEventListener('change', this.checkWindow.bind(this));
   }
-  return _createClass(main, [{
-    key: "checkWindow",
-    value: function checkWindow(windowSize) {
-      // ウィンドウサイズが768px以上か
-      if (windowSize.matches) {
-        // 768px以上の時（PCの処理）
-        console.log('PC');
-        // this.width = window.innerWidth;
-        // this.height = window.innerHeight;
-        // this.videoY = -this.height/4;
-        // this.animationScroll();
-        for (var i = 0; i < this.swiperArry.length; i++) {
-          this.swiperArry[i].swiper.destroy();
-        }
-        this.swiperArry = [];
-        this.initSwiper();
-      } else {
-        // 上記以外の時（SPの処理）
-        console.log('SP');
-        // this.width = window.innerWidth;
-        // this.height = window.innerHeight;
-        // this.videoY = -this.width/.84;
-        // this.animationScroll();
-        for (var _i2 = 0; _i2 < this.swiperArry.length; _i2++) {
-          this.swiperArry[_i2].swiper.destroy();
-        }
-        this.swiperArry = [];
-        gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.refresh();
-      }
-    }
-  }, {
-    key: "initSwiper",
-    value: function initSwiper() {
-      for (var i = 0; i < this.swiperContainer.length; i++) {
-        var excute = false;
-        var thisSwiper = this.swiperContainer[i];
-        var slides = thisSwiper.getAttribute('data-slides') === 'auto' ? 'auto' : parseInt(thisSwiper.getAttribute('data-slides'));
-        var slidesPc = thisSwiper.getAttribute('data-slidesPc') === 'auto' ? 'auto' : parseInt(thisSwiper.getAttribute('data-slidesPc'));
-        var scrollbar = thisSwiper.getAttribute('data-scrollbar') === 'true' ? {
-          el: ".".concat(thisSwiper.getAttribute('id'), "-scrollbar")
-        } : false;
-        var scrollbarPc = thisSwiper.getAttribute('data-scrollbarPc') === 'true' ? {
-          el: ".".concat(thisSwiper.getAttribute('id'), "-scrollbar")
-        } : false;
-        var navigation = thisSwiper.getAttribute('data-navigation') === 'true' ? {
-          nextEl: thisSwiper.parentElement.getElementsByClassName('swiper-button-next')[0],
-          prevEl: thisSwiper.parentElement.getElementsByClassName('swiper-button-prev')[0],
-          clickable: true
-        } : false;
-        var navigationPc = thisSwiper.getAttribute('data-navigationPc') === 'true' ? {
-          nextEl: thisSwiper.parentElement.getElementsByClassName('swiper-button-next')[0],
-          prevEl: thisSwiper.parentElement.getElementsByClassName('swiper-button-prev')[0],
-          clickable: true
-        } : false;
-        var speed = parseInt(thisSwiper.getAttribute('data-speed'));
-        var loopedSlides = slides;
-        var autoplay = void 0;
-        if (thisSwiper.getAttribute('data-autoplay') === 'marquee') {
-          autoplay = {
-            delay: 0,
-            // pauseOnMouseEnter: true,
-            disableOnInteraction: false,
-            preventInteractionOnTransition: true
-          };
-          loopedSlides = document.getElementsByClassName('news').length;
-        } else if (thisSwiper.getAttribute('data-autoplay') === 'false') {
-          autoplay = false;
-        } else if (thisSwiper.getAttribute('data-autoplay') === 'true') {
-          autoplay = {
-            delay: 2000,
-            pauseOnMouseEnter: true,
-            disableOnInteraction: false
-          };
-        }
-        if (this.width < 750 && thisSwiper.getAttribute('data-swiper') === 'true') {
-          excute = true;
-        } else if (this.width > 750 && thisSwiper.getAttribute('data-swiperPc') === 'true') {
-          excute = true;
-        }
-        if (excute) {
-          var swiper = new Swiper(thisSwiper, {
-            speed: speed,
-            initialSlide: parseInt(thisSwiper.getAttribute('data-initialslide')),
-            autoplay: autoplay,
-            loop: thisSwiper.getAttribute('data-loop') === 'true' ? true : false,
-            loopedSlides: loopedSlides,
-            centeredSlides: thisSwiper.getAttribute('data-center') === 'true' ? true : false,
-            slidesPerView: slides,
-            spaceBetween: parseInt(thisSwiper.getAttribute('data-space')),
-            // slidesPerGroup: parseInt(thisSwiper.getAttribute('data-slides')),
-            scrollbar: scrollbar,
-            navigation: navigation,
-            on: {
-              slideChangeTransitionStart: function slideChangeTransitionStart(e) {
-                var index = document.getElementById("current1");
-                if (index) {
-                  var span = index.getElementsByTagName('span');
-                  var max = span.length;
-                  for (var _i3 = 0; _i3 < span.length; _i3++) {
-                    if (span[_i3].classList.contains('up')) {
-                      span[_i3].classList.remove('active');
-                      span[_i3].classList.remove('up');
-                    }
-                    if (span[_i3].classList.contains('active')) {
-                      if (span[_i3].classList.contains('initial')) {
-                        span[_i3].classList.remove('initial');
-                      } else {
-                        span[_i3].classList.add('up');
-                      }
-                    }
-                    if (e.realIndex === _i3 || e.realIndex === max && _i3 === 0) {
-                      span[_i3].classList.add('active');
-                    }
-                  }
-                }
-              }
-            },
-            breakpoints: {
-              750: {
-                slidesPerView: slidesPc,
-                loopedSlides: loopedSlides,
-                scrollbar: scrollbarPc,
-                navigation: navigationPc,
-                spaceBetween: parseInt(thisSwiper.getAttribute('data-spacePc'))
-              }
-            }
-          });
-          this.swiperArry.push({
-            swiper: swiper,
-            elm: thisSwiper
-          });
-        }
-      }
-    }
-  }, {
-    key: "animationScroll",
-    value: function animationScroll() {
-      var addactive = document.getElementsByClassName('addactive');
-      var parallax = document.getElementsByClassName('parallax');
-      var _loop = function _loop() {
-        var elm = parallax[i];
-        var amount = elm.getAttribute('data-amount');
-        gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.fromTo(elm, {
-          y: function y() {
-            return "".concat(amount / -2, "%");
-          }
-        }, {
-          y: function y() {
-            return "".concat(amount / 2, "%");
-          },
-          ease: "power1.out",
-          scrollTrigger: {
-            trigger: elm,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 1,
-            invalidateOnRefresh: true
-          }
-        });
-      };
-      for (var i = 0; i < parallax.length; i++) {
-        _loop();
-      }
-      var _loop2 = function _loop2() {
-        var elm = addactive[_i4];
-        var start = "top center+=".concat(window.innerHeight / 4);
-        if (elm.classList.contains('blur')) {
-          start = "top center";
-        }
-        if (elm.classList.contains('first')) {
-          start = "top bottom+=".concat(window.innerWidth * .3);
-        }
-        if (elm.classList.contains('delay')) {
-          start = "center center+=".concat(window.innerHeight / 4);
-        }
-        gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.to(elm, {
-          ease: "power4.inOut",
-          scrollTrigger: {
-            trigger: elm,
-            start: start,
-            onEnter: function onEnter() {
-              elm.classList.add('active');
-            }
-          }
-        });
-      };
-      for (var _i4 = 0; _i4 < addactive.length; _i4++) {
-        _loop2();
-      }
-    }
-  }, {
-    key: "mapRange",
-    value: function mapRange(value, a, b, c, d) {
-      // first map value from (a..b) to (0..1)
-      value = (value - a) / (b - a);
-      // then map it from (0..1) to (c..d) and return it
-      return c + value * (d - c);
-    }
-  }, {
-    key: "lerp",
-    value: function lerp(a, b, t) {
-      if (b == a) return a;
-      return a + t * (b - a);
-    }
-  }, {
-    key: "triggerModal",
-    value: function triggerModal(e) {
-      var elm = e.currentTarget;
-      if (this.modal.classList.contains('active')) {
-        this.modal.classList.remove('active');
-      } else {
-        var index = parseInt(elm.getAttribute('data-target'));
-        this.modal.classList.add('active');
-        if (this.width < 750) {
-          this.modal.scrollTo(0, document.getElementsByClassName('swiper-slide')[index - 1].offsetTop);
-        } else {
-          this.swiperArry[0].swiper.slideTo(index);
-        }
-      }
-    }
-  }, {
-    key: "toScroll",
-    value: function toScroll(e) {
-      var elm = e.currentTarget;
-      var target = document.getElementById(elm.getAttribute('data-target'));
-      var elemRect = target.getBoundingClientRect();
-      var scrollY = window.scrollY || window.pageYOffset;
-      var top = elemRect.top + scrollY;
-      top -= this.header.clientHeight;
-      _utils_Scroll__WEBPACK_IMPORTED_MODULE_0__["default"].to(top, 2);
-    }
-  }, {
-    key: "interval",
-    value: function interval() {
-      this.velocity = this.lerp(this.velocity, 1, .05);
-      // console.log(this.velocity);
-      if (this.velocity > 0) {
-        this.tl.timeScale(this.velocity);
-      }
-    }
-  }, {
+  _createClass(main, [{
     key: "init",
     value: function init() {
+      var _this2 = this;
+      // new Common();
       this.resizeEvent();
-      // this.lenis();
-      this.initSwiper();
-      window.scrollTo(0, 0);
-      this.container.classList.add('loaded');
+      setTimeout(function () {
+        _this2.root.classList.add('loaded');
+      }, 10);
+      var vh = window.innerHeight * 0.01;
+      // カスタム変数--vhの値をドキュメントのルートに設定
+      document.documentElement.style.setProperty('--vh', "".concat(vh, "px"));
     }
   }, {
     key: "resizeEvent",
     value: function resizeEvent() {
-      var vh = window.innerHeight * 0.01;
-      // カスタム変数--vhの値をドキュメントのルートに設定
-      document.documentElement.style.setProperty('--vh', "".concat(vh, "px"));
-      for (var i = 0; i < this.swipers.length; i++) {
-        // let thisSwiper = this.swipers[i];
-        // console.log(thisSwiper)
-        // thisSwiper.autoplay.stop();
-        // thisSwiper.autoplay.start();
-      }
-    }
-  }, {
-    key: "scrollAnimation",
-    value: function scrollAnimation() {
-      this.scrollY = this.scrollingElement.scrollTop;
-
-      // if (this.scrollY > this.height) {
-      //   this.toTop.classList.add('active');
-      // } else {
-      //   this.toTop.classList.remove('active');
-      // }
-    }
-  }, {
-    key: "lenis",
-    value: function lenis() {
-      var _this2 = this;
-      var lerp = .8;
-      var duration = 1.1;
-      if (this.width < 750) {
-        // lerp = .1;
-        // duration = 3;
-        // this.lenisInstance = new Lenis({
-        //   lerp: lerp,
-        //   duration: duration,
-        //   smooth: true,
-        //   smoothTouch: true,
-        // })
-      } else {
-        if (this.browserName === 'Safari' && parseFloat(this.browserVersion) < 14) {} else {
-          this.lenisInstance = new Lenis({
-            lerp: lerp,
-            duration: duration
-          });
-        }
-      }
-      if (this.lenisInstance) {
-        gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.ticker.add(function (time) {
-          _this2.lenisInstance.raf(time * 1000);
-        });
+      if (window.innerWidth < 750) {} else {
+        var vh = window.innerHeight * 0.01;
+        // カスタム変数--vhの値をドキュメントのルートに設定
+        document.documentElement.style.setProperty('--vh', "".concat(vh, "px"));
+        // if (window.innerWidth / window.innerHeight > 1440 / 810) {
+        //   this.root.classList.add('yoko');
+        // } else {
+        //   this.root.classList.remove('yoko');
+        // }
       }
     }
   }]);
+  return main;
 }();
-window.addEventListener("load", function () {
+window.addEventListener('DOMContentLoaded', function () {
   new main();
 });
 })();
