@@ -1473,6 +1473,9 @@ a {
   #contentTop section .parallax.parallax2 {
     height: 129.0076335878vw;
   }
+  #contentTop section .parallax.parallax3 {
+    height: 76.844783715vw;
+  }
   #contentTop section .parallax img {
     max-height: initial;
     max-width: initial;
@@ -1769,6 +1772,9 @@ a {
   }
   #contentTop section .parallax.parallax2 {
     height: 77.8472222222vw;
+  }
+  #contentTop section .parallax.parallax3 {
+    height: 52.8472222222vw;
   }
   #contentTop section .parallax img {
     max-height: initial;

@@ -292,6 +292,9 @@ body {
         &.parallax2 {
           height: vw(507);
         }
+        &.parallax3 {
+          height: vw(302);
+        }
         img {
           max-height: initial;
           max-width: initial;
@@ -633,23 +636,13 @@ body {
       }
       .parallax {
         &.parallax1 {
-          // min-height: rem(640);
           height: calc( 640 / 1440 * 100vw);
         }
         &.parallax2 {
-          // min-height: rem(640);
           height: calc( 1121 / 1440 * 100vw);
-          .image {
-            // height: 100%;
-            // picture {
-            //   display: flex;
-            //   justify-content: center;
-            // }
-            // img {
-            //   height: calc( 1320 / 1121 * 100%);
-            //   width: auto;
-            // }
-          }
+        }
+        &.parallax3 {
+          height: calc( 761 / 1440 * 100vw);
         }
         img {
           max-height: initial;
