@@ -13,6 +13,12 @@ const InitLenis = () => {
     lerp = 1;
   }
 
+  const easeInOutCubic = (x) => {
+    return x < 0.5
+      ? 4 * x * x * x
+      : 1 - Math.pow(-2 * x + 2, 3) / 2;
+  };
+
   const lenisInstance = new Lenis({
     lerp: lerp,
     smooth: true,
@@ -23,13 +29,14 @@ const InitLenis = () => {
   for (let i = 0; i < scrollTrigger.length; i++) {
     let target = document.getElementById(scrollTrigger[i].getAttribute('data-target'));
     scrollTrigger[i].addEventListener('click', () => {
-      menu.classList.remove('active');
-      for (let i = 0; i < menuTriggerWrapper.length; i++) {
-        menuTriggerWrapper[i].classList.remove('active');
-      }
-      menuTitle.classList.remove('active');
+      // menu.classList.remove('active');
+      // for (let i = 0; i < menuTriggerWrapper.length; i++) {
+      //   menuTriggerWrapper[i].classList.remove('active');
+      // }
+      // menuTitle.classList.remove('active');
       lenisInstance.scrollTo(target, {
-        duration: 1
+        duration: 1,
+        easing: easeInOutCubic
       })
     })
   }

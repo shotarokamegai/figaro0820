@@ -51,12 +51,15 @@ body {
     &.loaded {
       .section {
         &#top {
-          &::after {
-            opacity: 1;
+          // &::after {
+          //   opacity: 1;
+          // }
+          .hidden {
+            opacity: 0;
           }
           .title {
-            opacity: 0;
-            transform: translate3d(-50%, calc( -50% + rem(-50) ), 0);
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
           }
           .back {
             opacity: 1;
@@ -112,6 +115,13 @@ body {
           z-index: 1;
           display: none;
         }
+        .hidden {
+          will-change: opacity; 
+          transition: opacity 2s $Power1easeInOut 2s;
+        }
+        .back {
+          margin-bottom: vw(32);
+        }
         .title, .back, .scroll-trigger {
           z-index: 2;
         }
@@ -143,15 +153,18 @@ body {
         }
         .title {
           margin-top: vw(32);
+          margin-bottom: vw(66);
           width: vw(324);
+          opacity: 0;
+          transform: translate3d(0, vw(20), 0);
           will-change: opacity, transform; 
-          transition: opacity 1s $Power1easeIn 1.5s, transform 1s $Power1easeIn 1.5s;
+          transition: opacity 2s $Power1easeInOut 4s, transform 2s $Power1easeInOut 4s;
         }
         .back {
           opacity: 0;
-          transform: translate3d(0, rem(50), 0);
-          will-change: opacity, transform; 
-          transition: opacity 2s $Power1easeInOut 2s, transform 2s $Power1easeInOut 2s;
+          // transform: translate3d(0, rem(50), 0);
+          will-change: opacity; 
+          transition: opacity 2s $Power1easeInOut 4s;
           background: linear-gradient(to bottom, #FFFEFB, #F9F8F2);
           img {
 
@@ -276,7 +289,7 @@ body {
           height: vw(262);
         }
         &.parallax2 {
-          height: calc( 1121 / 1440 * 100vw);
+          height: vw(507);
         }
         img {
           max-height: initial;
@@ -449,16 +462,16 @@ body {
     }
     section {
       &#top {
-        &::after {
-          content: '';
-          @include center();
-          height: 100%;
-          width: 100%;
-          background-color: $white;
-          will-change: opacity; 
-          transition: opacity 2s $Power1easeInOut 2s;
-          z-index: 1;
-        }
+        // &::after {
+        //   content: '';
+        //   @include center();
+        //   height: 100%;
+        //   width: 100%;
+        //   background-color: $white;
+        //   will-change: opacity; 
+        //   transition: opacity 2s $Power1easeInOut 2s;
+        //   z-index: 1;
+        // }
         .title, .back, .scroll-trigger {
           z-index: 2;
         }

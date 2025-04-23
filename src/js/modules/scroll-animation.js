@@ -110,11 +110,16 @@ const scrollAnimation = () => {
 
     for (let i = 0; i < parallax.length; i++) {
       let elm = parallax[i];
-      let amount = elm.getAttribute('data-amount');
+      let amountPc = elm.getAttribute('data-amount');
+      let amountSp = elm.getAttribute('data-amountSp');
+      let amount = '';
       let child = elm.getElementsByClassName('image')[0];
-      // if (window.innerWidth < 750) {
-      //   amount =  amount / 3.5;
-      // }
+
+      if (window.innerWidth < 750) {
+        amount =  amountSp;
+      } else {
+        amount =  amountPc;
+      }
       gsap.fromTo(child, {
         // y: 0,
         y: () => `0`,

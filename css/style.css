@@ -1251,12 +1251,12 @@ a {
 }
 
 @media screen and (max-width: 749px) {
-  #contentTop.loaded .section#top::after {
-    opacity: 1;
+  #contentTop.loaded .section#top .hidden {
+    opacity: 0;
   }
   #contentTop.loaded .section#top .title {
-    opacity: 0;
-    transform: translate3d(-50%, calc(-50% + -50px), 0);
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
   #contentTop.loaded .section#top .back {
     opacity: 1;
@@ -1308,6 +1308,13 @@ a {
     z-index: 1;
     display: none;
   }
+  #contentTop section#top .hidden {
+    will-change: opacity;
+    transition: opacity 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s;
+  }
+  #contentTop section#top .back {
+    margin-bottom: 8.1424936387vw;
+  }
   #contentTop section#top .title, #contentTop section#top .back, #contentTop section#top .scroll-trigger {
     z-index: 2;
   }
@@ -1339,15 +1346,17 @@ a {
   }
   #contentTop section#top .title {
     margin-top: 8.1424936387vw;
+    margin-bottom: 16.7938931298vw;
     width: 82.4427480916vw;
+    opacity: 0;
+    transform: translate3d(0, 5.0890585242vw, 0);
     will-change: opacity, transform;
-    transition: opacity 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 1.5s, transform 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 1.5s;
+    transition: opacity 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 4s, transform 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 4s;
   }
   #contentTop section#top .back {
     opacity: 0;
-    transform: translate3d(0, 50px, 0);
-    will-change: opacity, transform;
-    transition: opacity 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s, transform 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s;
+    will-change: opacity;
+    transition: opacity 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 4s;
     background: linear-gradient(to bottom, #FFFEFB, #F9F8F2);
   }
   #contentTop section#about {
@@ -1460,7 +1469,7 @@ a {
     height: 66.6666666667vw;
   }
   #contentTop section .parallax.parallax2 {
-    height: 77.8472222222vw;
+    height: 129.0076335878vw;
   }
   #contentTop section .parallax img {
     max-height: initial;
@@ -1599,19 +1608,6 @@ a {
     margin-top: 32px;
     font-size: 12px;
     line-height: 160%;
-  }
-  #contentTop section#top::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%) scale(1) rotate(0);
-    height: 100%;
-    width: 100%;
-    background-color: #ffffff;
-    will-change: opacity;
-    transition: opacity 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s;
-    z-index: 1;
   }
   #contentTop section#top .title, #contentTop section#top .back, #contentTop section#top .scroll-trigger {
     z-index: 2;
@@ -1886,6 +1882,12 @@ a {
 @media (max-width: 750px){
   .sm\:relative{
     position: relative;
+  }
+  .sm\:left-0{
+    left: 0px;
+  }
+  .sm\:top-0{
+    top: 0px;
   }
   .sm\:order-1{
     order: 1;

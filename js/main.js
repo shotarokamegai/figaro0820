@@ -81,6 +81,9 @@ var InitLenis = function InitLenis() {
   if (window.innerWidth < 750) {
     lerp = 1;
   }
+  var easeInOutCubic = function easeInOutCubic(x) {
+    return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+  };
   var lenisInstance = new lenis__WEBPACK_IMPORTED_MODULE_0__["default"]({
     lerp: lerp,
     smooth: true,
@@ -90,13 +93,14 @@ var InitLenis = function InitLenis() {
   var _loop = function _loop() {
     var target = document.getElementById(scrollTrigger[i].getAttribute('data-target'));
     scrollTrigger[i].addEventListener('click', function () {
-      menu.classList.remove('active');
-      for (var _i = 0; _i < menuTriggerWrapper.length; _i++) {
-        menuTriggerWrapper[_i].classList.remove('active');
-      }
-      menuTitle.classList.remove('active');
+      // menu.classList.remove('active');
+      // for (let i = 0; i < menuTriggerWrapper.length; i++) {
+      //   menuTriggerWrapper[i].classList.remove('active');
+      // }
+      // menuTitle.classList.remove('active');
       lenisInstance.scrollTo(target, {
-        duration: 1
+        duration: 1,
+        easing: easeInOutCubic
       });
     });
   };
@@ -10863,11 +10867,15 @@ var scrollAnimation = function scrollAnimation() {
   }
   var _loop4 = function _loop4() {
     var elm = parallax[_i4];
-    var amount = elm.getAttribute('data-amount');
+    var amountPc = elm.getAttribute('data-amount');
+    var amountSp = elm.getAttribute('data-amountSp');
+    var amount = '';
     var child = elm.getElementsByClassName('image')[0];
-    // if (window.innerWidth < 750) {
-    //   amount =  amount / 3.5;
-    // }
+    if (window.innerWidth < 750) {
+      amount = amountSp;
+    } else {
+      amount = amountPc;
+    }
     gsap__WEBPACK_IMPORTED_MODULE_0__["default"].fromTo(child, {
       // y: 0,
       y: function y() {
