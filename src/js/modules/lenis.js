@@ -1,7 +1,8 @@
+import Lenis from 'lenis'
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
-const lenis = () => {
+const InitLenis = () => {
   const menu = document.getElementById('menu');
   const menuTriggerWrapper = document.getElementsByClassName('menu-trigger-wrapper');
   const menuTitle = document.getElementsByClassName('menu-title')[0];
@@ -40,4 +41,4 @@ const lenis = () => {
   })
 }
 
-window.addEventListener("DOMContentLoaded", lenis, false);
+window.addEventListener("DOMContentLoaded", InitLenis, false);
