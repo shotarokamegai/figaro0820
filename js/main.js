@@ -113,6 +113,9 @@ var InitLenis = function InitLenis() {
   gsap__WEBPACK_IMPORTED_MODULE_2__["default"].ticker.add(function (time) {
     lenisInstance.raf(time * 1000);
   });
+  lenisInstance.scrollTo(document.getElementById('contentTop'), {
+    immediate: true
+  });
 };
 window.addEventListener("DOMContentLoaded", InitLenis, false);
 

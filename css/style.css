@@ -1228,6 +1228,7 @@ a {
 }
 
 #contentTop {
+  opacity: 0;
   font-family: "Hiragino Sans", Meiryo, sans-serif;
   will-change: opacity;
   color: #272727;
@@ -1321,7 +1322,6 @@ a {
   #contentTop section#top .scroll-trigger {
     left: auto;
     transform: translate3d(0, 0, 0);
-    width: 2.0356234097vw;
   }
   #contentTop section#top .scroll-trigger p {
     writing-mode: vertical-rl;
@@ -1919,6 +1919,9 @@ a {
   }
   .sm\:text-left{
     text-align: left;
+  }
+  .sm\:text-center{
+    text-align: center;
   }
   .sm\:text-key2{
     --tw-text-opacity: 1;

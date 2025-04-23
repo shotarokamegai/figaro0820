@@ -21,7 +21,7 @@ body {
   // background-color: $base;
 }
 #contentTop {
-  // opacity: 0;
+  opacity: 0;
   font-family: "Hiragino Sans",
     Meiryo,
     sans-serif;
@@ -128,7 +128,6 @@ body {
         .scroll-trigger {
           left: auto;
           transform: translate3d(0, 0, 0);
-          width: vw(8);
           p {
             writing-mode: vertical-rl;
             @include fontvw(12);

@@ -46,6 +46,7 @@ const InitLenis = () => {
   gsap.ticker.add((time)=>{
     lenisInstance.raf(time * 1000)
   })
+  lenisInstance.scrollTo(document.getElementById('contentTop'), {immediate: true})
 }
 
 window.addEventListener("DOMContentLoaded", InitLenis, false);
