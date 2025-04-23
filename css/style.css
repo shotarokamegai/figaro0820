@@ -1325,6 +1325,8 @@ a {
   }
   #contentTop section#top .scroll-trigger p {
     writing-mode: vertical-rl;
+    white-space: pre;
+    display: inline-block;
     font-size: 3.0534351145vw;
   }
   #contentTop section#top .scroll-trigger div {
