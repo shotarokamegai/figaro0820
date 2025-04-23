@@ -101,10 +101,13 @@ body {
     }
     section {
       &#top {
+        background: linear-gradient(to bottom, #FFFEFB, #F9F8F2);
         &::after {
+          position: absolute;
           content: '';
-          @include center();
-          height: 100%;
+          top: 0;
+          left: 0;
+          height: vw(491);
           width: 100%;
           background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
           will-change: opacity; 
@@ -165,7 +168,6 @@ body {
           // transform: translate3d(0, rem(50), 0);
           will-change: opacity; 
           transition: opacity 2s $Power1easeInOut 4s;
-          background: linear-gradient(to bottom, #FFFEFB, #F9F8F2);
           img {
 
           }

@@ -1299,13 +1299,15 @@ a {
     font-size: 3.0534351145vw;
     line-height: 160%;
   }
+  #contentTop section#top {
+    background: linear-gradient(to bottom, #FFFEFB, #F9F8F2);
+  }
   #contentTop section#top::after {
-    content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%) scale(1) rotate(0);
-    height: 100%;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 124.9363867684vw;
     width: 100%;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(255, 255, 255));
     will-change: opacity;
@@ -1365,7 +1367,6 @@ a {
     opacity: 0;
     will-change: opacity;
     transition: opacity 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 4s;
-    background: linear-gradient(to bottom, #FFFEFB, #F9F8F2);
   }
   #contentTop section#about {
     padding: 10.1781170483vw 0 15.2671755725vw;
