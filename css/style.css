@@ -516,6 +516,10 @@ video {
 .border{
   border-width: 1px;
 }
+.bg-white{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
 .text-center{
   text-align: center;
 }
@@ -1273,7 +1277,7 @@ a {
     height: 100%;
     width: 100%;
     background-image: url(./../../img/noise.png);
-    background-size: 1200px;
+    background-size: 600px;
     background-repeat: repeat;
     z-index: 0;
   }
@@ -1595,7 +1599,7 @@ a {
     height: 100%;
     width: 100%;
     background-image: url(./../../img/noise.png);
-    background-size: 1200px;
+    background-size: 600px;
     background-repeat: repeat;
     z-index: 0;
   }
@@ -1614,6 +1618,19 @@ a {
     margin-top: 32px;
     font-size: 12px;
     line-height: 160%;
+  }
+  #contentTop section#top::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) scale(1) rotate(0);
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(255, 255, 255));
+    will-change: opacity;
+    transition: opacity 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s;
+    z-index: 1;
   }
   #contentTop section#top .title, #contentTop section#top .back, #contentTop section#top .scroll-trigger {
     z-index: 2;
@@ -1656,7 +1673,7 @@ a {
     transform: translate3d(0, 50px, 0);
     will-change: opacity, transform;
     transition: opacity 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s, transform 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s;
-    background: linear-gradient(to bottom, #FFFEFB, #F9F8F2);
+    background: linear-gradient(to bottom right, #FFFEFB, #F9F8F2);
   }
   #contentTop section#about {
     padding: 80px 0 120px;
@@ -1675,7 +1692,7 @@ a {
   }
   #contentTop section#interview {
     padding: 80px 0 120px;
-    background: linear-gradient(to bottom, #FFFEFB, #F9F8F2);
+    background: linear-gradient(to bottom right, #FFFEFB, #F9F8F2);
   }
   #contentTop section#interview .content {
     width: 73.9631336406%;
