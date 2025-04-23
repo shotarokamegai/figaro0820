@@ -72,7 +72,7 @@ const scrollAnimation = () => {
         opacity: 1,
         y: `0px`,
         duration: 1,
-        ease: "power4.inOut",
+        ease: "power1.inOut",
         scrollTrigger: {
           trigger: elm,
           start: start, 
