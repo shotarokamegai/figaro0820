@@ -26,6 +26,10 @@ const InitLenis = () => {
   })
   const scrollTrigger = document.getElementsByClassName('scroll-trigger');
 
+  setTimeout(() => {
+  lenisInstance.scrollTo(document.getElementById('wrapper'), {immediate: true})
+  }, 500)
+
   for (let i = 0; i < scrollTrigger.length; i++) {
     let target = document.getElementById(scrollTrigger[i].getAttribute('data-target'));
     scrollTrigger[i].addEventListener('click', () => {
@@ -46,7 +50,6 @@ const InitLenis = () => {
   gsap.ticker.add((time)=>{
     lenisInstance.raf(time * 1000)
   })
-  lenisInstance.scrollTo(document.getElementById('contentTop'), {immediate: true})
 }
 
 window.addEventListener("DOMContentLoaded", InitLenis, false);

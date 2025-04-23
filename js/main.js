@@ -90,6 +90,11 @@ var InitLenis = function InitLenis() {
     direction: "vertical"
   });
   var scrollTrigger = document.getElementsByClassName('scroll-trigger');
+  setTimeout(function () {
+    lenisInstance.scrollTo(document.getElementById('wrapper'), {
+      immediate: true
+    });
+  }, 500);
   var _loop = function _loop() {
     var target = document.getElementById(scrollTrigger[i].getAttribute('data-target'));
     scrollTrigger[i].addEventListener('click', function () {
@@ -112,9 +117,6 @@ var InitLenis = function InitLenis() {
   });
   gsap__WEBPACK_IMPORTED_MODULE_2__["default"].ticker.add(function (time) {
     lenisInstance.raf(time * 1000);
-  });
-  lenisInstance.scrollTo(document.getElementById('contentTop'), {
-    immediate: true
   });
 };
 window.addEventListener("DOMContentLoaded", InitLenis, false);
