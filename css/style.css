@@ -1366,7 +1366,7 @@ a {
   #contentTop section#top .back {
     opacity: 0;
     will-change: opacity;
-    transition: opacity 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 4s;
+    transition: opacity 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 4s;
   }
   #contentTop section#about {
     padding: 10.1781170483vw 0 15.2671755725vw;
