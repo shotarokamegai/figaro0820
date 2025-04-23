@@ -25,10 +25,10 @@ class main {
     let vh = window.innerHeight * 0.01;
     // カスタム変数--vhの値をドキュメントのルートに設定
     document.documentElement.style.setProperty('--vh', `${vh}px`);
-    setTimeout(() => {
-      this.lenis.lenisInstance.scrollTo(document.getElementById('wrapper'), {immediate: true})
-      this.root.classList.add('loaded');
-    }, 500);
+    this.root.classList.add('loaded');
+    // setTimeout(() => {
+    //   this.lenis.lenisInstance.scrollTo(document.getElementById('wrapper'), {immediate: true})
+    // }, 500);
   }
 
   resizeEvent() {

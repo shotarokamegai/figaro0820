@@ -11027,18 +11027,15 @@ var main = /*#__PURE__*/function () {
   _createClass(main, [{
     key: "init",
     value: function init() {
-      var _this2 = this;
       // new Common();
       this.resizeEvent();
       var vh = window.innerHeight * 0.01;
       // カスタム変数--vhの値をドキュメントのルートに設定
       document.documentElement.style.setProperty('--vh', "".concat(vh, "px"));
-      setTimeout(function () {
-        _this2.lenis.lenisInstance.scrollTo(document.getElementById('wrapper'), {
-          immediate: true
-        });
-        _this2.root.classList.add('loaded');
-      }, 500);
+      this.root.classList.add('loaded');
+      // setTimeout(() => {
+      //   this.lenis.lenisInstance.scrollTo(document.getElementById('wrapper'), {immediate: true})
+      // }, 500);
     }
   }, {
     key: "resizeEvent",
