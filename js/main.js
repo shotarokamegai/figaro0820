@@ -90,11 +90,9 @@ var InitLenis = function InitLenis() {
     direction: "vertical"
   });
   var scrollTrigger = document.getElementsByClassName('scroll-trigger');
-  setTimeout(function () {
-    lenisInstance.scrollTo(document.getElementById('wrapper'), {
-      immediate: true
-    });
-  }, 500);
+  lenisInstance.scrollTo(document.getElementById('wrapper'), {
+    immediate: true
+  });
   var _loop = function _loop() {
     var target = document.getElementById(scrollTrigger[i].getAttribute('data-target'));
     scrollTrigger[i].addEventListener('click', function () {

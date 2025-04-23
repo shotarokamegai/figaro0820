@@ -26,9 +26,7 @@ const InitLenis = () => {
   })
   const scrollTrigger = document.getElementsByClassName('scroll-trigger');
 
-  setTimeout(() => {
   lenisInstance.scrollTo(document.getElementById('wrapper'), {immediate: true})
-  }, 500)
 
   for (let i = 0; i < scrollTrigger.length; i++) {
     let target = document.getElementById(scrollTrigger[i].getAttribute('data-target'));
