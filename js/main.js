@@ -67,57 +67,70 @@ mediaQuery.addEventListener('change', checkWindow);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var lenis__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7);
 /* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 
 
 
-var InitLenis = function InitLenis() {
-  var menu = document.getElementById('menu');
-  var menuTriggerWrapper = document.getElementsByClassName('menu-trigger-wrapper');
-  var menuTitle = document.getElementsByClassName('menu-title')[0];
-  var lerp = .07;
-  if (window.innerWidth < 750) {
-    lerp = 1;
+var InitLenis = /*#__PURE__*/function () {
+  function InitLenis() {
+    _classCallCheck(this, InitLenis);
   }
-  var easeInOutCubic = function easeInOutCubic(x) {
-    return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
-  };
-  var lenisInstance = new lenis__WEBPACK_IMPORTED_MODULE_0__["default"]({
-    lerp: lerp,
-    smooth: true,
-    direction: "vertical"
-  });
-  var scrollTrigger = document.getElementsByClassName('scroll-trigger');
-  lenisInstance.scrollTo(document.getElementById('wrapper'), {
-    immediate: true
-  });
-  var _loop = function _loop() {
-    var target = document.getElementById(scrollTrigger[i].getAttribute('data-target'));
-    scrollTrigger[i].addEventListener('click', function () {
-      // menu.classList.remove('active');
-      // for (let i = 0; i < menuTriggerWrapper.length; i++) {
-      //   menuTriggerWrapper[i].classList.remove('active');
-      // }
-      // menuTitle.classList.remove('active');
-      lenisInstance.scrollTo(target, {
-        duration: 1,
-        easing: easeInOutCubic
+  _createClass(InitLenis, [{
+    key: "init",
+    value: function init() {
+      var _this = this;
+      var lerp = .07;
+      if (window.innerWidth < 750) {
+        lerp = 1;
+      }
+      var easeInOutCubic = function easeInOutCubic(x) {
+        return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+      };
+      this.lenisInstance = new lenis__WEBPACK_IMPORTED_MODULE_0__["default"]({
+        lerp: lerp,
+        smooth: true,
+        direction: "vertical"
       });
-    });
-  };
-  for (var i = 0; i < scrollTrigger.length; i++) {
-    _loop();
-  }
-  lenisInstance.on('scroll', function (e) {
-    gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["default"].update();
-  });
-  gsap__WEBPACK_IMPORTED_MODULE_2__["default"].ticker.add(function (time) {
-    lenisInstance.raf(time * 1000);
-  });
-};
-window.addEventListener("DOMContentLoaded", InitLenis, false);
+      var scrollTrigger = document.getElementsByClassName('scroll-trigger');
+      var _loop = function _loop() {
+        var target = document.getElementById(scrollTrigger[i].getAttribute('data-target'));
+        scrollTrigger[i].addEventListener('click', function () {
+          // menu.classList.remove('active');
+          // for (let i = 0; i < menuTriggerWrapper.length; i++) {
+          //   menuTriggerWrapper[i].classList.remove('active');
+          // }
+          // menuTitle.classList.remove('active');
+          _this.lenisInstance.scrollTo(target, {
+            duration: 1,
+            easing: easeInOutCubic
+          });
+        });
+      };
+      for (var i = 0; i < scrollTrigger.length; i++) {
+        _loop();
+      }
+      this.lenisInstance.on('scroll', function (e) {
+        gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["default"].update();
+      });
+      gsap__WEBPACK_IMPORTED_MODULE_2__["default"].ticker.add(function (time) {
+        _this.lenisInstance.raf(time * 1000);
+      });
+    }
+  }]);
+  return InitLenis;
+}();
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (InitLenis);
 
 /***/ }),
 /* 4 */
@@ -11004,9 +11017,8 @@ var main = /*#__PURE__*/function () {
     var _this = this;
     _classCallCheck(this, main);
     this.root = document.getElementById('contentTop');
-    // this.swiper = new initSwiper()
-    // this.modal = new triggerModal();
-
+    this.lenis = new _modules_lenis__WEBPACK_IMPORTED_MODULE_2__["default"]();
+    this.lenis.init();
     this.init();
     window.onresize = function () {
       _this.resizeEvent();
@@ -11015,12 +11027,18 @@ var main = /*#__PURE__*/function () {
   _createClass(main, [{
     key: "init",
     value: function init() {
+      var _this2 = this;
       // new Common();
       this.resizeEvent();
       var vh = window.innerHeight * 0.01;
       // カスタム変数--vhの値をドキュメントのルートに設定
       document.documentElement.style.setProperty('--vh', "".concat(vh, "px"));
-      this.root.classList.add('loaded');
+      setTimeout(function () {
+        _this2.lenis.lenisInstance.scrollTo(document.getElementById('wrapper'), {
+          immediate: true
+        });
+        _this2.root.classList.add('loaded');
+      }, 500);
     }
   }, {
     key: "resizeEvent",

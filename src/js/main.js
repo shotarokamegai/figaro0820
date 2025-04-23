@@ -5,15 +5,14 @@ import "./modules/trigger-menu";
 // import Common from "./modules/common";
 import "./modules/check-mediaquery";
 // import "./modules/movie";
-import "./modules/lenis";
+import InitLenis from "./modules/lenis";
 import "./modules/scroll-animation";
 
 class main {
   constructor() {
     this.root = document.getElementById('contentTop');
-    // this.swiper = new initSwiper()
-    // this.modal = new triggerModal();
-
+    this.lenis = new InitLenis();
+    this.lenis.init();
     this.init();
     window.onresize = () => {
       this.resizeEvent();
@@ -26,7 +25,10 @@ class main {
     let vh = window.innerHeight * 0.01;
     // カスタム変数--vhの値をドキュメントのルートに設定
     document.documentElement.style.setProperty('--vh', `${vh}px`);
-    this.root.classList.add('loaded');
+    setTimeout(() => {
+      this.lenis.lenisInstance.scrollTo(document.getElementById('wrapper'), {immediate: true})
+      this.root.classList.add('loaded');
+    }, 500);
   }
 
   resizeEvent() {
