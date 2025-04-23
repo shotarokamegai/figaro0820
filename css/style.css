@@ -1596,6 +1596,7 @@ a {
   }
   #contentTop .section__inner {
     width: 91.6666666667%;
+    max-width: 1440px;
   }
   #contentTop .section__content {
     width: 60.2777777778%;

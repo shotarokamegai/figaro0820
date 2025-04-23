@@ -445,6 +445,7 @@ body {
     .section {
       &__inner {
         width: calc( 1320 / 1440 * 100%);
+        max-width: rem(1440);
       }
       &__content {
         width: calc( 868 / 1440 * 100%);
