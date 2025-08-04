@@ -62,7 +62,7 @@ gulp.task("js", (done) => {
       },
     }, webpack))
     // .pipe(connect.reload())
-    .pipe(gulp.dest('./250420/js/'));
+    .pipe(gulp.dest('./assets/js/'));
   done();
 });
 // });
@@ -76,14 +76,14 @@ gulp.task('sass', () => {
     .pipe(sourcemaps.init())
     .pipe(postcss([tailwindcss(), autoprefixer()]))
     // .pipe(webpack())
-    .pipe(gulp.dest('./250420/css/'))
+    .pipe(gulp.dest('./assets/css/'))
     .pipe(cleanCSS())
     .pipe(rename({
       suffix: '.min',
     }))
     .pipe(sourcemaps.write('.'))
     // .pipe(connect.reload())
-    .pipe(gulp.dest('./250420/css/'));
+    .pipe(gulp.dest('./assets/css/'));
 
   return (pc);
 });

@@ -1,5 +1,4 @@
-html,
-body,
+#contentTop {
 div,
 span,
 applet,
@@ -130,12 +129,6 @@ html {
   box-sizing: inherit;
 }
 
-body {
-  font-family: "游明朝", YuMincho, "Hiragino Mincho ProN W3",
-    "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝",
-    "ＭＳ 明朝", serif;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -151,54 +144,38 @@ img {
 a {
   text-decoration: none;
 }
-
-.invisible {
-  visibility: hidden;
 }
-
-.reset {
-  transition: none !important;
-  animation: none !important;
-  * {
-    transition: none !important;
-    animation: none !important;
-  }
-}
-
-.link {
-  @include center();
-  height: 100%;
-  width: 100%;
-  z-index: 10;
-}
-
 @media screen and (max-width: 749px) {
-  .sm\:center-xy {
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%, -50%, 0)
-  }
-  .sm\:center-y {
-    top: 50%;
-    transform: translate3d(0, -50%, 0)
-  }
-  .sm\:center-x {
-    left: 50%;
-    transform: translate3d(-50%, 0, 0)
+  #contentTop {
+    .sm\:center-xy {
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0)
+    }
+    .sm\:center-y {
+      top: 50%;
+      transform: translate3d(0, -50%, 0)
+    }
+    .sm\:center-x {
+      left: 50%;
+      transform: translate3d(-50%, 0, 0)
+    }
   }
 }
 @media screen and (min-width: 750px) {
-  .center-xy {
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%, -50%, 0)
-  }
-  .center-y {
-    top: 50%;
-    transform: translate3d(0, -50%, 0)
-  }
-  .center-x {
-    left: 50%;
-    transform: translate3d(-50%, 0, 0)
+  #contentTop {
+    .center-xy {
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0)
+    }
+    .center-y {
+      top: 50%;
+      transform: translate3d(0, -50%, 0)
+    }
+    .center-x {
+      left: 50%;
+      transform: translate3d(-50%, 0, 0)
+    }
   }
 }
