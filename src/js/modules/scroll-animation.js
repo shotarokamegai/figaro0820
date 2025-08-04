@@ -10,8 +10,28 @@ const scrollAnimation = () => {
     let scaleImage = document.getElementsByClassName('scale-image');
     let parallax = document.getElementsByClassName('parallax');
     let revert = document.getElementsByClassName('revert');
+    let fadeIn = document.getElementsByClassName('fade-in');
 
     window.scrollTo(0, 0);
+
+        for (let i = 0; i < fadeIn.length; i++) {
+      let elm = fadeIn[i];
+      let start = `top bottom-=${window.innerHeight/4}`;
+      gsap.fromTo(elm, {
+        alpha: 0,
+        y: `20px`
+      }
+        ,{
+        alpha: 1,
+        y: `0px`,
+        duration: 1,
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: elm,
+          start: start, 
+        }
+      });
+    }
 
     for (let i = 0; i < revert.length; i++) {
       let elm = revert[i];

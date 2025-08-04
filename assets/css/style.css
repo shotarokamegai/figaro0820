@@ -1301,6 +1301,8 @@ video {
     margin-right: 0;
     margin-left: auto;
     width: 40.6944444444%;
+    font-size: 13px;
+    line-height: 200%;
   }
   #contentTop .section#about {
     padding: 80px 0;

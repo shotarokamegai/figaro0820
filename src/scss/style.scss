@@ -111,6 +111,8 @@
           margin-right: 0;
           margin-left: auto;
           width: calc( 586 / 1440 * 100%);
+          @include fontsize(13);
+          line-height: 200%;
         }
       }
     }

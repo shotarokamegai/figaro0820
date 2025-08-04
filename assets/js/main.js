@@ -10780,9 +10780,27 @@ var scrollAnimation = function scrollAnimation() {
   var scaleImage = document.getElementsByClassName('scale-image');
   var parallax = document.getElementsByClassName('parallax');
   var revert = document.getElementsByClassName('revert');
+  var fadeIn = document.getElementsByClassName('fade-in');
   window.scrollTo(0, 0);
+  for (var i = 0; i < fadeIn.length; i++) {
+    var elm = fadeIn[i];
+    var start = "top bottom-=".concat(window.innerHeight / 4);
+    gsap__WEBPACK_IMPORTED_MODULE_0__["default"].fromTo(elm, {
+      alpha: 0,
+      y: "20px"
+    }, {
+      alpha: 1,
+      y: "0px",
+      duration: 1,
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: elm,
+        start: start
+      }
+    });
+  }
   var _loop = function _loop() {
-    var elm = revert[i];
+    var elm = revert[_i];
     var start = "top 0";
     var end = "top ".concat(top.clientHeight);
     gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(elm, {
@@ -10808,13 +10826,13 @@ var scrollAnimation = function scrollAnimation() {
       }
     });
   };
-  for (var i = 0; i < revert.length; i++) {
+  for (var _i = 0; _i < revert.length; _i++) {
     _loop();
   }
-  for (var _i = 0; _i < scaleImage.length; _i++) {
-    var elm = scaleImage[_i];
-    var start = "top bottom-=".concat(window.innerHeight / 4);
-    var img = elm.getElementsByTagName('img')[0];
+  for (var _i2 = 0; _i2 < scaleImage.length; _i2++) {
+    var _elm = scaleImage[_i2];
+    var _start = "top bottom-=".concat(window.innerHeight / 4);
+    var img = _elm.getElementsByTagName('img')[0];
     gsap__WEBPACK_IMPORTED_MODULE_0__["default"].fromTo(img, {
       opacity: 0,
       y: "24px",
@@ -10826,13 +10844,13 @@ var scrollAnimation = function scrollAnimation() {
       duration: 1,
       ease: "power1.inOut",
       scrollTrigger: {
-        trigger: elm,
-        start: start
+        trigger: _elm,
+        start: _start
       }
     });
   }
   var _loop2 = function _loop2() {
-    var elm = show[_i2];
+    var elm = show[_i3];
     var start = "top bottom-=".concat(window.innerHeight / 4);
     gsap__WEBPACK_IMPORTED_MODULE_0__["default"].fromTo(elm, {
       opacity: 0,
@@ -10856,11 +10874,11 @@ var scrollAnimation = function scrollAnimation() {
       }
     });
   };
-  for (var _i2 = 0; _i2 < show.length; _i2++) {
+  for (var _i3 = 0; _i3 < show.length; _i3++) {
     _loop2();
   }
   var _loop3 = function _loop3() {
-    var elm = addactive[_i3];
+    var elm = addactive[_i4];
     var start = "top bottom-=".concat(window.innerHeight / 4);
     gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(elm, {
       ease: "power4.inOut",
@@ -10878,11 +10896,11 @@ var scrollAnimation = function scrollAnimation() {
       }
     });
   };
-  for (var _i3 = 0; _i3 < addactive.length; _i3++) {
+  for (var _i4 = 0; _i4 < addactive.length; _i4++) {
     _loop3();
   }
   var _loop4 = function _loop4() {
-    var elm = parallax[_i4];
+    var elm = parallax[_i5];
     var amountPc = elm.getAttribute('data-amount');
     var amountSp = elm.getAttribute('data-amountSp');
     var amount = '';
@@ -10911,7 +10929,7 @@ var scrollAnimation = function scrollAnimation() {
       }
     });
   };
-  for (var _i4 = 0; _i4 < parallax.length; _i4++) {
+  for (var _i5 = 0; _i5 < parallax.length; _i5++) {
     _loop4();
   }
 };
