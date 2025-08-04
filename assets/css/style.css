@@ -545,6 +545,9 @@ video {
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+.cursor-pointer {
+  cursor: pointer;
+}
 .resize {
   resize: both;
 }
@@ -1215,6 +1218,9 @@ video {
 #contentTop.loaded {
   opacity: 1;
 }
+#contentTop .stevie-sans {
+  font-family: "stevie-sans", sans-serif;
+}
 #contentTop .source-han-sans-cjk-ja {
   font-family: "source-han-sans-cjk-ja", sans-serif;
 }
@@ -1247,6 +1253,31 @@ video {
   position: relative;
 }
 
+@media screen and (max-width: 749px) {
+  #contentTop .scroll-trigger:active div {
+    transform: rotateY(180deg);
+  }
+  #contentTop .scroll-trigger div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    height: 10.1781170483vw;
+    width: 10.1781170483vw;
+    background-color: #F7F7F7;
+    border-radius: 100%;
+    will-change: transform;
+    transition: transform 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  }
+  #contentTop .scroll-trigger div svg {
+    width: 3.0534351145vw;
+  }
+  #contentTop .scroll-trigger p {
+    margin-top: 2.0356234097vw;
+    font-size: 3.0534351145vw;
+  }
+}
 @media screen and (min-width: 750px) {
   #contentTop .button {
     display: flex;
@@ -1255,6 +1286,10 @@ video {
     height: 56px;
     width: 183px;
     background-color: #DC98CE;
+  }
+  #contentTop .button.long {
+    width: 386px;
+    background-color: #272727;
   }
   #contentTop .button-text {
     font-size: 12px;
@@ -1459,6 +1494,7 @@ video {
   }
   #contentTop .section#information {
     padding: 64px 0;
+    background-color: #F7F7F7;
   }
   #contentTop .section#information .section__inner {
     margin-left: auto;
@@ -1499,6 +1535,57 @@ video {
   #contentTop .section#information .section__inner .wrapper-content .line-wrapper .line div:nth-child(2) p {
     font-size: 13px;
     line-height: 180%;
+  }
+  #contentTop .section#footer {
+    padding: 120px 0 80px;
+  }
+  #contentTop .section#footer h2 {
+    margin-bottom: 32px;
+    font-size: 16px;
+  }
+  #contentTop .section#footer .text {
+    font-size: 13px;
+    line-height: 180%;
+  }
+  #contentTop .section#footer .button {
+    margin-top: 48px;
+    margin-bottom: 53px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #contentTop .section#footer ul li {
+    font-size: 30px;
+  }
+  #contentTop .section#footer ul li a {
+    color: #272727;
+  }
+  #contentTop .section#footer .note {
+    margin-bottom: 80px;
+    font-size: 12px;
+    line-height: 180%;
+  }
+  #contentTop .section#footer .scroll-trigger:hover div {
+    transform: rotateY(180deg);
+  }
+  #contentTop .section#footer .scroll-trigger div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    height: 40px;
+    width: 40px;
+    background-color: #F7F7F7;
+    border-radius: 100%;
+    will-change: transform;
+    transition: transform 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  }
+  #contentTop .section#footer .scroll-trigger div svg {
+    width: 12px;
+  }
+  #contentTop .section#footer .scroll-trigger p {
+    margin-top: 8px;
+    font-size: 12px;
   }
   #contentTop .section.common .wrapper {
     margin-bottom: 120px;

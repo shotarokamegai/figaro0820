@@ -21,6 +21,9 @@
   &.loaded {
     opacity: 1;
   }
+  .stevie-sans {
+    font-family: "stevie-sans", sans-serif;
+  }
   .source-han-sans-cjk-ja {
     font-family: "source-han-sans-cjk-ja", sans-serif;
     &.regular {
@@ -56,6 +59,31 @@
 
 @media screen and (max-width: 749px) {
   #contentTop {
+            .scroll-trigger {
+          &:active {
+            div {
+              transform: rotateY(180deg);
+            }
+          }
+          div {
+            @include fitcenter();
+            margin-left: auto;
+            margin-right: auto;
+            height: vw(40);
+            width: vw(40);
+            background-color: #F7F7F7;
+            border-radius: 100%;
+            will-change: transform; 
+            transition: transform .3s $Power1easeIn;
+            svg {
+              width: vw(12);
+            }
+          }
+          p {
+            margin-top: vw(8);
+            @include fontvw(12);
+          }
+        }
   }
 }
 
@@ -66,6 +94,10 @@
       height: rem(56);
       width: rem(183);
       background-color: $accent1;
+      &.long {
+        width: rem(386);
+        background-color: $black;
+      }
       &-text {
         @include fontsize(12);
         color: $white;
@@ -186,6 +218,7 @@
       }
       &#information {
         padding: rem(64) 0;
+        background-color: #F7F7F7;
         .section__inner {
           margin-left: auto;
           margin-right: auto;
@@ -228,6 +261,61 @@
                 }
               }
             }
+          }
+        }
+      }
+      &#footer {
+        padding: rem(120) 0 rem(80);
+        h2 {
+          margin-bottom: rem(32);
+          @include fontsize(16);
+        }
+        .text {
+          @include fontsize(13);
+          line-height: 180%;
+        }
+        .button {
+          margin-top: rem(48);
+          margin-bottom: rem(53);
+          margin-left: auto;
+          margin-right: auto;
+        }
+        ul {
+          li {
+            @include fontsize(30);
+            a {
+              color: $black;
+            }
+          }
+        }
+        .note {
+          margin-bottom: rem(80);
+          @include fontsize(12);
+          line-height: 180%;
+        }
+        .scroll-trigger {
+          &:hover {
+            div {
+              transform: rotateY(180deg);
+            }
+          }
+          div {
+            @include fitcenter();
+            margin-left: auto;
+            margin-right: auto;
+            height: rem(40);
+            width: rem(40);
+            background-color: #F7F7F7;
+            border-radius: 100%;
+            will-change: transform; 
+            transition: transform .3s $Power1easeIn;
+            svg {
+              width: rem(12);
+            }
+          }
+          p {
+            margin-top: rem(8);
+            @include fontsize(12);
           }
         }
       }
