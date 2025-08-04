@@ -62,7 +62,7 @@ gulp.task("js", (done) => {
       },
     }, webpack))
     // .pipe(connect.reload())
-    .pipe(gulp.dest('./js/'));
+    .pipe(gulp.dest('./250420/js/'));
   done();
 });
 // });
@@ -76,14 +76,14 @@ gulp.task('sass', () => {
     .pipe(sourcemaps.init())
     .pipe(postcss([tailwindcss(), autoprefixer()]))
     // .pipe(webpack())
-    .pipe(gulp.dest('./css/'))
+    .pipe(gulp.dest('./250420/css/'))
     .pipe(cleanCSS())
     .pipe(rename({
       suffix: '.min',
     }))
     .pipe(sourcemaps.write('.'))
     // .pipe(connect.reload())
-    .pipe(gulp.dest('./css/'));
+    .pipe(gulp.dest('./250420/css/'));
 
   return (pc);
 });
@@ -92,7 +92,7 @@ gulp.task('sass', () => {
 gulp.task('ejs', (done) => {
   gulp.src('./src/ejs/_index.ejs')
     .pipe(ejs())
-    .pipe(rename('250420-mio-imada-vintage.html'))
+    .pipe(rename('index.html'))
     // .pipe(connect.reload())
     .pipe(gulp.dest(`./`));
   done();

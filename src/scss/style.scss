@@ -177,7 +177,7 @@ body {
         padding: vw(40) 0 vw(60);
         h2 {
           margin-bottom: vw(30);
-          @include fontvw(18);
+          @include fontvw(17);
           line-height: 180%;
         }
         p {
@@ -345,6 +345,10 @@ body {
           margin-bottom: vw(80);
           .block-content {
             width: vw(354);
+            img {
+              height: vw(48);
+              width: auto;
+            }
           }
         }
         &.block6 {
@@ -663,6 +667,9 @@ body {
           }
           .block-content {
             width: calc(416 / 1320 * 100%);
+            p {
+              width: calc(303 / 416 * 100%);
+            }
           }
         }
         &.block2 {
@@ -696,7 +703,7 @@ body {
           margin-bottom: calc( 64 / 1440 * 100%);
           .block-content {
             margin-left: calc(113 / 1320 * 100%);
-            width: calc( 568 / 1320 * 100%);
+            width: calc( 346 / 1320 * 100%);
           }
         }
         &.block6 {

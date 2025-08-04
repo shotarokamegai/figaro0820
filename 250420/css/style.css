@@ -1373,7 +1373,7 @@ a {
   }
   #contentTop section#about h2 {
     margin-bottom: 7.6335877863vw;
-    font-size: 4.5801526718vw;
+    font-size: 4.3256997455vw;
     line-height: 180%;
   }
   #contentTop section#about p {
@@ -1518,6 +1518,10 @@ a {
   }
   #contentTop section .block.block5 .block-content {
     width: 90.0763358779vw;
+  }
+  #contentTop section .block.block5 .block-content img {
+    height: 12.213740458vw;
+    width: auto;
   }
   #contentTop section .block.block6 {
     margin-bottom: 2.0356234097vw;
@@ -1814,6 +1818,9 @@ a {
   #contentTop section .block.block1 .block-content {
     width: 31.5151515152%;
   }
+  #contentTop section .block.block1 .block-content p {
+    width: 72.8365384615%;
+  }
   #contentTop section .block.block2 {
     margin-bottom: 4.4444444444%;
   }
@@ -1846,7 +1853,7 @@ a {
   }
   #contentTop section .block.block5 .block-content {
     margin-left: 8.5606060606%;
-    width: 43.0303030303%;
+    width: 26.2121212121%;
   }
   #contentTop section .block.block6 {
     margin-bottom: 1.6666666667%;
