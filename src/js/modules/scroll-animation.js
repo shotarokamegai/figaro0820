@@ -1,9 +1,11 @@
 import gsap from 'gsap';
+import DeviceController from './device-controller';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const scrollAnimation = () => {
+    let deviceController = new DeviceController();
     let top = document.getElementById('top');
     let addactive = document.getElementsByClassName('addactive');
     let show = document.getElementsByClassName('show');
@@ -14,7 +16,7 @@ const scrollAnimation = () => {
 
     window.scrollTo(0, 0);
 
-        for (let i = 0; i < fadeIn.length; i++) {
+    for (let i = 0; i < fadeIn.length; i++) {
       let elm = fadeIn[i];
       let start = `top bottom-=${window.innerHeight/4}`;
       gsap.fromTo(elm, {
@@ -130,12 +132,12 @@ const scrollAnimation = () => {
 
     for (let i = 0; i < parallax.length; i++) {
       let elm = parallax[i];
-      let amountPc = elm.getAttribute('data-amount');
+      let amountPc = elm.getAttribute('data-amountPc');
       let amountSp = elm.getAttribute('data-amountSp');
       let amount = '';
-      let child = elm.getElementsByClassName('image')[0];
+      let child = elm.getElementsByTagName('img')[0];
 
-      if (window.innerWidth < 750) {
+      if (window.innerWidth < deviceController.getDevice('sm')) {
         amount =  amountSp;
       } else {
         amount =  amountPc;

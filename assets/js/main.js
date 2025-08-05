@@ -10768,12 +10768,15 @@ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(CSSPlugin);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
-/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
+/* harmony import */ var _device_controller__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(11);
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
 
 
-gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
+gsap__WEBPACK_IMPORTED_MODULE_1__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__["default"]);
 var scrollAnimation = function scrollAnimation() {
+  var deviceController = new _device_controller__WEBPACK_IMPORTED_MODULE_0__["default"]();
   var top = document.getElementById('top');
   var addactive = document.getElementsByClassName('addactive');
   var show = document.getElementsByClassName('show');
@@ -10785,7 +10788,7 @@ var scrollAnimation = function scrollAnimation() {
   for (var i = 0; i < fadeIn.length; i++) {
     var elm = fadeIn[i];
     var start = "top bottom-=".concat(window.innerHeight / 4);
-    gsap__WEBPACK_IMPORTED_MODULE_0__["default"].fromTo(elm, {
+    gsap__WEBPACK_IMPORTED_MODULE_1__["default"].fromTo(elm, {
       alpha: 0,
       y: "20px"
     }, {
@@ -10803,7 +10806,7 @@ var scrollAnimation = function scrollAnimation() {
     var elm = revert[_i];
     var start = "top 0";
     var end = "top ".concat(top.clientHeight);
-    gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(elm, {
+    gsap__WEBPACK_IMPORTED_MODULE_1__["default"].to(elm, {
       ease: "power4.inOut",
       scrollTrigger: {
         trigger: top,
@@ -10833,7 +10836,7 @@ var scrollAnimation = function scrollAnimation() {
     var _elm = scaleImage[_i2];
     var _start = "top bottom-=".concat(window.innerHeight / 4);
     var img = _elm.getElementsByTagName('img')[0];
-    gsap__WEBPACK_IMPORTED_MODULE_0__["default"].fromTo(img, {
+    gsap__WEBPACK_IMPORTED_MODULE_1__["default"].fromTo(img, {
       opacity: 0,
       y: "24px",
       scale: 1.05
@@ -10852,7 +10855,7 @@ var scrollAnimation = function scrollAnimation() {
   var _loop2 = function _loop2() {
     var elm = show[_i3];
     var start = "top bottom-=".concat(window.innerHeight / 4);
-    gsap__WEBPACK_IMPORTED_MODULE_0__["default"].fromTo(elm, {
+    gsap__WEBPACK_IMPORTED_MODULE_1__["default"].fromTo(elm, {
       opacity: 0,
       y: "20px"
     }, {
@@ -10880,7 +10883,7 @@ var scrollAnimation = function scrollAnimation() {
   var _loop3 = function _loop3() {
     var elm = addactive[_i4];
     var start = "top bottom-=".concat(window.innerHeight / 4);
-    gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(elm, {
+    gsap__WEBPACK_IMPORTED_MODULE_1__["default"].to(elm, {
       ease: "power4.inOut",
       scrollTrigger: {
         trigger: elm,
@@ -10901,16 +10904,16 @@ var scrollAnimation = function scrollAnimation() {
   }
   var _loop4 = function _loop4() {
     var elm = parallax[_i5];
-    var amountPc = elm.getAttribute('data-amount');
+    var amountPc = elm.getAttribute('data-amountPc');
     var amountSp = elm.getAttribute('data-amountSp');
     var amount = '';
-    var child = elm.getElementsByClassName('image')[0];
-    if (window.innerWidth < 750) {
+    var child = elm.getElementsByTagName('img')[0];
+    if (window.innerWidth < deviceController.getDevice('sm')) {
       amount = amountSp;
     } else {
       amount = amountPc;
     }
-    gsap__WEBPACK_IMPORTED_MODULE_0__["default"].fromTo(child, {
+    gsap__WEBPACK_IMPORTED_MODULE_1__["default"].fromTo(child, {
       // y: 0,
       y: function y() {
         return "0";
@@ -10934,6 +10937,43 @@ var scrollAnimation = function scrollAnimation() {
   }
 };
 window.addEventListener("DOMContentLoaded", scrollAnimation, false);
+
+/***/ }),
+/* 11 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+var DeviceController = /*#__PURE__*/function () {
+  function DeviceController() {
+    _classCallCheck(this, DeviceController);
+  }
+  _createClass(DeviceController, [{
+    key: "getDevice",
+    value: function getDevice(device) {
+      var width = 0;
+      switch (device) {
+        case 'sm':
+          width = 750;
+          break;
+        default:
+          break;
+      }
+      return width;
+    }
+  }]);
+  return DeviceController;
+}();
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DeviceController);
 
 /***/ })
 /******/ 	]);

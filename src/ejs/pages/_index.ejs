@@ -1,7 +1,12 @@
 <div class="250820-louisvuitton-visionaryjourneys mx-auto bg-white" id="contentTop">
     <section id="section1" class="pv-section" data-pv-section="section1" data-section="section1">
         <div class="section">
-            <video src="./assets/img/pc_kv.mp4" autoplay muted playsinline loop></video>
+            <video class="hidden sm:block" muted playsinline loop autoplay>
+                 <source src="./assets/img/sp_kv.mp4" />
+            </video>
+            <video class="block sm:hidden" muted playsinline loop autoplay>
+                 <source src="./assets/img/pc_kv.mp4" />
+            </video>
         </div>
         <div class="section" id="about">
             <h2 class="source-han-sans-jp bold fade-in text-center">
@@ -60,11 +65,11 @@
     </section>
     <section id="section3" class="pv-section" data-pv-section="section3" data-section="section3">
         <div class="section">
-            <div class="parallax">
-                <picture>
+            <div class="parallax-area overflow-hidden">
+                <picture class="parallax relative block" data-amountSp="-<%- (700 / 667 * 10) %>" data-amountPc="-<%- (1080 / 1920* 10) %>">
                     <source srcset="./assets/img/sp_1.jpg" media="(max-width:749px)" />
                     <img src="./assets/img/pc_1.jpg" alt="">
-                </picture>  
+                </picture> 
             </div>
             <p class="text source-han-sans-jp regular">
                メゾン創業170周年というアニバーサリーイヤーにふさわしい壮大なエキシビション「ビジョナリー・ジャーニー」展が、大阪中之島美術館で開催されている。今回は日本との関係性に焦点を当てているのが特徴で、卓越した匠の技、創造性、革新性を日本のフィルターを通した新たな解釈で提示。美術史家兼キュレーターのフロランス・ミュラーの協力のもとOMAの重松象平が演出デザインを担当し、メゾンの原点から最新クリエイションまでの軌跡を巡る没入型の展覧会となっている。ここで披露されるのは、厳選されたアーカイブや貴重な歴史的オブジェ、世界有数の国際的芸術機関の協力による特別展示といったレジェンダリーな名品から、グラフィックアーティストのVERDYがカスタムしたストリート感あふれるスペシャルなトランクまで、総計1000点以上にものぼる。加えて、オーディオガイドには市川團十郎白猿、広瀬すず、平野紫耀らアンバサダーが顔を揃えるとあり、必見ならぬ必聴ポイントもたっぷり。11のテーマで展開される空間が、過去から未来へと馳せるイマジネーティブな旅へと誘う。 
@@ -119,7 +124,7 @@
     <section id="section5" class="pv-section" data-pv-section="section5" data-section="section5">
         <div id="invitation" class="section">
             <div class="section__inner">
-                <div class="wrapper flex fade-in">
+                <div class="wrapper flex fade-in sm:block">
                     <h2 class="indivisible semibold">
                         INVITATION OF VISIONARY JOURNEYS
                     </h2>
@@ -272,7 +277,7 @@
                             INFORMATION
                         </h2>
                         <div class="line-wrapper">
-                            <div class="line flex justify-between fade-in">
+                            <div class="line flex justify-between fade-in sm:block">
                                 <div>
                                     <p class="source-han-sans-jp bold">会期</p>
                                 </div>
@@ -280,7 +285,7 @@
                                     <p class="source-han-sans-jp">開催中～9月17日（水）</p>
                                 </div>
                             </div>
-                            <div class="line flex justify-between fade-in">
+                            <div class="line flex justify-between fade-in sm:block">
                                 <div>
                                     <p class="source-han-sans-jp bold">会場</p>
                                 </div>
@@ -288,7 +293,7 @@
                                     <p class="source-han-sans-jp">大阪中之島美術館5階展示室 ※ギフトショップは本展鑑賞時のみ入場可能。</p>
                                 </div>
                             </div>
-                            <div class="line flex justify-between fade-in">
+                            <div class="line flex justify-between fade-in sm:block">
                                 <div>
                                     <p class="source-han-sans-jp bold">開館時間</p>
                                 </div>
@@ -297,7 +302,7 @@
                                     10：00～19：00（18：30最終入場、金・土・祝前日）</p>
                                 </div>
                             </div>
-                            <div class="line flex justify-between fade-in">
+                            <div class="line flex justify-between fade-in sm:block">
                                 <div>
                                     <p class="source-han-sans-jp bold">休館日</p>
                                 </div>
@@ -305,7 +310,7 @@
                                     <p class="source-han-sans-jp">月 ※ 9月15日（月・祝）は開館。※災害などにより臨時休館する場合アリ。</p>
                                 </div>
                             </div>
-                            <div class="line flex justify-between fade-in">
+                            <div class="line flex justify-between fade-in sm:block">
                                 <div>
                                     <p class="source-han-sans-jp bold">主催</p>
                                 </div>
@@ -313,7 +318,7 @@
                                     <p class="source-han-sans-jp">大阪中之島美術館</p>
                                 </div>
                             </div>
-                            <div class="line flex justify-between fade-in">
+                            <div class="line flex justify-between fade-in sm:block">
                                 <div>
                                     <p class="source-han-sans-jp bold">特別協力</p>
                                 </div>
@@ -321,7 +326,7 @@
                                     <p class="source-han-sans-jp">ルイ・ヴィトン</p>
                                 </div>
                             </div>
-                            <div class="line flex justify-between fade-in">
+                            <div class="line flex justify-between fade-in sm:block">
                                 <div>
                                     <p class="source-han-sans-jp bold">料金</p>
                                 </div>
@@ -329,7 +334,7 @@
                                     <p class="source-han-sans-jp">一般￥2,000、大学・専門学校生￥1,500、 高校生以下無料　※日時指定制</p>
                                 </div>
                             </div>
-                            <div class="line flex justify-between fade-in">
+                            <div class="line flex justify-between fade-in sm:block">
                                 <div>
                                     <p class="source-han-sans-jp bold">販売場所</p>
                                 </div>
@@ -337,7 +342,7 @@
                                     <p class="source-han-sans-jp">大阪中之島美術館チケットサイト、ローソンチケット</p>
                                 </div>
                             </div>
-                            <div class="line flex justify-between fade-in">
+                            <div class="line flex justify-between fade-in sm:block">
                                 <div>
                                     <p class="source-han-sans-jp bold">オーディオガイド</p>
                                 </div>
@@ -345,7 +350,7 @@
                                     <p class="source-han-sans-jp">会場内にある案内に スマートフォンをかざすと無料で利用可能。 スマートフォンとイヤホンが必要。 </p>
                                 </div>
                             </div>
-                            <div class="line flex justify-between fade-in">
+                            <div class="line flex justify-between fade-in sm:block">
                                 <div>
                                     <p class="source-han-sans-jp bold">問い合わせ</p>
                                 </div>
