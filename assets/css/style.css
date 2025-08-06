@@ -1390,9 +1390,6 @@ video {
   #contentTop .section#index .wrapper ul li {
     margin-bottom: 8.1424936387vw;
   }
-  #contentTop .section#index .wrapper ul li:last-child {
-    margin-bottom: 0;
-  }
   #contentTop .section#index .wrapper ul li p.no1 {
     display: flex;
   }

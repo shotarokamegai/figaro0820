@@ -201,9 +201,6 @@
           ul {
             li {
               margin-bottom: vw(32);
-              &:last-child {
-                margin-bottom: 0;
-              }
               p {
                 @for $i from 1 through 11 {
                   &.no#{$i} {
