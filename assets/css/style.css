@@ -1388,6 +1388,8 @@ video {
     overflow: scroll;
   }
   #contentTop .section#index .wrapper ul li {
+    opacity: 1 !important;
+    transform: translate3d(0, 0, 0) !important;
     margin-bottom: 8.1424936387vw;
   }
   #contentTop .section#index .wrapper ul li p.no1 {
