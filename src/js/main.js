@@ -1,5 +1,6 @@
 // import imagesLoaded from 'imagesloaded'
 import "./modules/trigger-menu";
+import "./modules/gif-animation";
 // import initSwiper from "./modules/init-swiper";
 // import triggerModal from "./modules/trigger-modal";
 // import Common from "./modules/common";

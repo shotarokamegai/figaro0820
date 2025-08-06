@@ -21,6 +21,34 @@
   &.loaded {
     opacity: 1;
   }
+  .gif {
+    .gif-image {
+      opacity: 0;
+      will-change: opacity;
+      transition: opacity .5s $Power1easeInOut;
+      &:nth-child(1) {
+        img {
+          position: relative;
+          top: auto;
+          left: auto;
+          transform: initial;
+        }
+      }
+      picture, img {
+        display: block;
+        height: 100%;
+        width: 100%;
+      }
+      img {
+        @include center();
+        object-fit: cover;
+      }
+      &.active {
+        opacity: 1;
+        z-index: 1;
+      }
+    }
+  }
   .stevie-sans {
     font-family: "stevie-sans", sans-serif;
   }
@@ -384,7 +412,7 @@
           line-height: 200%;
         }
         .parallax-area {
-          height: rem(810);
+          // height: rem(810);
         }
       }
     }
