@@ -102,6 +102,13 @@
         @include fontvw(12);
         color: $white;
       }
+      &-arrow {
+        svg {
+          &:nth-child(2) {
+            display: none;
+          }
+        }
+      }
     }
     .pv-section {
       &#section3 {
@@ -387,17 +394,69 @@
 @media screen and (min-width: 750px) {
   #contentTop {
     .button {
+      position: relative;
       @include fitcenter();
+      justify-content: space-between;
       height: rem(56);
       width: rem(183);
+      padding: 0 rem(16);
       background-color: $accent1;
+      &:hover {
+        &::before {
+          opacity: 1;
+        }
+        .button-text {
+          transform: translate3d(rem(5), 0, 0);
+        }
+        .button-arrow {
+          svg {
+            &:nth-child(1) {
+              transform: translate3d(rem(16), rem(-16), 0);
+            }
+            &:nth-child(2) {
+              transform: translate3d(0, 0, 0);
+            }
+          }
+        }
+      }
+      &::before {
+        content: '';
+        @include center();
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0,0,0,.1);
+        opacity: 0;
+        will-change: opacity;
+        transition: opacity .5s $Power1easeInOut;
+      }
       &.long {
         width: rem(386);
         background-color: $black;
       }
+      &-arrow {
+        position: relative;
+        height: rem(16);
+        width: rem(16);
+        svg {
+          position: relative;
+          display: block;
+          will-change: transform;
+          transition: transform .5s $Power1easeInOut;
+          &:nth-child(2) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            transform: translate3d(rem(-16), rem(16), 0);
+          }
+        }
+      }
       &-text {
+        position: relative;
         @include fontsize(12);
         color: $white;
+        will-change: transform;
+        transition: transform .5s $Power1easeInOut;
       }
     }
     .pv-section {
@@ -413,6 +472,11 @@
         }
         .parallax-area {
           // height: rem(810);
+        }
+        .section__inner {
+          margin-left: auto;
+          margin-right: auto;
+          width: calc( 1200 / 1440 * 100%);
         }
       }
     }
