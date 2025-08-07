@@ -502,7 +502,7 @@
           line-height: 180%;
         }
         p {
-          @include fontsize(13);
+          @include fontsize(15);
           line-height: 200%;
         }
       }
@@ -738,7 +738,7 @@
           }
           p {
             margin-bottom: rem(32);
-            @include fontsize(13);
+            @include fontsize(15);
             line-height: 200%;
             color: $gray;
           }
