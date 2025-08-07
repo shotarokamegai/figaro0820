@@ -140,10 +140,14 @@
         p {
           @include fontvw(13);
           line-height: 200%;
+          margin-left: auto;
+          margin-right: auto;
+          width: vw(354);
+          text-align: left;
         }
       }
       &#invitation {
-        padding: vw(48) 0 vw(40);
+        padding: vw(40) 0 vw(40);
         background-color: #FBF7E5;
         .section__inner {
           margin-left: auto;
@@ -159,13 +163,13 @@
             // width: calc(488 / 1200 * 100%);
           }
           h2 {
-            margin-bottom: vw(48);
+            margin-bottom: vw(30);
             @include fontvw(28);
             line-height: 120%;
             color: $accent3;
           }
           h3 {
-            margin-bottom: vw(24);
+            margin-bottom: vw(20);
             @include fontvw(16);
             line-height: 160%;
           }
@@ -198,11 +202,13 @@
           height: vw(410);
           box-sizing: border-box;
           overflow: scroll;
+          border-top: vw(1) solid #B3B5BD;
+          border-bottom: vw(1) solid #B3B5BD;
           ul {
             li {
               opacity: 1 !important;
               transform: translate3d(0, 0, 0) !important;
-              margin-bottom: vw(32);
+              margin-bottom: vw(28);
               p {
                 @for $i from 1 through 11 {
                   &.no#{$i} {
@@ -246,26 +252,30 @@
             // justify-content: space-between;
             &-image {
               // width: calc( 490 / 1200 * 100%);
-              margin-bottom: vw(48);
+              margin-bottom: vw(40);
             }
             &-content {
               margin-left: auto;
               margin-right: auto;
               width: vw(354);
               h2 {
-                margin-bottom: vw(48);
+                margin-bottom: vw(40);
                 @include fontvw(24);
               }
               .line-wrapper {
                 .line {
-                  margin-bottom: vw(24);
+                  margin-bottom: vw(18);
+                  a {
+                    color: $accent2;
+                    text-decoration: underline;
+                  }
                   &:last-child {
                     margin-bottom: 0;
                   }
                   div {
                     &:nth-child(1) {
                       // width: rem(112);
-                      margin-bottom: vw(16);
+                      margin-bottom: vw(8);
                       p {
                         @include fontvw(13);
                       }
@@ -341,7 +351,7 @@
       }
       &.common {
         .wrapper {
-          margin-bottom: vw(64);
+          margin-bottom: vw(56);
           margin-left: auto;
           margin-right: auto;
           display: block;
@@ -356,7 +366,7 @@
             width: vw(354);
           }
           &-title {
-            margin-bottom: vw(24);
+            margin-bottom: vw(18);
             line-height: 1;
             @include fontvw(28);
           }
@@ -364,23 +374,23 @@
             span {
               display: block;
               &.medium {
-                margin-bottom: vw(16);
                 @include fontvw(13);
+                color: $gray;
               }
               &.semibold {
-                margin-bottom: vw(32);
+                margin-bottom: vw(24);
                 @include fontvw(24);
                 line-height: 1.4;
               }
             }
           }
           h5 {
-            margin-bottom: vw(32);
+            margin-bottom: vw(24);
             @include fontvw(16);
             line-height: 160%;
           }
           p {
-            margin-bottom: vw(32);
+            margin-bottom: vw(28);
             @include fontvw(13);
             line-height: 200%;
           }
@@ -486,7 +496,7 @@
       &#about {
         padding: rem(80) 0;
         h2 {
-          margin-bottom: rem(40);
+          margin-bottom: rem(32);
           @include fontsize(24);
           line-height: 180%;
         }
@@ -504,7 +514,7 @@
           width: calc( 1200 / 1440 * 100%);
         }
         .wrapper {
-          margin-bottom: rem(48);
+          margin-bottom: rem(40);
           div {
             width: calc(488 / 1200 * 100%);
           }
@@ -514,13 +524,14 @@
             color: $accent3;
           }
           h3 {
-            margin-bottom: rem(32);
+            margin-bottom: rem(20);
             @include fontsize(22);
             line-height: 160%;
           }
           p {
             @include fontsize(13);
             line-height: 160%;
+            color: $gray;
           }
         }
         .image {
@@ -566,7 +577,7 @@
                   }
                 } 
                 &:nth-child(1) {
-                  margin-bottom: rem(24);
+                  margin-bottom: rem(18);
                   @include fontsize(16);
                   line-height: 160%;
                   color: $accent3;
@@ -597,14 +608,18 @@
             &-content {
               width: calc( 590 / 1200 * 100%);
               h2 {
-                padding-bottom: rem(24);
-                margin-bottom: rem(40);
+                padding-bottom: rem(16);
+                margin-bottom: rem(32);
                 @include fontsize(24);
                 border-bottom: rem(1) solid $gray300;
               }
               .line-wrapper {
                 .line {
-                  margin-bottom: rem(32);
+                  margin-bottom: rem(28);
+                  a {
+                    color: $accent2;
+                    text-decoration: underline;
+                  }
                   &:last-child {
                     margin-bottom: 0;
                   }
@@ -697,7 +712,7 @@
             width: calc( 488 / 1200 * 100%);
           }
           &-title {
-            margin-bottom: rem(40);
+            margin-bottom: rem(30);
             line-height: 1;
             @include fontsize(40);
           }
@@ -705,23 +720,23 @@
             span {
               display: block;
               &.medium {
-                margin-bottom: rem(16);
                 @include fontsize(16);
+                color: $gray;
               }
               &.semibold {
-                margin-bottom: rem(48);
+                margin-bottom: rem(32);
                 @include fontsize(32);
                 line-height: 1.4;
               }
             }
           }
           h5 {
-            margin-bottom: rem(32);
+            margin-bottom: rem(20);
             @include fontsize(20);
             line-height: 160%;
           }
           p {
-            margin-bottom: rem(48);
+            margin-bottom: rem(32);
             @include fontsize(13);
             line-height: 200%;
           }
