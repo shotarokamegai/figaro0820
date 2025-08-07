@@ -393,6 +393,7 @@
             margin-bottom: vw(28);
             @include fontvw(13);
             line-height: 200%;
+            color: $gray;
           }
         }
       }
@@ -615,7 +616,7 @@
               }
               .line-wrapper {
                 .line {
-                  margin-bottom: rem(28);
+                  margin-bottom: rem(20);
                   a {
                     color: $accent2;
                     text-decoration: underline;
@@ -739,6 +740,7 @@
             margin-bottom: rem(32);
             @include fontsize(13);
             line-height: 200%;
+            color: $gray;
           }
         }
       }

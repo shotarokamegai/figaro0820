@@ -1655,6 +1655,7 @@ video {
     margin-bottom: 7.1246819338vw;
     font-size: 3.3078880407vw;
     line-height: 200%;
+    color: #6D6D6D;
   }
 }
 @media screen and (min-width: 750px) {
@@ -1954,7 +1955,7 @@ video {
     border-bottom: 1px solid #B3B5BD;
   }
   #contentTop .section#information .section__inner .wrapper-content .line-wrapper .line {
-    margin-bottom: 28px;
+    margin-bottom: 20px;
   }
   #contentTop .section#information .section__inner .wrapper-content .line-wrapper .line a {
     color: #A9C23F;
@@ -2065,6 +2066,7 @@ video {
     margin-bottom: 32px;
     font-size: 13px;
     line-height: 200%;
+    color: #6D6D6D;
   }
 }
 @media (max-width: 750px) {
