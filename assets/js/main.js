@@ -32,30 +32,6 @@ window.addEventListener("DOMContentLoaded", triggerMenu, false);
 /* 2 */
 /***/ (() => {
 
-var gifAnimation = function gifAnimation() {
-  var gif = document.getElementsByClassName('gif-image');
-  var max = gif.length;
-  var index = 0;
-  setInterval(gifAnim, 3000);
-  function gifAnim() {
-    if (index < max - 1) {
-      index++;
-    } else {
-      index = 0;
-    }
-    for (var i = 0; i < gif.length; i++) {
-      var image = gif[i];
-      image.classList.remove('active');
-    }
-    gif[index].classList.add('active');
-  }
-};
-window.addEventListener("DOMContentLoaded", gifAnimation, false);
-
-/***/ }),
-/* 3 */
-/***/ (() => {
-
 var mediaQuery = window.matchMedia('(min-width: 750px)');
 var top = document.getElementById('top');
 // 関数を定義
@@ -86,7 +62,7 @@ function checkWindow(windowSize) {
 mediaQuery.addEventListener('change', checkWindow);
 
 /***/ }),
-/* 4 */
+/* 3 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -94,9 +70,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var lenis__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8);
-/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
+/* harmony import */ var lenis__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7);
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
@@ -157,7 +133,7 @@ var InitLenis = /*#__PURE__*/function () {
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (InitLenis);
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1213,7 +1189,7 @@ var Lenis = class {
 //# sourceMappingURL=lenis.mjs.map
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1222,7 +1198,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   ScrollTrigger: () => (/* binding */ ScrollTrigger),
 /* harmony export */   "default": () => (/* binding */ ScrollTrigger)
 /* harmony export */ });
-/* harmony import */ var _Observer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
+/* harmony import */ var _Observer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
 /*!
  * ScrollTrigger 3.12.5
  * https://gsap.com
@@ -3883,7 +3859,7 @@ _getGSAP() && gsap.registerPlugin(ScrollTrigger);
 
 
 /***/ }),
-/* 7 */
+/* 6 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -4589,7 +4565,7 @@ _getGSAP() && gsap.registerPlugin(Observer);
 
 
 /***/ }),
-/* 8 */
+/* 7 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -4621,8 +4597,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ gsapWithCSS),
 /* harmony export */   gsap: () => (/* binding */ gsapWithCSS)
 /* harmony export */ });
-/* harmony import */ var _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
-/* harmony import */ var _CSSPlugin_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
+/* harmony import */ var _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8);
+/* harmony import */ var _CSSPlugin_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9);
 
 
 var gsapWithCSS = _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(_CSSPlugin_js__WEBPACK_IMPORTED_MODULE_1__.CSSPlugin) || _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.gsap,
@@ -4631,7 +4607,7 @@ TweenMaxWithCSS = gsapWithCSS.core.Tween;
 
 
 /***/ }),
-/* 9 */
+/* 8 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -9196,7 +9172,7 @@ var Power0 = _easeMap.Power0,
 
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -9208,7 +9184,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   checkPrefix: () => (/* binding */ _checkPropPrefix),
 /* harmony export */   "default": () => (/* binding */ CSSPlugin)
 /* harmony export */ });
-/* harmony import */ var _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
+/* harmony import */ var _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8);
 /*!
  * CSSPlugin 3.12.5
  * https://gsap.com
@@ -10787,14 +10763,14 @@ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(CSSPlugin);
 
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8);
-/* harmony import */ var _device_controller__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(12);
-/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
+/* harmony import */ var _device_controller__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(11);
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
 
 
 
@@ -10973,7 +10949,7 @@ var scrollAnimation = function scrollAnimation() {
 window.addEventListener("DOMContentLoaded", scrollAnimation, false);
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -11085,12 +11061,10 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_trigger_menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _modules_trigger_menu__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_modules_trigger_menu__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _modules_gif_animation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
-/* harmony import */ var _modules_gif_animation__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modules_gif_animation__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _modules_check_mediaquery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
-/* harmony import */ var _modules_check_mediaquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modules_check_mediaquery__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _modules_lenis__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
-/* harmony import */ var _modules_scroll_animation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(11);
+/* harmony import */ var _modules_check_mediaquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var _modules_check_mediaquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modules_check_mediaquery__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _modules_lenis__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _modules_scroll_animation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(10);
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
@@ -11099,7 +11073,7 @@ function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _ty
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 // import imagesLoaded from 'imagesloaded'
 
-
+// import "./modules/gif-animation";
 // import initSwiper from "./modules/init-swiper";
 // import triggerModal from "./modules/trigger-modal";
 // import Common from "./modules/common";
@@ -11112,7 +11086,7 @@ var main = /*#__PURE__*/function () {
     var _this = this;
     _classCallCheck(this, main);
     this.root = document.getElementById('contentTop');
-    this.lenis = new _modules_lenis__WEBPACK_IMPORTED_MODULE_3__["default"]();
+    this.lenis = new _modules_lenis__WEBPACK_IMPORTED_MODULE_2__["default"]();
     this.lenis.init();
     this.init();
     window.onresize = function () {
