@@ -10802,6 +10802,7 @@ gsap__WEBPACK_IMPORTED_MODULE_1__["default"].registerPlugin(gsap_ScrollTrigger__
 var scrollAnimation = function scrollAnimation() {
   var deviceController = new _device_controller__WEBPACK_IMPORTED_MODULE_0__["default"]();
   var top = document.getElementById('top');
+  var video = document.getElementById('video');
   var addactive = document.getElementsByClassName('addactive');
   var show = document.getElementsByClassName('show');
   var scaleImage = document.getElementsByClassName('scale-image');
@@ -10809,7 +10810,7 @@ var scrollAnimation = function scrollAnimation() {
   var revert = document.getElementsByClassName('revert');
   var fadeIn = document.getElementsByClassName('fade-in');
   window.scrollTo(0, 0);
-  for (var i = 0; i < fadeIn.length; i++) {
+  var _loop = function _loop() {
     var elm = fadeIn[i];
     var start = "top bottom-=".concat(window.innerHeight / 4);
     gsap__WEBPACK_IMPORTED_MODULE_1__["default"].fromTo(elm, {
@@ -10823,10 +10824,19 @@ var scrollAnimation = function scrollAnimation() {
       scrollTrigger: {
         trigger: elm,
         start: start
+      },
+      onEnter: function onEnter() {
+        if (elm.classList.contains('play-video')) {
+          console.log('enter');
+          video.play();
+        }
       }
     });
+  };
+  for (var i = 0; i < fadeIn.length; i++) {
+    _loop();
   }
-  var _loop = function _loop() {
+  var _loop2 = function _loop2() {
     var elm = revert[_i];
     var start = "top 0";
     var end = "top ".concat(top.clientHeight);
@@ -10854,12 +10864,12 @@ var scrollAnimation = function scrollAnimation() {
     });
   };
   for (var _i = 0; _i < revert.length; _i++) {
-    _loop();
+    _loop2();
   }
   for (var _i2 = 0; _i2 < scaleImage.length; _i2++) {
-    var _elm = scaleImage[_i2];
-    var _start = "top bottom-=".concat(window.innerHeight / 4);
-    var img = _elm.getElementsByTagName('img')[0];
+    var elm = scaleImage[_i2];
+    var start = "top bottom-=".concat(window.innerHeight / 4);
+    var img = elm.getElementsByTagName('img')[0];
     gsap__WEBPACK_IMPORTED_MODULE_1__["default"].fromTo(img, {
       opacity: 0,
       y: "24px",
@@ -10871,12 +10881,12 @@ var scrollAnimation = function scrollAnimation() {
       duration: 1,
       ease: "power1.inOut",
       scrollTrigger: {
-        trigger: _elm,
-        start: _start
+        trigger: elm,
+        start: start
       }
     });
   }
-  var _loop2 = function _loop2() {
+  var _loop3 = function _loop3() {
     var elm = show[_i3];
     var start = "top bottom-=".concat(window.innerHeight / 4);
     gsap__WEBPACK_IMPORTED_MODULE_1__["default"].fromTo(elm, {
@@ -10902,9 +10912,9 @@ var scrollAnimation = function scrollAnimation() {
     });
   };
   for (var _i3 = 0; _i3 < show.length; _i3++) {
-    _loop2();
+    _loop3();
   }
-  var _loop3 = function _loop3() {
+  var _loop4 = function _loop4() {
     var elm = addactive[_i4];
     var start = "top bottom-=".concat(window.innerHeight / 4);
     gsap__WEBPACK_IMPORTED_MODULE_1__["default"].to(elm, {
@@ -10924,9 +10934,9 @@ var scrollAnimation = function scrollAnimation() {
     });
   };
   for (var _i4 = 0; _i4 < addactive.length; _i4++) {
-    _loop3();
+    _loop4();
   }
-  var _loop4 = function _loop4() {
+  var _loop5 = function _loop5() {
     var elm = parallax[_i5];
     var amountPc = elm.getAttribute('data-amountPc');
     var amountSp = elm.getAttribute('data-amountSp');
@@ -10957,7 +10967,7 @@ var scrollAnimation = function scrollAnimation() {
     });
   };
   for (var _i5 = 0; _i5 < parallax.length; _i5++) {
-    _loop4();
+    _loop5();
   }
 };
 window.addEventListener("DOMContentLoaded", scrollAnimation, false);

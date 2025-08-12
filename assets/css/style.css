@@ -554,8 +554,8 @@ video {
 .flex-wrap {
   flex-wrap: wrap;
 }
-.items-end {
-  align-items: flex-end;
+.items-center {
+  align-items: center;
 }
 .justify-end {
   justify-content: flex-end;
@@ -1315,6 +1315,13 @@ video {
     font-size: 3.3078880407vw;
     line-height: 200%;
   }
+  #contentTop .pv-section#section4 .text {
+    margin-top: 8.1424936387vw;
+    width: 59.2875318066vw;
+  }
+  #contentTop .pv-section#section6 .wrapper {
+    margin-bottom: 5.0890585242vw;
+  }
   #contentTop .section#about {
     padding: 16.2849872774vw 0;
   }
@@ -1332,7 +1339,12 @@ video {
     text-align: left;
   }
   #contentTop .section#footer {
-    padding: 20.3562340967vw 0;
+    padding: 0 0 20.3562340967vw 0;
+  }
+  #contentTop .section#footer .section__inner {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90.0763358779vw;
   }
   #contentTop .section#footer h2 {
     margin-bottom: 8.1424936387vw;
@@ -1349,7 +1361,15 @@ video {
     margin-right: auto;
   }
   #contentTop .section#footer ul li {
-    font-size: 6.106870229vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 8.1424936387vw;
+    width: 8.1424936387vw;
+    margin-right: 4.0712468193vw;
+  }
+  #contentTop .section#footer ul li:last-child {
+    margin-right: 0;
   }
   #contentTop .section#footer ul li a {
     color: #272727;
@@ -1366,6 +1386,7 @@ video {
     color: #6D6D6D;
   }
   #contentTop .section#footer .credit {
+    margin-top: 16.2849872774vw;
     margin-bottom: 20.3562340967vw;
     font-size: 3.0534351145vw;
     line-height: 180%;
@@ -1517,6 +1538,10 @@ video {
     margin-right: auto;
     width: 83.3333333333%;
   }
+  #contentTop .pv-section#section4 .text {
+    margin-top: 8.1355932203%;
+    width: 62.0338983051%;
+  }
   #contentTop .section#about {
     padding: 80px 0;
   }
@@ -1547,7 +1572,15 @@ video {
     margin-right: auto;
   }
   #contentTop .section#footer ul li {
-    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    margin-right: 24px;
+  }
+  #contentTop .section#footer ul li:last-child {
+    margin-right: 0;
   }
   #contentTop .section#footer ul li a {
     color: #272727;
@@ -1565,6 +1598,7 @@ video {
     color: #6D6D6D;
   }
   #contentTop .section#footer .credit {
+    margin-top: 80px;
     margin-bottom: 80px;
     font-size: 12px;
     line-height: 180%;

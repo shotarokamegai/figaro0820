@@ -125,6 +125,17 @@
           // height: rem(810);
         }
       }
+      &#section4 {
+        .text {
+          margin-top: vw(32);
+          width: vw(233);
+        }
+      }
+      &#section6 {
+        .wrapper {
+          margin-bottom: vw(20);
+        }
+      }
     }
     .section {
       &#top {
@@ -147,7 +158,12 @@
         }
       }
       &#footer {
-        padding: vw(80) 0;
+        padding: 0 0 vw(80) 0;
+        .section__inner {
+          margin-left: auto;
+          margin-right: auto;
+          width: vw(354);
+        }
         h2 {
           margin-bottom: vw(32);
           @include fontvw(14);
@@ -164,9 +180,18 @@
         }
         ul {
           li {
-            @include fontvw(24);
+            @include fitcenter();
+            height: vw(32);
+            width: vw(32);
+            margin-right: vw(16);
+            &:last-child {
+              margin-right: 0;
+            }
             a {
               color: $black;
+              img {
+                // width: vw(24);
+              }
             }
           }
         }
@@ -182,6 +207,7 @@
           color: $gray;
         }
         .credit {
+          margin-top: vw(64);
           margin-bottom: vw(80);
           @include fontvw(12);
           line-height: 180%;
@@ -351,6 +377,12 @@
           width: calc( 1200 / 1440 * 100%);
         }
       }
+      &#section4 {
+        .text {
+          margin-top: calc(48 / 590 * 100% );
+          width: calc(366 / 590 * 100% );
+        }
+      }
     }
     .section {
       &#top {
@@ -386,9 +418,19 @@
         }
         ul {
           li {
-            @include fontsize(30);
+            // @include fontsize(30);
+            @include fitcenter();
+            height: rem(40);
+            width: rem(40);
+            margin-right: rem(24);
+            &:last-child {
+              margin-right: 0;
+            }
             a {
               color: $black;
+              img {
+                // width: rem(30);
+              }
             }
           }
         }
@@ -405,6 +447,7 @@
           color: $gray;
         }
         .credit {
+          margin-top: rem(80);
           margin-bottom: rem(80);
           @include fontsize(12);
           line-height: 180%;

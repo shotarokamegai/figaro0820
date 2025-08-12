@@ -20,9 +20,9 @@
             </p>
         </div>
         <div class="section common">
-            <div class="wrapper flex justify-between items-end mx-auto">
-                <div class="wrapper-image fade-in">
-                    <video src="./assets/img/01.mp4" autoplay muted playsinline loop></video>
+            <div class="wrapper flex justify-between items-center mx-auto">
+                <div class="wrapper-image fade-in play-video">
+                    <video id="video" src="./assets/img/01.mp4" muted playsinline></video>
                 </div>
                 <div class="wrapper-content fade-in">
                     <h2 class="source-han-sans-jp bold">唇に宿す“真のラグジュアリー”。</h2>
@@ -34,9 +34,9 @@
     </section>
     <section id="section2" class="pv-section" data-pv-section="section2" data-section="section2">
         <div class="section common">
-            <div class="wrapper flex justify-between items-end mx-auto flex-row-reverse">
+            <div class="wrapper flex justify-between items-center mx-auto flex-row-reverse">
                 <div class="wrapper-image fade-in">
-                    <img src="./assets/img/02.png" alt="">
+                    <img src="./assets/img/02.jpg" alt="">
                 </div>
                 <div class="wrapper-content fade-in">
                     <h2 class="source-han-sans-jp bold">伝統とモダニティが創る新しい美。</h2>
@@ -48,7 +48,7 @@
     </section>
     <section id="section3" class="pv-section" data-pv-section="section3" data-section="section3">
         <div class="section common">
-            <div class="wrapper flex justify-between items-end mx-auto">
+            <div class="wrapper flex justify-between items-center mx-auto">
                 <div class="wrapper-image fade-in">
                     <video src="./assets/img/03.mp4" autoplay muted playsinline loop></video>
                 </div>
@@ -56,29 +56,32 @@
                     <h2 class="source-han-sans-jp bold">リップスティックは個性を讃える招待状。</h2>
                     <p class="wrapper-text source-han-sans-jp regular">クリエイティブ・ディレクターのパット・マクグラスは、「リップスティックは存在感。ひと筆で描かれるサインであり、女性が世界の中で自分を表現する方法」だと言う。その言葉の真意をLV ルージュは教えてくれる。赤と茶をブレンドした温かみのある「ローズ オディッセ」は自分の道を切り拓く美しさを、マットレッドの「ルージュ ルイ」はエレガンスとフェミニニティを、深く豊かなボルドーの「ランブリング ストーム」は自信に満ちた強さを反映。シェードの個性がまとう人の個性を引き出す様は、まるで魔法のよう。</p>
                     <p class="wrapper-note source-han-sans-jp regular">モデル使用色：赤味の強いローズカラーからほんのりとブラウンが覗く「ローズ オディッセ」LV ルージュ 203、 ルイ·ヴィトンの創始者にちなんで名付けられた発色のいいスカーレットレッド「ルージュ ルイ」同 854、繊細なゴールド パールが煌めくモードなボルドー「ランブリング ストーム」同 112 各￥23,100（レフィル各￥9,900）（8/29発売）／ルイ·ヴィトン クライアントサービス</p>
-                    <%- include('./../parts/_button', {link: '', className: '', text: 'LV ルージュをCHECK'}) %>
+                    <%- include('./../parts/_button', {target: '',link: '', className: '', text: 'LV ルージュをCHECK'}) %>
                 </div>
             </div>
         </div>
     </section>
     <section id="section4" class="pv-section" data-pv-section="section4" data-section="section4">
         <div class="section common">
-            <div class="wrapper flex justify-between items-end mx-auto flex-row-reverse">
+            <div class="wrapper flex justify-between items-center mx-auto flex-row-reverse">
                 <div class="wrapper-image fade-in">
                     <video src="./assets/img/04.mp4" autoplay muted playsinline loop></video>
+                    <div class="text fade-in">
+                        <img src="./assets/img/text.svg" alt="Beauty Begins Here: A Journey Through Color and Craft" />
+                    </div>
                 </div>
                 <div class="wrapper-content fade-in">
                     <h2 class="source-han-sans-jp bold">シアーな輝きが導く無限の可能性。</h2>
                     <p class="wrapper-text source-han-sans-jp regular">軽やかな仕上がりとなめらかなテクスチャーが特徴のLV バームは、10のカラー展開で登場。エフォートレスなツヤ感はリップスティックに重ねたり、単品で使用したり、どんな気分やシーンにもフィットする。LV ルージュと色違いのパッケージは、モノグラムのデザインや手にした時のリュクスな重厚感、キャップを閉めるの音まで、細部に美意識が行き届いている。ミントとラズベリーのフレッシュな香りが毎日を豊かに彩る。</p>
                     <p class="wrapper-note source-han-sans-jp regular">シアバターとヒアルロン酸が配合のバームは、唇に美しい潤いを与えてくれる。ギフトにもぴったりなクリアカラー「インフィニット ドリーマー」LV バーム 000￥23,100（レフィル￥9,900）（8/29発売）／ルイ·ヴィトン クライアントサービス</p>
-                    <%- include('./../parts/_button', {link: '', className: '', text: 'LV バームをCHECK'}) %>
+                    <%- include('./../parts/_button', {target: '',link: '', className: '', text: 'LV バームをCHECK'}) %>
                 </div>
             </div>
         </div>
     </section>
     <section id="section5" class="pv-section" data-pv-section="section5" data-section="section5">
         <div class="section common">
-            <div class="wrapper flex justify-between items-end mx-auto">
+            <div class="wrapper flex justify-between items-center mx-auto">
                 <div class="wrapper-image fade-in">
                     <video src="./assets/img/04.mp4" autoplay muted playsinline loop></video>
                 </div>
@@ -86,14 +89,13 @@
                     <h2 class="source-han-sans-jp bold">自由に、自分色のハーモニーを奏でて。</h2>
                     <p class="wrapper-text source-han-sans-jp regular">ビューティーシーンを牽引するメイクアップアーティストで、コスメティップ部門をリードするパット・マクグラスのスタイルがそうであるように、アイシャドウパレットは変幻自在なアイメイクを叶えてくれる。多彩な質感で魅せるスーパーナチュラルな仕上がりや、エッジを効かせた大胆でシネマティックな仕上がりも思いのまま。大きな翼を広げた鳥のように、自分色の個性で自由な空を羽ばたいて。</p>
                     <p class="wrapper-note source-han-sans-jp regular">カラーとヌード、洗練の色が作る2つの顔を表現。（モデル1）カーキグリーンのパレットを水で溶き、リキッドとして目尻に使用。自然を感じる美しき色の競演。「フォース オブ ネイチャー」LV オンブル 951　（モデル1）絶妙なナチュラルカラーが表情に奥行きを生む。まぶた全体にニュートラルなベージュをオン。「ヌード ミラージュ」同 250、トーンの異なるブラウンを目頭と目尻に近いまぶたに重ね、下まつ毛の際をラインで埋めて。「モノグラム ルージュ」同 896 各￥33,000（レフィル各￥12,000）（すべて8/29発売）／以上ルイ·ヴィトン クライアントサービス</p>
-                    <%- include('./../parts/_button', {link: '', className: '', text: 'LV オンブレをCHECK'}) %>
                 </div>
             </div>
         </div>
     </section>
     <section id="section6" class="pv-section" data-pv-section="section6" data-section="section6">
         <div class="section common">
-            <div class="wrapper flex justify-between items-end mx-auto flex-row-reverse">
+            <div class="wrapper flex justify-between items-center mx-auto flex-row-reverse">
                 <div class="wrapper-image fade-in">
                     <video src="./assets/img/05.mp4" autoplay muted playsinline loop></video>
                 </div>
@@ -101,42 +103,41 @@
                     <h2 class="source-han-sans-jp bold">色と質感の意外で巧妙なハーモニー。</h2>
                     <p class="wrapper-text source-han-sans-jp regular">アイシャドウパレットは、日常使いしやすい3色に意外性のある1色を組み合わせたセット。シェードはもちろん、質感にもこだわり、ウルトラマットやグリッターなど6つのフィニッシュを駆使し、8種のカラーコンビネーションをラインナップしている。肌の上でシームレスにのびるフォーミュラだから、色だけでなく質感の妙も存分に楽しんで。1色ずつ入れ替えられるリフィラブルな設計で、自分好みのパレットを作ることができる点も価値あるポイント。</p>
                     <p class="wrapper-note source-han-sans-jp regular">上から：淡く繊細なライトブルーや力強いディープブルーで構成されたブルーのカルテット「スカイ イズ ザ リミット」LV オンブル 950、メゾンのアイコニックなレザーへオマージュを捧げた多彩なベージュカラー「ベージュ メメント」同 150、クラシックな3色のブラウンにリップスティックの物語を継承するボルドーを加えた「モノグラム ルージュ」同 896 各￥33,000（レフィル各￥12,000）（すべて8/29発売）／以上ルイ·ヴィトン クライアントサービス</p>
+                    <%- include('./../parts/_button', {target: '',link: '', className: '', text: 'LV オンブレをCHECK'}) %>
                 </div>
             </div>
         </div>
-    </section>
-    <section id="section6" class="pv-section" data-pv-section="section6" data-section="section6">
         <div id="footer" class="section">
             <div class="section__inner">
                 <p class="source-han-sans-jp note regular text-center">TOP使用色（シェードナンバー順に）：「ヌード ネセセール」LV ルージュ 105、「デューン エクスプローラー」同 106、「ノット ブラッシング」同 303、「ブレーキング ポイント」同 307、「ネビュラ プラム」同 400、「アンエクスプロアード」同 505、「トニック オレンジ」同 601、「マグマ ファンタジー」同 606、「ルージュ ルイ」同 854 　「ヌード ポエトリー」LVバーム 010、「ローズ エセンシエル」同 020、「テンダー ブリス」同 030、「フレッシュ パラダイス」同 031、「ミルキーウェイ」同 040、「モノグラム タッチ」同 051、「モノグラム タッチ」同 061 各￥23,100（レフィル各￥9,900）（すべて8/29発売）／以上ルイ·ヴィトン クライアントサービス</p>
                 <h2 class="source-han-sans-jp bold text-center">問い合わせ先</h2>
                 <p class="source-han-sans-jp text regular text-center">ルイ・ヴィトン クライアントサービス<br/>
 0120-00-1854（フリーダイヤル）</p>
-                <%- include('./../parts/_button', {link: 'https://jp.louisvuitton.com/jpn-jp/homepage', className: 'long', text: '公式サイト'}) %>
+                <%- include('./../parts/_button', {target: '',link: 'https://jp.louisvuitton.com/jpn-jp/homepage', className: 'long', text: '公式サイト'}) %>
                 <ul class="flex justify-center">
                     <li>
                         <a href="https://www.instagram.com/louisvuitton/" target="_blank" rel="noopener">
-                            <i class="fa-brands fa-instagram"></i>
+                            <img src="./assets/img/instagram.svg" alt="">
                         </a>
                     </li>
                     <li>
                         <a href="https://line.me/R/ti/p/@louisvuitton?from=page&openQrModal=true&searchId=louisvuitton" target="_blank" rel="noopener">
-                            <i class="fa-brands fa-line"></i>
+                            <img src="./assets/img/line.svg" alt="">
                         </a>
                     </li>
                     <li>
                         <a href="https://www.facebook.com/LouisVuitton/?locale=ja_JP" target="_blank" rel="noopener">
-                            <i class="fa-brands fa-facebook"></i>
+                            <img src="./assets/img/facebook.svg" alt="">
                         </a>
                     </li>
                     <li>
                         <a href="https://www.youtube.com/channel/UC5q0PIKGr2lGOsiT14AlEYg" target="_blank" rel="noopener">
-                            <i class="fa-brands fa-youtube"></i>
+                            <img src="./assets/img/youtube.svg" alt="">
                         </a>
                     </li>
                     <li>
                         <a href="https://x.com/LouisVuitton_JP" target="_blank" rel="noopener">
-                            <i class="fa-brands fa-x-twitter"></i>
+                            <img src="./assets/img/x.svg" alt="">
                         </a>
                     </li>
                 </ul>

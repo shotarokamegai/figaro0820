@@ -7,6 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 const scrollAnimation = () => {
     let deviceController = new DeviceController();
     let top = document.getElementById('top');
+    let video = document.getElementById('video');
     let addactive = document.getElementsByClassName('addactive');
     let show = document.getElementsByClassName('show');
     let scaleImage = document.getElementsByClassName('scale-image');
@@ -31,6 +32,12 @@ const scrollAnimation = () => {
         scrollTrigger: {
           trigger: elm,
           start: start, 
+        },
+        onEnter: () => {
+          if (elm.classList.contains('play-video')) {
+            console.log('enter')
+            video.play()
+          }
         }
       });
     }
