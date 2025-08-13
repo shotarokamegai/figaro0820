@@ -149,7 +149,7 @@
           line-height: 160%;
         }
         p {
-          @include fontvw(13);
+          @include fontvw(15);
           line-height: 200%;
           margin-left: auto;
           margin-right: auto;
@@ -266,7 +266,7 @@
           }
           &-text {
             margin-bottom: vw(28);
-            @include fontvw(13);
+            @include fontvw(15);
             line-height: 200%;
             color: $gray;
           }
